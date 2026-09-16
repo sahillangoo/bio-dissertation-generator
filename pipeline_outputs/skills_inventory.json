@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-09-16T20:19:27.023993+00:00",
+  "status": "PASS",
+  "summary": {
+    "total_skills": 8,
+    "created_count": 8,
+    "external_count": 0,
+    "duplicates_detected": 0
+  },
+  "duplicates": [],
+  "created_skills": [
+    {
+      "name": "bio-chapter-builder",
+      "description": "Standardizes modular dissertation scaffolding, chapter planning, section drafting, and cross-chapter synthesis for Biology and Zoology graduate dissertations. Generates LaTeX chapter structures, frontmatter, and specimen appendices with academic biological argumentation.",
+      "path": ".agents/skills/bio-chapter-builder",
+      "has_scripts": true,
+      "has_references": true,
+      "has_examples": true,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "Modular LaTeX dissertation chapter & appendix scaffolding, cross-chapter synthesis",
+      "domain": "Dissertation Chapter Architecture"
+    },
+    {
+      "name": "bio-nomenclature-ethics",
+      "description": "Enforces International Code of Zoological Nomenclature (ICZN) taxonomic formatting rules, binomial/trinomial italicization, authority citations, novel taxon designations, and mandatory animal care (IACUC) and field collection ethical permit compliance in LaTeX dissertations.",
+      "path": ".agents/skills/bio-nomenclature-ethics",
+      "has_scripts": true,
+      "has_references": true,
+      "has_examples": true,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "ICZN zoological nomenclature enforcement, binomial italicization & IACUC ethical permit compliance",
+      "domain": "Taxonomy & Ethical Compliance"
+    },
+    {
+      "name": "bio-reference-manager",
+      "description": "Manages BibLaTeX reference databases, CSE/APA citation styles, bibliography deduplication, and life sciences citation standards. Ingests and validates student BibTeX files from research_sources/citations/ and merges them into master references.bib with citation key diagnostics.",
+      "path": ".agents/skills/bio-reference-manager",
+      "has_scripts": true,
+      "has_references": true,
+      "has_examples": true,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "BibLaTeX reference database management, CSE/APA citation styles & DOI resolution",
+      "domain": "Scholarly Citations & Reference Database"
+    },
+    {
+      "name": "bio-research-sources",
+      "description": "Discovers, indexes, and synthesizes user-provided research sources from research_sources/ (existing drafts, datasets, notes, citations) into dissertation chapters. Integrates with PubMed, bioRxiv, and NCBI Entrez APIs for life sciences literature synthesis, taxonomic verification, and provenance tracking.",
+      "path": ".agents/skills/bio-research-sources",
+      "has_scripts": true,
+      "has_references": true,
+      "has_examples": true,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "Life Sciences literature discovery, student draft synthesis, NCBI/PubMed/bioRxiv ingestion",
+      "domain": "Life Sciences Research Staging"
+    },
+    {
+      "name": "bio-scientific-formatting",
+      "description": "Formats life sciences scientific outputs in LaTeX, including Newick phylogenetic tree conversion to TikZ/Forest cladograms, publication-grade anatomical and morphometric tables with booktabs and siunitx, museum voucher catalogs, and statistical reporting.",
+      "path": ".agents/skills/bio-scientific-formatting",
+      "has_scripts": true,
+      "has_references": true,
+      "has_examples": true,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "TikZ/Forest phylogenetic cladograms, Newick conversion, morphometrics & siunitx tables",
+      "domain": "Scientific Publication Formatting"
+    },
+    {
+      "name": "dissertation-checker",
+      "description": "Use when examining the finished Kashmir M.Sc. Dipsacus inermis dissertation for claim-data mismatches, figure caption errors, table/chart layout, broken citations, or leftover template content before PDF finalization.",
+      "path": ".agents/skills/dissertation-checker",
+      "has_scripts": false,
+      "has_references": false,
+      "has_examples": false,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "Claim-data, caption, citation, and layout check before final PDF",
+      "domain": "Examiner playbook"
+    },
+    {
+      "name": "final-output",
+      "description": "Master end-to-end dissertation pipeline orchestrator coordinating research staging, biology logic, chapter drafting, citation verification, Reviewer 2 audit, stylistic scan, and LaTeX publication build.",
+      "path": ".agents/skills/final-output",
+      "has_scripts": true,
+      "has_references": true,
+      "has_examples": true,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "Master unified 7-stage dissertation pipeline orchestrator",
+      "domain": "Master Pipeline Orchestrator"
+    },
+    {
+      "name": "scholar-language-auditor",
+      "description": "Use when auditing or rewriting Kashmir M.Sc. Zoology dissertation prose for Band 2-3 scientific English, AI-slop, padding jargon, or line-by-line register hygiene.",
+      "path": ".agents/skills/scholar-language-auditor",
+      "has_scripts": false,
+      "has_references": false,
+      "has_examples": false,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "Band 2-3 scientific English audit of live Kashmir dissertation chapters",
+      "domain": "Examiner playbook"
+    }
+  ],
+  "external_skills": [],
+  "external_by_source": {}
+}

@@ -1,0 +1,61 @@
+=== TABLE 0 ===
+Row 0: Taxon | Escherichia coli | Pseudomonas aeruginosa | Klebsiella pneumoniae
+Row 1: Kingdom | Bacteria | Bacteria | Bacteria
+Row 2: Phylum | Pseudomonadota | Pseudomonadota | Pseudomonadota
+Row 3: Class | Gammaproteobacteria | Gammaproteobacteria | Gammaproteobacteria
+Row 4: Order | Enterobacterales | Pseudomonadales | Enterobacterales
+Row 5: Family | Enterobacteriaceae | Pseudomonadaceae | Enterobacteriaceae
+Row 6: Genus | Escherichia | Pseudomonas | Klebsiella
+Row 7: Species | E. coli | P. aeruginosa | K. pneumoniae
+
+=== TABLE 1 ===
+Row 0: Rank | Taxon
+Row 1: Kingdom | Plantae
+Row 2: Clade | Angiosperms
+Row 3: Order | Dipsacales
+Row 4: Family | Caprifoliaceae
+Row 5: Genus | Dipsacus
+Row 6: Species | D. inermis
+
+=== TABLE 2 ===
+Row 0: Treatment | C1 (50 µg) ZOI (mm) — well diffusion | C2 (100 µg) ZOI (mm) — well diffusion | Gentamicin (+, disc diffusion) / Negative (–, well) (mm)
+Row 1: E. coli | [ __ ± __ ] | [ __ ± __ ] | [ + __ / – __ ]
+
+=== TABLE 3 ===
+Row 0: Treatment | C1 (50 µg) ZOI (mm) — well diffusion | C2 (100 µg) ZOI (mm) — well diffusion | Gentamicin (+, disc diffusion) / Negative (–, well) (mm)
+Row 1: P. aeruginosa | [ __ ± __ ] | [ __ ± __ ] | [ + __ / – __ ]
+
+=== TABLE 4 ===
+Row 0: Treatment | C1 (50 µg) ZOI (mm) ± SD — well diffusion | C2 (100 µg) ZOI (mm) ± SD — well diffusion | Gentamicin (+, disc diffusion) / Negative (–, well) (mm)
+Row 1: K. pneumoniae | [ __ ± __ ] | [ __ ± __ ] | [ + __ / – __ ]
+
+=== TABLE 5 ===
+Row 0: Treatment | E. coli ZOI (mm) | P. aeruginosa ZOI (mm)
+Row 1: Present study — Aqueous extract | [ __ ± __ ] | [ __ ± __ ]
+Row 2: DCM extract, 100 µg/mL (Drakhshaan et al., 2026) | 15.93 ± 0.11 | 16.83 ± 0.29
+Row 3: DCM extract, 50 µg/mL (Drakhshaan et al., 2026) | 12.93 ± 0.11 | 13.10 ± 0.17
+Row 4: MeOH extract, 100 µg/mL (Drakhshaan et al., 2026) | 15.80 ± 0.34 | 15.17 ± 0.29
+Row 5: MeOH extract, 50 µg/mL (Drakhshaan et al., 2026) | 11.13 ± 0.23 | 9.07 ± 0.11
+Row 6: Gentamicin, 10 µg (Drakhshaan et al., 2026) | 15.00 ± 0.12 | 14.50 ± 0.30
+
+=== TABLE 6 ===
+Row 0: E. coli | Replicate 1 (mm) | Replicate 2 (mm) | Replicate 3 (mm)
+Row 1: Aqueous extract — C1 (50 µg) [well diffusion] |  |  | 
+Row 2: Aqueous extract — C2 (100 µg) [well diffusion] |  |  | 
+Row 3: Positive control (Gentamicin) [disc diffusion] |  |  | 
+Row 4: Negative control [well diffusion] |  |  | 
+
+=== TABLE 7 ===
+Row 0: P. aeruginosa | Replicate 1 (mm) | Replicate 2 (mm) | Replicate 3 (mm)
+Row 1: Aqueous extract — C1 (50 µg) [well diffusion] |  |  | 
+Row 2: Aqueous extract — C2 (100 µg) [well diffusion] |  |  | 
+Row 3: Positive control (Gentamicin) [disc diffusion] |  |  | 
+Row 4: Negative control [well diffusion] |  |  | 
+
+=== TABLE 8 ===
+Row 0: K. pneumoniae | Replicate 1 (mm) | Replicate 2 (mm) | Replicate 3 (mm)
+Row 1: Aqueous extract — C1 (50 µg) [well diffusion] |  |  | 
+Row 2: Aqueous extract — C2 (100 µg) [well diffusion] |  |  | 
+Row 3: Positive control (Gentamicin) [disc diffusion] |  |  | 
+Row 4: Negative control [well diffusion] |  |  | 
+

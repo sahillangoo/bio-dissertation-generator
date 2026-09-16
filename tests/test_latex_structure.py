@@ -96,16 +96,13 @@ def test_frontmatter_modules_exist(project_root, fm_filename):
     assert fm_file.stat().st_size > 0, f"Frontmatter module is empty: {fm_file}"
 
 
-def test_frontmatter_ethics_statement_content(project_root):
-    """T1-LATEX-03: Verify ethics_statement.tex contains IACUC / animal ethics compliance terms."""
-    ethics_file = project_root / "frontmatter" / "ethics_statement.tex"
-    assert ethics_file.exists(), f"ethics_statement.tex missing at {ethics_file}"
-
-    content = ethics_file.read_text(encoding="utf-8").lower()
-    for keyword in ["iacuc", "animal", "protocol"]:
-        assert keyword in content, (
-            f"Keyword '{keyword}' missing in ethics_statement.tex"
-        )
+def test_frontmatter_certificate_and_declaration(project_root):
+    """T1-LATEX-03: Certificate and declaration name the candidate and Kashmir Zoology department."""
+    cert = (project_root / "frontmatter" / "certificate.tex").read_text(encoding="utf-8").lower()
+    decl = (project_root / "frontmatter" / "declaration.tex").read_text(encoding="utf-8").lower()
+    for keyword in ["bazilla", "24061119001", "kashmir", "zoology"]:
+        assert keyword in cert, f"Keyword '{keyword}' missing in certificate.tex"
+        assert keyword in decl, f"Keyword '{keyword}' missing in declaration.tex"
 
 
 @pytest.mark.parametrize("ch_filename", EXPECTED_CHAPTER_FILES)
@@ -147,12 +144,12 @@ def test_all_cited_keys_resolved_in_references_bib(project_root):
     defined_keys = extract_bibtex_keys(bib_file)
     assert len(defined_keys) > 0, "No keys found in references.bib"
 
-    # Scan all .tex files in project
+    # Scan only the live Kashmir thesis (not leftover frog/morphometrics files).
     all_tex_files = [
         project_root / "dissertation.tex",
-        *list((project_root / "frontmatter").glob("*.tex")),
-        *list((project_root / "chapters").glob("*.tex")),
-        *list((project_root / "appendices").glob("*.tex")),
+        *[project_root / "frontmatter" / f for f in EXPECTED_FRONTMATTER_FILES],
+        *[project_root / "chapters" / f for f in EXPECTED_CHAPTER_FILES],
+        *[project_root / "appendices" / f for f in EXPECTED_APPENDIX_FILES],
     ]
 
     missing_citations = {}

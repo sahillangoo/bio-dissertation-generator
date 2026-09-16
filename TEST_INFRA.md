@@ -74,9 +74,9 @@ Validates the presence, formatting, and structural integrity of all declared pro
 | `T1-STAGE-04` | `test_staging.py` | Sample Staging Files | Realistic sample files exist in staging (`methods_draft.md`, `morphometrics.csv`, `student_citations.bib`, `committee_notes.md`). |
 | `T1-LATEX-01` | `test_latex_structure.py` | Root LaTeX Document | `dissertation.tex` exists and inputs frontmatter, chapters, appendices, and bibliography. |
 | `T1-LATEX-02` | `test_latex_structure.py` | Life Sciences Preamble | `preamble.tex` exists, loads required packages (`geometry`, `booktabs`, `siunitx`, `mhchem`, `forest`, `biblatex`), and defines ICZN macros (`\taxa`, `\taxonauth`, `\spnov`, `\holotype`). |
-| `T1-LATEX-03` | `test_latex_structure.py` | Frontmatter Modules | `frontmatter/` contains `title.tex`, `abstract.tex`, `dedication.tex`, `acknowledgements.tex`, `abbreviations.tex`, and `ethics_statement.tex` (with IACUC details). |
-| `T1-LATEX-04` | `test_latex_structure.py` | Chapter Modules | `chapters/` contains `01_introduction.tex`, `02_lit_review.tex`, `03_methods.tex`, `04_results.tex`, `05_discussion.tex`. |
-| `T1-LATEX-05` | `test_latex_structure.py` | Appendix Modules | `appendices/` contains `appendix_a_specimens.tex`, `appendix_b_primers.tex`, `appendix_c_stats.tex`. |
+| `T1-LATEX-03` | `test_latex_structure.py` | Frontmatter Modules | `frontmatter/` contains `title.tex`, `certificate.tex`, `declaration.tex`, `abstract.tex`, `acknowledgements.tex`, `abbreviations.tex`. |
+| `T1-LATEX-04` | `test_latex_structure.py` | Chapter Modules | `chapters/` contains `01_introduction.tex` through `07_conclusion.tex` (Kashmir M.Sc. sequence). |
+| `T1-LATEX-05` | `test_latex_structure.py` | Appendix Modules | `appendices/` contains `appendix_a_template.tex`. |
 | `T1-LATEX-06` | `test_latex_structure.py` | Master Bibliography | `references.bib` exists and contains valid BibTeX entries. |
 | `T1-CLI-01` | `test_build_cli.py` | Build CLI Presence | `build.py` exists and can be executed via Python standard invocation. |
 | `T1-CLI-02` | `test_build_cli.py` | CLI Help Output | `build.py --help` exits with code 0 and displays supported arguments (`--root`, `--output`, `--engine`, `--clean`, `--strict`, `--verbose`). |

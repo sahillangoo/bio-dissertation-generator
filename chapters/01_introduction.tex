@@ -3,83 +3,12 @@
 % =========================================================================
 
 \chapter{Introduction}
-\label{chap:introduction}
+\label{ch:introduction}
 
-\section{The Riddle of Cryptic Biodiversity}
-\label{sec:intro_cryptic}
+Antimicrobial resistance (AMR) is a major clinical and public-health problem \citep{amrcollaborators2022,who2024}. Antibiotics still underpin surgery, chemotherapy, and the treatment of common bacterial infections, but overuse in clinics, households, and livestock has selected multidrug-resistant lineages. The Global Research on Antimicrobial Resistance analysis in \textit{The Lancet} associated bacterial AMR with a large share of deaths worldwide in 2019 \citep{amrcollaborators2022}. Gram-negative rods are particularly difficult to inhibit: an outer membrane rich in lipopolysaccharide, periplasmic enzymes, and efflux pumps restrict many drugs and many plant phenolics \citep{nikaido2003,li2015,blair2015}. \textit{Escherichia coli}, \textit{Pseudomonas aeruginosa}, and \textit{Klebsiella pneumoniae} account for a large share of community and hospital Gram-negative disease and sit, in carbapenem-resistant form, in the critical tier of the WHO Bacterial Priority Pathogens List \citep{who2024,sati2025}.
 
-Understanding the generation and maintenance of biological diversity represents one of the foundational pursuits of evolutionary biology \parencite{darwin1859,mayr1942}. Over the past three decades, the integration of molecular systematics with traditional morphological analysis has fundamentally revolutionized our comprehension of species richness, revealing that phenotypic divergence frequently decouples from evolutionary lineage diversification \parencite{avise2000phylogeography}. In particular, tropical biodiversity hotspots harbor immense reservoirs of ``cryptic species''---distinct evolutionary lineages that are morphologically indistinguishable or erroneously synonymized due to conserved morphological traits or extreme phenotypic plasticity.
+New synthetic antibiotic classes that work against Gram-negative bacteria remain scarce, so plant extracts continue to be screened \citep{cowan1999,jubair2021}. Vascular plants make phenolics, flavonoids, tannins, terpenoids, saponins, alkaloids, and related glycosides as part of their defence chemistry \citep{cowan1999,cushnie2005,kumar2013}. Those mixed metabolites are often described as acting on more than one cellular process. Such statements are literature generalisations; they were not measured on the aqueous extract used here.
 
-In amphibians, morphological stasis combined with high levels of homoplasy presents acute challenges for systematic taxonomy. Anurans frequently rely on non-visual modalities such as bioacoustic advertisement calls or cutaneously secreted chemical pheromones to achieve reproductive isolation, allowing profound genetic divergence to accumulate in the absence of diagnostic external morphological change. Consequently, standard morphological keys frequently underestimate true lineage diversity, obscuring evolutionary history and misinforming conservation prioritization.
+The western Himalaya, including the Kashmir Valley, holds many plants used as decoctions or poultices. Most of those plants still lack simple, documented in vitro antibacterial measurements on aqueous preparations. This dissertation tests one of them, \textit{Dipsacus inermis} Wall.\ ex DC.\ (Himalayan teasel; Caprifoliaceae sensu lato), as an aqueous extract \citep{apgiv2016,skala2023}. The genus \textit{Dipsacus} is known for triterpenoid saponins, iridoid glycosides, and phenolics \citep{zhao2011,skala2023,oszmianski2020}. Kashmir material of \textit{D.\ inermis} has been studied for anti-inflammatory activity \citep{hassan2020}. Dichloromethane and methanol extracts of the same species from northern Pakistan have published antibacterial data against several bacteria, including \textit{E.\ coli} and \textit{P.\ aeruginosa}, but not \textit{K.\ pneumoniae} \citep{drakhshaan2026}. An aqueous extract tested by disc diffusion against laboratory stocks of those three Gram-negative organisms therefore remains a practical gap.
 
-\section{The Poison Frog Radiation: Model Clade in Tropical Systematics}
-\label{sec:intro_dendrobatidae}
-
-Poison frogs of the family \taxa{Dendrobatidae} Cope, 1865 comprise approximately 330 recognized species distributed throughout the humid Neotropics, from Central America through the Amazon Basin to the Atlantic Forest of Brazil. Dendrobatids are globally celebrated for their striking aposematic coloration, parental care behaviors (including egg guarding, tadpole transport, and obligate trophic oophagy), and the sequestering of lipophilic alkaloid toxins from dietary arthropods.
-
-Within Dendrobatidae, the genus \taxa{Ranitomeya} Bauer, 1986 represents a monophyletic radiation of diminutive, diurnal, phytotelm-breeding poison frogs primarily concentrated in the western Amazon Basin and the eastern Andean foothills \parencite{brown2011ranitomeya,santos2009amazonian}. Members of this genus, colloquially termed ``thumbnail poison frogs,'' rarely exceed \SI{20}{\milli\metre} in snout-vent length (\textsc{svl}). Several lineages exhibit hypervariable dorsal color morphs and mimetic polymorphism, which have historically led to conflicting taxonomic hypotheses.
-
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}[scale=0.85]
-    % Central box
-    \node[draw, rectangle, rounded corners, fill=dissertationblue!10, text width=6cm, align=center, inner sep=8pt] (core) at (0,0) {
-      \textbf{\taxa{Ranitomeya} Systematics}\\[3pt]
-      Evolutionary Lineages \& Cryptic Divergence
-    };
-    % Surrounding boxes
-    \node[draw, rectangle, rounded corners, fill=dissertationgreen!10, text width=3.5cm, align=center, inner sep=6pt] (mol) at (-5, 2.5) {
-      \textbf{Molecular Markers}\\
-      \gene{COI}, \gene{16S}, \gene{RAG1}\\
-      Coalescent Phylogenetics
-    };
-    \node[draw, rectangle, rounded corners, fill=orange!10, text width=3.5cm, align=center, inner sep=6pt] (morph) at (5, 2.5) {
-      \textbf{Morphometrics}\\
-      Caliper measurements\\
-      Multivariate PCA / CVA
-    };
-    \node[draw, rectangle, rounded corners, fill=purple!10, text width=3.5cm, align=center, inner sep=6pt] (geo) at (-5, -2.5) {
-      \textbf{Biogeography}\\
-      Andean Orogeny\\
-      Riverine Barriers
-    };
-    \node[draw, rectangle, rounded corners, fill=cyan!10, text width=3.5cm, align=center, inner sep=6pt] (nom) at (5, -2.5) {
-      \textbf{Taxonomic Formalization}\\
-      ICZN Compliance\\
-      Museum Vouchers
-    };
-    % Connecting arrows
-    \draw[-{Stealth[length=3mm]}, thick] (mol) -- (core);
-    \draw[-{Stealth[length=3mm]}, thick] (morph) -- (core);
-    \draw[-{Stealth[length=3mm]}, thick] (geo) -- (core);
-    \draw[-{Stealth[length=3mm]}, thick] (nom) -- (core);
-  \end{tikzpicture}
-  \caption{Conceptual framework of integrative taxonomy implemented in this dissertation. Multiple independent lines of evolutionary evidence---molecular phylogenetics, comparative morphometrics, historical biogeography, and formal ICZN nomenclature---are synthesized to resolve cryptic species boundaries.}
-  \label{fig:integrative_framework}
-\end{figure}
-
-The \taxa{Ranitomeya fantastica} species complex occupies a critical geographic transition zone between the Peruvian Amazon lowlands and the sub-Andean Cordillera Oriental. Despite comprehensive taxonomic revisions by \textcite{brown2011ranitomeya}, disjunct populations in the upper Huallaga and Mayo river drainages display enigmatic chromatic variation and notable divergence in call acoustic properties. Whether these localized populations constitute continuous clinal variation of described taxa or represent distinct evolutionary species under the General Lineage Concept remained unverified prior to this investigation.
-
-\section{Research Objectives and Specific Aims}
-\label{sec:intro_aims}
-
-The overarching objective of this doctoral dissertation is to conduct an integrative, multi-locus systematic revision of the genus \taxa{Ranitomeya}, with special focus on the \taxa{Ranitomeya fantastica} clade. To achieve this objective, this research addresses three primary aims:
-
-\begin{enumerate}
-  \item \textbf{Specific Aim 1: Multi-Locus Phylogenetic Reconstruction.} Construct a robust, time-calibrated phylogenetic framework for the genus \taxa{Ranitomeya} using mitochondrial (\gene{COI}, \gene{16S rRNA}) and nuclear (\gene{RAG1}) gene sequences sampled across the full geographic range of the clade.
-  \item \textbf{Specific Aim 2: Coalescent-Based Species Delimitation.} Test explicit species delimitation models using objective multi-rate Poisson Tree Processes (mPTP) and Bayesian Phylogenetics and Phylogeography (BPP) to determine whether isolated populations represent independently evolving lineages.
-  \item \textbf{Specific Aim 3: Morphometric Quantification and Formal Taxonomic Revision.} Conduct rigorous multivariate morphometric analyses across curated museum voucher series, evaluate diagnosability under the rules of the International Code of Zoological Nomenclature \parencite{iczn1999code}, and formally describe unrecognized taxa.
-\end{enumerate}
-
-\section{Dissertation Organization}
-\label{sec:intro_organization}
-
-This dissertation is organized into five interrelated chapters and three supplementary appendices:
-
-\begin{itemize}
-  \item \textbf{\cref{chap:lit_review}} provides a comprehensive synthesis of systematic theory, species concepts, the historical development of anuran phylogenetics, and the taxonomic history of Dendrobatidae.
-  \item \textbf{\cref{chap:methods}} details the field sampling strategies, laboratory protocols for DNA extraction and PCR amplification, chemical buffer recipes, and computational parameters for phylogenetic inference and species delimitation.
-  \item \textbf{\cref{chap:results}} presents the empirical phylogenetic trees, coalescent delimitation outputs, morphometric statistical tests, and the formal ICZN taxonomic description of a newly identified species.
-  \item \textbf{\cref{chap:discussion}} contextualizes the empirical discoveries within broader Neotropical biogeography, assesses diversification mechanisms driven by Andean orogenesis, and evaluates conservation implications.
-  \item \textbf{\cref{app:specimens}, \cref{app:primers}, and \cref{app:stats}} provide complete specimen catalogs, primer oligonucleotides, and statistical ANOVA tables, respectively.
-\end{itemize}
+The work was done at the Advanced Research Laboratory, Department of Zoology, University of Kashmir. Its aims were three. First, to collect, identify, and prepare the aqueous extract of \textit{Dipsacus inermis}. Second, to evaluate the preliminary phytochemical profile of that aqueous extract. Third, to evaluate the antibacterial activity of the extract against clinical pathogenic bacterial strains of \textit{E.\ coli}, \textit{P.\ aeruginosa}, and \textit{K.\ pneumoniae}. The chapters that follow set out the literature (Ch.\ 3), the laboratory protocol (Ch.\ 4), the findings (Ch.\ 5), and their limits (Ch.\ 6--7). The numbered statement of the same three aims is given in Chapter~2, as required by the departmental sequence, and is not repeated at length elsewhere.

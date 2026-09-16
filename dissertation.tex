@@ -1,10 +1,11 @@
 % =========================================================================
-% Master Doctoral Dissertation Root Document
-% Field: Biology & Zoology (Systematics, Phylogenomics & Integrative Taxonomy)
-% Compiled via Tectonic Typesetting Engine / build.py
+% Master Dissertation Root Document
+% Subject: ANTIBACTERIAL POTENTIAL OF DIPSACUS INERMIS: AN IN VITRO STUDY
+% Candidate: BAZILLA SALEEM (Roll No: 24061119001)
+% Department of Zoology, University of Kashmir, Srinagar
 % =========================================================================
 
-\documentclass[12pt,oneside,letterpaper]{book}
+\documentclass[12pt,oneside,a4paper]{book}
 
 % --- Load Master Preamble & Life Sciences Configurations ---
 \input{preamble}
@@ -12,69 +13,80 @@
 \begin{document}
 
 % =========================================================================
-% FRONT MATTER
+% FRONT MATTER (Roman Numeral Pagination)
 % =========================================================================
 \frontmatter
+\pagestyle{frontmatterstyle}
 
-% Academic Title Page
+% 1. Academic Title Page
 \input{frontmatter/title}
 
-% Structured Abstract
-\input{frontmatter/abstract}
+% 2. Official Certificate
+\input{frontmatter/certificate}
 
-% Dedication
-\input{frontmatter/dedication}
+% 3. Declaration by the Candidate
+\input{frontmatter/declaration}
 
-% Acknowledgements & Grant Attributions
+% 4. Acknowledgements
 \input{frontmatter/acknowledgements}
 
-% Automated Table of Contents & Lists
+% 5. Structured Abstract
+\input{frontmatter/abstract}
+
+% 6. Table of Contents / Index
 \clearpage
 \phantomsection
 \pdfbookmark[0]{\contentsname}{contents}
 \tableofcontents
 
+% 7. List of Figures
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
+% 8. List of Tables
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 
-% Zoological, Genetic, and Institutional Abbreviations
+% 9. List of Acronyms and Abbreviations
 \input{frontmatter/abbreviations}
 
-% Animal Care, IACUC Protocol & Scientific Permit Attestation
-\input{frontmatter/ethics_statement}
-
 % =========================================================================
-% MAIN BODY CHAPTERS
+% MAIN BODY CHAPTERS (Arabic Numeral Pagination, Running Header & Footer)
 % =========================================================================
 \mainmatter
+\pagestyle{fancy}
 
-% Chapter 1: Introduction & Research Aims
+% 10. Chapter 1: Introduction
 \input{chapters/01_introduction}
 
-% Chapter 2: Literature Review, Systematic Theory & Dendrobatid Evolution
-\input{chapters/02_lit_review}
+% 11. Chapter 2: Objectives of the Study
+\input{chapters/02_objectives}
 
-% Chapter 3: Materials & Methods (Sampling, Molecular Protocols & Phylogenetics)
-\input{chapters/03_methods}
+% 12. Chapter 3: Review of Literature
+\input{chapters/03_lit_review}
 
-% Chapter 4: Results & Formal Taxonomic Descriptions
-\input{chapters/04_results}
+% 13. Chapter 4: Materials and Methods
+\input{chapters/04_methods}
 
-% Chapter 5: Discussion, Historical Biogeography & Conservation Implications
-\input{chapters/05_discussion}
+% 14. Chapter 5: Results
+\input{chapters/05_results}
+
+% 15. Chapter 6: Discussion
+\input{chapters/06_discussion}
+
+% 16. Chapter 7: Conclusion
+\input{chapters/07_conclusion}
 
 % =========================================================================
 % BIBLIOGRAPHY & REFERENCES
 % =========================================================================
 \clearpage
 \phantomsection
+% 17. References
 \printbibliography[heading=bibintoc, title={References}]
 
 % =========================================================================
@@ -82,13 +94,10 @@
 % =========================================================================
 \appendix
 
-% Appendix A: Examined Museum Voucher Specimens & Localities
-\input{appendices/appendix_a_specimens}
+% 18. Appendix A: Raw triplicate measurements
+\input{appendices/appendix_a_template}
 
-% Appendix B: Oligonucleotide Primers & Molecular Amplification Protocols
-\input{appendices/appendix_b_primers}
-
-% Appendix C: Supplementary Statistical Models, ANOVA & AICc Tables
-\input{appendices/appendix_c_stats}
+% 19. Appendix B: Laboratory plate gallery
+\input{appendices/appendix_b_plate_gallery}
 
 \end{document}

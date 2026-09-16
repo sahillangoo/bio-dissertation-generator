@@ -65,25 +65,26 @@ EXPECTED_STAGING_DIRS = [
 
 EXPECTED_FRONTMATTER_FILES = [
     "title.tex",
+    "certificate.tex",
+    "declaration.tex",
     "abstract.tex",
-    "dedication.tex",
     "acknowledgements.tex",
     "abbreviations.tex",
-    "ethics_statement.tex",
 ]
 
 EXPECTED_CHAPTER_FILES = [
     "01_introduction.tex",
-    "02_lit_review.tex",
-    "03_methods.tex",
-    "04_results.tex",
-    "05_discussion.tex",
+    "02_objectives.tex",
+    "03_lit_review.tex",
+    "04_methods.tex",
+    "05_results.tex",
+    "06_discussion.tex",
+    "07_conclusion.tex",
 ]
 
 EXPECTED_APPENDIX_FILES = [
-    "appendix_a_specimens.tex",
-    "appendix_b_primers.tex",
-    "appendix_c_stats.tex",
+    "appendix_a_template.tex",
+    "appendix_b_plate_gallery.tex",
 ]
 
 
@@ -247,10 +248,11 @@ def verify_skills(project_root: Path, strict: bool = False, verbose: bool = Fals
             message=f"All {len(EXPECTED_SKILLS)} expected skill suites present ({', '.join(EXPECTED_SKILLS)})"
         ))
 
-    # Validate each skill suite
+    # Validate the five core dissertation skills only (playbooks are examiner
+    # notes; other folders in .agents/skills/ are unrelated agent utilities).
     name_regex = re.compile(r"^[a-z0-9-]+$")
 
-    for skill_path in sorted(skill_folders):
+    for skill_path in [skills_dir / name for name in EXPECTED_SKILLS]:
         s_name = skill_path.name
         t0 = time.perf_counter()
         skill_details: List[str] = []
@@ -306,38 +308,39 @@ def verify_skills(project_root: Path, strict: bool = False, verbose: bool = Fals
             skill_failed = True
             skill_details.append(f"'description' exceeds 1024 characters ({len(desc)} chars)")
 
-        # 3. Progressive disclosure directories
-        for req_subdir in ["scripts", "references", "examples"]:
-            target_sub = skill_path / req_subdir
-            if not target_sub.exists() or not target_sub.is_dir():
-                skill_failed = True
-                skill_details.append(f"Missing required progressive disclosure directory: '{req_subdir}/'")
+        # 3. Progressive disclosure directories (required for core dissertation skills)
+        if s_name in EXPECTED_SKILLS:
+            for req_subdir in ["scripts", "references", "examples"]:
+                target_sub = skill_path / req_subdir
+                if not target_sub.exists() or not target_sub.is_dir():
+                    skill_failed = True
+                    skill_details.append(f"Missing required progressive disclosure directory: '{req_subdir}/'")
 
-        # 4. CLI Scripts execution check
-        scripts_dir = skill_path / "scripts"
-        if scripts_dir.exists() and scripts_dir.is_dir():
-            py_scripts = list(scripts_dir.glob("*.py"))
-            if not py_scripts:
-                if strict:
-                    skill_failed = True
-                    skill_details.append(f"No Python scripts found in {s_name}/scripts/")
-                else:
-                    skill_warned = True
-                    skill_details.append(f"No Python scripts in {s_name}/scripts/ (warning)")
-            for script in py_scripts:
-                try:
-                    res = subprocess.run(
-                        [sys.executable, str(script), "--help"],
-                        capture_output=True,
-                        text=True,
-                        timeout=10
-                    )
-                    if res.returncode != 0:
+            # 4. CLI Scripts execution check for core skills
+            scripts_dir = skill_path / "scripts"
+            if scripts_dir.exists() and scripts_dir.is_dir():
+                py_scripts = list(scripts_dir.glob("*.py"))
+                if not py_scripts:
+                    if strict:
                         skill_failed = True
-                        skill_details.append(f"Script {script.name} --help exited with code {res.returncode}")
-                except Exception as ex:
-                    skill_failed = True
-                    skill_details.append(f"Script {script.name} --help execution error: {ex}")
+                        skill_details.append(f"No Python scripts found in {s_name}/scripts/")
+                    else:
+                        skill_warned = True
+                        skill_details.append(f"No Python scripts in {s_name}/scripts/ (warning)")
+                for script in py_scripts:
+                    try:
+                        res = subprocess.run(
+                            [sys.executable, str(script), "--help"],
+                            capture_output=True,
+                            text=True,
+                            timeout=10
+                        )
+                        if res.returncode != 0:
+                            skill_failed = True
+                            skill_details.append(f"Script {script.name} --help exited with code {res.returncode}")
+                    except Exception as ex:
+                        skill_failed = True
+                        skill_details.append(f"Script {script.name} --help execution error: {ex}")
 
         # Check status outcome
         if skill_failed:
@@ -351,7 +354,10 @@ def verify_skills(project_root: Path, strict: bool = False, verbose: bool = Fals
             msg = f"Skill {s_name} passed with warnings"
         else:
             status = "PASS"
-            msg = f"Skill {s_name} verified (name, description, scripts, references, examples)"
+            if s_name in EXPECTED_SKILLS:
+                msg = f"Core Skill {s_name} verified (name, description, scripts, references, examples)"
+            else:
+                msg = f"Skill {s_name} verified (Agent Skills frontmatter compliant)"
 
         pass_res.checks.append(CheckResult(
             name=f"Skill Suite: {s_name}",
@@ -640,10 +646,15 @@ def verify_build(
     defined_keys = extract_bibtex_keys(bib_path)
     all_cited_keys: Set[str] = set()
 
-    for tex_file in project_root.rglob("*.tex"):
-        if ".agents" in tex_file.parts or ".venv" in tex_file.parts or "tests" in tex_file.parts:
-            continue
-        all_cited_keys.update(extract_latex_citations(tex_file))
+    live_tex = [
+        project_root / "dissertation.tex",
+        *[project_root / "frontmatter" / f for f in EXPECTED_FRONTMATTER_FILES],
+        *[project_root / "chapters" / f for f in EXPECTED_CHAPTER_FILES],
+        *[project_root / "appendices" / f for f in EXPECTED_APPENDIX_FILES],
+    ]
+    for tex_file in live_tex:
+        if tex_file.exists():
+            all_cited_keys.update(extract_latex_citations(tex_file))
 
     unresolved_keys = all_cited_keys - defined_keys
     if unresolved_keys:
@@ -693,7 +704,7 @@ def verify_build(
             cwd=str(project_root),
             capture_output=True,
             text=True,
-            timeout=180
+            timeout=300
         )
         compile_duration_ms = (time.perf_counter() - t_compile) * 1000
         combined_output = build_proc.stdout + "\n" + build_proc.stderr

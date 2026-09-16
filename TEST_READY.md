@@ -82,7 +82,7 @@ uv run python build.py --root dissertation.tex --output dissertation.pdf --stric
 | F8 | Skill: `bio-scientific-formatting` | M2 | Tier 1, 3 | **VERIFIED** | `test_cross_feature.py::test_newick_to_forest_conversion` |
 | F9 | Root Document (`dissertation.tex`) | M3 | Tier 1, 4 | **VERIFIED** | `test_latex_structure.py::test_dissertation_root_document_exists` |
 | F10 | Life Sciences Preamble (`preamble.tex`) | M3 | Tier 1 | **VERIFIED** | `test_latex_structure.py::test_preamble_defines_iczn_zoological_macros` |
-| F11 | Modular Frontmatter Components | M3 | Tier 1 | **VERIFIED** | `test_latex_structure.py::test_frontmatter_ethics_statement_content` |
+| F11 | Modular Frontmatter Components | M3 | Tier 1 | **VERIFIED** | `test_latex_structure.py::test_frontmatter_certificate_and_declaration` |
 | F12 | Modular Dissertation Chapters | M3 | Tier 1, 4 | **VERIFIED** | `test_latex_structure.py::test_chapter_modules_exist` |
 | F13 | Modular Specimen/Stats Appendices | M3 | Tier 1 | **VERIFIED** | `test_latex_structure.py::test_appendix_modules_exist` |
 | F14 | Master Bibliography (`references.bib`) | M3 | Tier 1, 2 | **VERIFIED** | `test_latex_structure.py::test_all_cited_keys_resolved_in_references_bib` |

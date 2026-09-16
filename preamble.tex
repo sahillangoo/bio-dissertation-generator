@@ -5,12 +5,14 @@
 
 % --- Page Geometry & Thesis Layout ---
 \usepackage[
-  letterpaper,
+  a4paper,
   top=1.0in,
   bottom=1.0in,
-  left=1.25in,   % 0.25in binding gutter margin for hardbound archival copy
+  left=1.25in,
   right=1.0in,
-  headheight=15pt
+  headheight=36pt,
+  headsep=12pt,
+  footskip=28pt
 ]{geometry}
 
 % --- Line Spacing & Paragraph Formatting ---
@@ -53,6 +55,8 @@
 % --- Phylogenetic Trees & Vector Diagrams ---
 \usepackage{tikz}
 \usetikzlibrary{trees,arrows.meta,positioning,shapes.geometric,calc,decorations.pathreplacing}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
 \usepackage[linguistics]{forest}
 
 % --- Scientific Units (siunitx) ---
@@ -96,7 +100,7 @@
   uniquelist=false,
   sorting=nyt,
   doi=true,
-  url=false,
+  url=true,
   isbn=false
 ]{biblatex}
 \addbibresource{references.bib}
@@ -110,7 +114,9 @@
   urlcolor=dissertationblue,
   filecolor=dissertationblue,
   pdfcreator={Tectonic Typesetting System},
-  pdfsubject={Doctoral Dissertation in Integrative Biology & Zoology}
+  pdftitle={Antibacterial Potential of Dipsacus inermis: An in vitro Study},
+  pdfauthor={Bazilla Saleem (24061119001)},
+  pdfsubject={M.Sc. Zoology dissertation, University of Kashmir}
 }
 
 % --- Intelligent Cross-Referencing (cleveref must load after hyperref) ---
@@ -167,16 +173,27 @@
 \theoremstyle{definition}
 \newtheorem{protocol}{Protocol}[chapter]
 
-% Fancy header styling
+% Running header: dissertation title + roll number
+% Running footer: department + page number
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\nouppercase{\leftmark}}
-\fancyhead[LO]{\nouppercase{\rightmark}}
-\renewcommand{\headrulewidth}{0.4pt}
-\fancypagestyle{plain}{
-  \fancyhf{}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0pt}
+\newcommand{\disshorttitle}{Antibacterial Potential of \textit{Dipsacus inermis}: An in vitro Study}
+\newcommand{\disroll}{24061119001}
+\newcommand{\disfooter}{Department of Zoology, University of Kashmir, Srinagar, 190006, J\&K}
+\newcommand{\applydissheaders}{%
+  \fancyhf{}%
+  \fancyhead[C]{%
+    \footnotesize
+    \begin{tabular}{@{}c@{}}
+      Antibacterial Potential of \textit{Dipsacus inermis}: An in vitro Study\\
+      Enrollment No.\ \disroll
+    \end{tabular}%
+  }%
+  \fancyfoot[L]{\footnotesize \disfooter}%
+  \fancyfoot[R]{\thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \renewcommand{\footrulewidth}{0.4pt}%
 }
+\pagestyle{fancy}
+\applydissheaders
+\fancypagestyle{frontmatterstyle}{\applydissheaders}
+\fancypagestyle{plain}{\applydissheaders}

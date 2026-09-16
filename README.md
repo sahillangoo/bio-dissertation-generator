@@ -7,7 +7,7 @@
 
 An end-to-end academic dissertation engineering platform and automated LaTeX dissertation generator tailored specifically for Master's and Ph.D. graduate students in **Biology**, **Zoology**, and related Life Sciences.
 
-This repository combines **five specialized Antigravity AI skills**, a **structured research staging workspace**, a **modular academic LaTeX template** with biological nomenclature and phylogenetic macros, and a **zero-configuration cross-platform build engine** powered by `uv` and Tectonic (with Docker fallback).
+This repository combines **six dissertation skills**, a **structured research staging workspace**, a **modular academic LaTeX template** with biological nomenclature macros, and a **zero-configuration cross-platform build engine** powered by `uv` and Tectonic (with Docker fallback).
 
 ---
 
@@ -20,6 +20,7 @@ This repository combines **five specialized Antigravity AI skills**, a **structu
 - [Quickstart Guide](#quickstart-guide)
 - [Research Staging Workflow (`research_sources/`)](#research-staging-workflow-research_sources)
 - [Life Sciences Antigravity Skills Suite](#life-sciences-antigravity-skills-suite)
+- [Master Dissertation Pipeline CLI (`pipeline.py`)](#master-dissertation-pipeline-cli-pipelinepy)
 - [Modular LaTeX Structure](#modular-latex-structure)
 - [Build CLI Reference (`build.py`)](#build-cli-reference-buildpy)
 - [Automated Verification & Diagnostics (`verify.py`)](#automated-verification--diagnostics-verifypy)
@@ -44,7 +45,8 @@ This platform unifies these demands into three integrated layers:
 ┌────────────────────────────────────────────────────────────────────────┐
 │                   2. Antigravity AI Skills Suite                       │
 │   .agents/skills/ (bio-research-sources, bio-nomenclature-ethics,      │
-│    bio-chapter-builder, bio-reference-manager, bio-scientific-format)  │
+│    bio-chapter-builder, bio-reference-manager,                         │
+│    bio-scientific-formatting, final-output)                            │
 └──────────────────────────────────┬─────────────────────────────────────┘
                                    │
                                    ▼
@@ -65,8 +67,8 @@ This platform unifies these demands into three integrated layers:
 2. **Domain-Specific Biological Typography**:
    - ICZN-compliant nomenclature macros: `\taxa{Genus species}`, `\taxonauth{Taxon}{Author, Year}`, `\spnov{Species}`, `\holotype{Museum:ID}`.
    - Built-in packages: `forest` & `tikz` (phylogenetic trees), `siunitx` (scientific units), `mhchem` (chemical buffers), `booktabs` (publication tables).
-3. **Five Specialized Antigravity Skills**:
-   - Progressive-disclosure AI skills covering literature synthesis, ethical statements, chapter scaffolding, BibLaTeX reference deduplication, and scientific figures.
+3. **Six Dissertation Skills**:
+   - Progressive-disclosure skills covering literature synthesis, nomenclature, chapter scaffolding, BibLaTeX, scientific figures, and pipeline orchestration.
 4. **Zero-Configuration LaTeX Compilation**:
    - Automatically bootstraps the standalone **Tectonic** engine from GitHub releases if no LaTeX engine is installed on the host system.
    - Includes seamless **Docker** fallback (`dxjoke/tectonic-docker` or `texlive/texlive`).
@@ -85,11 +87,12 @@ bio-dissertation-generator/
 ├── PROJECT.md                     # System architecture and milestone tracking
 ├── ORIGINAL_REQUEST.md            # Verified project specification and acceptance criteria
 ├── TEST_INFRA.md                  # Test infrastructure specification and tier mapping
-├── TEST_READY.md                  # Multi-tier test summary (84/84 passed)
+├── TEST_READY.md                  # Multi-tier test summary
 ├── pyproject.toml                 # Python project configuration (managed via uv)
 ├── uv.lock                        # Deterministic dependency lockfile
 ├── build.py                       # Automated cross-platform LaTeX compilation CLI
 ├── verify.py                      # Automated three-pass diagnostic verification CLI
+├── pipeline.py                    # 7-stage dissertation pipeline orchestrator
 ├── deploy_github.ps1              # Automated Git staging and GitHub deployment script
 │
 ├── dissertation.tex               # Root LaTeX document aggregating all components
@@ -97,26 +100,26 @@ bio-dissertation-generator/
 ├── references.bib                 # Master BibLaTeX bibliography database
 │
 ├── frontmatter/                   # Modular front matter components
-│   ├── titlepage.tex              # Academic title page
+│   ├── title.tex                  # Academic title page
+│   ├── certificate.tex            # Department certificate
+│   ├── declaration.tex            # Candidate declaration
 │   ├── abstract.tex               # Structured scientific abstract
-│   ├── dedication.tex             # Personal dedication
 │   ├── acknowledgements.tex       # Academic and personal acknowledgments
-│   ├── abbreviations.tex          # Glossary of life sciences acronyms
-│   └── ethics_statement.tex       # Animal care (IACUC) & field permit declarations
+│   └── abbreviations.tex          # Glossary of acronyms
 │
-├── chapters/                      # Modular dissertation chapters
-│   ├── 01_introduction.tex        # Evolutionary background, hypotheses, objectives
-│   ├── 02_lit_review.tex          # Systematic literature review and taxonomic history
-│   ├── 03_methods.tex             # Sampling, molecular assays, morphometrics, stats
-│   ├── 04_results.tex             # Phylogenetics, anatomical data, siunitx tables
-│   └── 05_discussion.tex          # Evolutionary synthesis, ecological implications
+├── chapters/                      # Modular dissertation chapters (Kashmir M.Sc. sequence)
+│   ├── 01_introduction.tex
+│   ├── 02_objectives.tex
+│   ├── 03_lit_review.tex
+│   ├── 04_methods.tex
+│   ├── 05_results.tex
+│   ├── 06_discussion.tex
+│   └── 07_conclusion.tex
 │
 ├── appendices/                    # Modular appendices
-│   ├── appendix_a_specimens.tex   # Museum voucher catalog and GPS collection data
-│   ├── appendix_b_primers.tex     # PCR primers, amplicons, and annealing conditions
-│   └── appendix_c_stats.tex       # Supplementary statistical models and ANOVA tables
+│   └── appendix_a_template.tex    # Raw triplicate ZOI and phytochemical colour key
 │
-├── figures/                       # High-resolution figures and vector graphics
+├── figures/                       # Plates used by Methods and Results
 │   └── .gitkeep
 │
 ├── research_sources/              # Student input staging workspace
@@ -127,12 +130,13 @@ bio-dissertation-generator/
 │   ├── citations/                 # Custom .bib exports from Zotero/Mendeley
 │   └── notes/                     # Committee guidance, outlines, hypotheses
 │
-├── .agents/skills/                # Antigravity progressive-disclosure skill suite
+├── .agents/skills/                # Dissertation skill suite (6 skills only)
 │   ├── bio-research-sources/      # Source ingestion and API querying (PubMed/NCBI)
 │   ├── bio-nomenclature-ethics/   # ICZN formatting and IACUC compliance
 │   ├── bio-chapter-builder/       # Chapter scaffolding, section drafting, outlines
 │   ├── bio-reference-manager/     # BibLaTeX deduplication and citation formatting
-│   └── bio-scientific-formatting/ # Phylogenetic trees, tables, voucher catalogs
+│   ├── bio-scientific-formatting/ # Phylogenetic trees, tables, voucher catalogs
+│   └── final-output/              # 7-stage pipeline orchestrator
 │
 └── tests/                         # Comprehensive multi-tier test suite (84 tests)
 ```
@@ -195,10 +199,10 @@ Graduate students can drop existing material into `research_sources/` so autonom
 
 | Subfolder | Recommended Input | Ingestion Action |
 |:---|:---|:---|
-| `existing_work/` | `.docx`, `.md`, `.txt`, `.csv` preliminary drafts & morphometric data | Ingested into `chapters/03_methods.tex` and `chapters/04_results.tex` |
-| `papers/` | `.md`, `.pdf` reading notes, literature matrices | Synthesized into `chapters/02_lit_review.tex` and `chapters/05_discussion.tex` |
+| `existing_work/` | `.docx`, `.md`, `.txt`, lab tables and plates | Ingested into `chapters/04_methods.tex` and `chapters/05_results.tex` |
+| `papers/` | `.md`, `.pdf` reading notes, literature matrices | Synthesized into `chapters/03_lit_review.tex` and `chapters/06_discussion.tex` |
 | `citations/` | `.bib` exports from Zotero, Mendeley, or EndNote | Merged and deduplicated into root `references.bib` |
-| `notes/` | Advisor comments, research questions, committee minutes | Directs chapter structure, hypotheses ($H_0/H_1$), and ethics permits |
+| `notes/` | Advisor comments, research questions, committee minutes | Directs chapter structure and hypotheses ($H_0/H_1$) |
 
 To index staged sources:
 ```bash
@@ -220,6 +224,42 @@ Located in `.agents/skills/`, each skill contains detailed guidelines, examples,
 | **`bio-chapter-builder`** | Plans, outlines, and drafts modular chapters with standard biological argumentation | `build_outline.py`, `dissertation_structure_guide.md` |
 | **`bio-reference-manager`** | Validates, formats, and deduplicates BibLaTeX entries across life sciences styles | `bib_manager.py`, `biblatex_styles_guide.md` |
 | **`bio-scientific-formatting`** | Converts Newick trees to TikZ/Forest cladograms; formats `siunitx` tables & museum catalogs | `newick_to_forest.py`, `format_table.py` |
+| **`final-output`** | 7-stage dissertation pipeline: staging, nomenclature, drafting, citations, review, style scan, PDF build | `run_pipeline.py`, `pipeline.py` |
+
+---
+
+## Master Dissertation Pipeline CLI (`pipeline.py`)
+
+The platform includes a unified orchestrator CLI (`pipeline.py`) that chains all specialized skills into an automated 7-stage workflow:
+
+```bash
+uv run python pipeline.py [OPTIONS]
+```
+
+### Options
+
+| Flag | Description |
+|:---|:---|
+| `--all` | Executes all 7 pipeline stages sequentially from staging to publication build |
+| `--stage <name>` | Runs a specific stage (`staging`, `biology_logic`, `chapter_drafting`, `citation_audit`, `adversarial_review`, `de_ai_humanizer`, `final_build`) |
+| `--list-stages` | Displays all 7 stages with descriptions |
+| `--audit-skills` | Audits the 6 dissertation skills and writes `pipeline_outputs/skills_inventory.*` |
+| `--status` | Displays the latest checkpoint state from `pipeline_outputs/pipeline_state.json` |
+| `--clean` | Cleans previous artifacts in `pipeline_outputs/` before execution |
+| `--json` | Emits machine-readable JSON status |
+
+### Generated Audit Deliverables (`pipeline_outputs/`)
+
+- `pipeline_outputs/sources_manifest.json`: Machine-readable index of staged drafts, notes, and datasets.
+- `pipeline_outputs/skills_inventory.json`: Catalog of the 6 dissertation skills.
+- `pipeline_outputs/skills_inventory.md`: Markdown inventory of skill roles and paths.
+- `pipeline_outputs/biology_logic_audit.json`: ICZN taxonomic binomials, novel taxa designations, and IACUC ethics permit audit.
+- `pipeline_outputs/drafting_status.json`: Chapter word counts, structural breakdown, and figure/table label census.
+- `pipeline_outputs/citation_verification.json`: BibLaTeX key resolution rate (100% assertion) and citation diagnostics.
+- `pipeline_outputs/reviewer2_audit.md`: Adversarial peer-review critique across hypotheses, methods, and results.
+- `pipeline_outputs/de_ai_humanizer_report.md`: Stylistic authenticity score, cliché analysis, and de-AI refinement recommendations.
+- `pipeline_outputs/pipeline_state.json`: Execution timestamps, stage durations, and convergence status.
+- `dissertation.pdf`: Final publication-ready PDF artifact in root.
 
 ---
 
@@ -232,9 +272,9 @@ The master document [`dissertation.tex`](file:///d:/sandbox/work-box/dissertatio
   - `\taxonauth{Balaenoptera musculus}{(Linnaeus, 1758)}` -> *Balaenoptera musculus* (Linnaeus, 1758)
   - `\spnov{Cryptic chlorophyta}` -> *Cryptic chlorophyta* sp. nov.
   - `\holotype{USNM 123456}` -> Holotype: USNM 123456
-- **Front Matter (`frontmatter/`)**: Title page, abstract, acknowledgments, abbreviations glossary, and IACUC animal ethics approval statement.
-- **Chapters (`chapters/`)**: Modular chapter files (`01_introduction.tex` through `05_discussion.tex`) featuring embedded TikZ/Forest phylogenetic cladograms and `booktabs` statistical tables.
-- **Appendices (`appendices/`)**: Specimen museum voucher catalogs (`appendix_a_specimens.tex`), PCR primer sequences (`appendix_b_primers.tex`), and supplementary ANOVA models (`appendix_c_stats.tex`).
+- **Front Matter (`frontmatter/`)**: Title page, certificate, declaration, abstract, acknowledgments, and abbreviations glossary.
+- **Chapters (`chapters/`)**: Modular chapter files (`01_introduction.tex` through `07_conclusion.tex`) with `booktabs` tables and laboratory plates.
+- **Appendices (`appendices/`)**: Raw triplicate zone-of-inhibition data (`appendix_a_template.tex`).
 - **Bibliography ([`references.bib`](file:///d:/sandbox/work-box/dissertation-skills/references.bib))**: Validated BibLaTeX entries with DOI links.
 
 ---
@@ -271,7 +311,7 @@ uv run python verify.py
 ```
 
 ### Verification Checks Performed:
-1. **Skill YAML Frontmatter & Schema Validation**: Verifies `name`, `description`, instructions, and examples for all 5 skills.
+1. **Skill YAML Frontmatter & Schema Validation**: Verifies `name`, `description`, instructions, and examples for the 5 core bio skills plus `final-output`.
 2. **Staging Directory & Manifest Integrity**: Verifies staging directories, file formats, and `sources_manifest.json` consistency.
 3. **Headless Compilation & Cross-Reference Audit**: Executes a real-time compilation pass and verifies:
    - Valid non-zero PDF generation.

@@ -1,0 +1,88 @@
+{
+  "audit_date": "2026-09-17",
+  "mode": "report-only",
+  "bib_file": "references.bib",
+  "rule": "Every cited key must exist in references.bib with DOI or URL. Sentence must not contradict the cited work.",
+  "keys_cited": [
+    "amrcollaborators2022",
+    "who2024",
+    "sati2025",
+    "cowan1999",
+    "jubair2021",
+    "balouiri2016",
+    "bauer1966",
+    "valgas2007",
+    "vanvuuren2019",
+    "clsi2024",
+    "drakhshaan2026",
+    "hassan2020",
+    "skala2023",
+    "zhao2011",
+    "liebold2011",
+    "oszmianski2020",
+    "cushnie2005",
+    "xie2015",
+    "kumar2013",
+    "tao2020",
+    "ji2026",
+    "burt2004"
+  ],
+  "wani2017_cited": false,
+  "mismatches": [
+    {
+      "location": "chapters/03_lit_review.tex (pre-patch)",
+      "cite": "who2024",
+      "problem": "10 million deaths/year was incorrectly tied to WHO BPPL 2024.",
+      "verdict": "PATCHED"
+    },
+    {
+      "location": "chapters/01_introduction.tex (pre-patch)",
+      "cite": "amrcollaborators2022",
+      "problem": "Uncited 2050 1.91/8.2 million forecast.",
+      "verdict": "PATCHED"
+    },
+    {
+      "location": "chapters/01_introduction.tex Klebsiella gap",
+      "cite": "n/a",
+      "problem": "Absolute novelty wording.",
+      "verdict": "PATCHED"
+    }
+  ],
+  "doi_or_url_present": {
+    "amrcollaborators2022": "doi",
+    "who2024": "url",
+    "sati2025": "doi",
+    "cowan1999": "doi",
+    "jubair2021": "doi",
+    "balouiri2016": "doi",
+    "bauer1966": "doi",
+    "valgas2007": "doi",
+    "vanvuuren2019": "doi",
+    "clsi2024": "url",
+    "drakhshaan2026": "doi",
+    "hassan2020": "doi",
+    "skala2023": "doi",
+    "zhao2011": "doi",
+    "liebold2011": "doi",
+    "oszmianski2020": "doi",
+    "cushnie2005": "doi",
+    "xie2015": "doi",
+    "kumar2013": "doi",
+    "tao2020": "doi",
+    "ji2026": "doi",
+    "burt2004": "doi"
+  },
+  "warnings": [
+    "sati2025, tao2020, ji2026 use abbreviated author lists ('and others').",
+    "vanvuuren2019 bibliographic metadata should be treated as the DOI row from literature_matrix.md."
+  ],
+  "mechanical_key_audit": {
+    "timestamp": "2026-09-16T20:19:27.045389+00:00",
+    "status": "SUCCESS",
+    "defined_keys_count": 34,
+    "cited_keys_count": 34,
+    "unresolved_keys_count": 0,
+    "unresolved_keys": [],
+    "resolution_rate_pct": 100.0
+  }
+}

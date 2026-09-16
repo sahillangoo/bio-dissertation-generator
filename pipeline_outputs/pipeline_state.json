@@ -1,0 +1,208 @@
+{
+  "pipeline": "bio-dissertation-generator-pipeline",
+  "started_at": "2026-09-16T20:19:26.893936+00:00",
+  "stages": {
+    "staging": {
+      "status": "SUCCESS",
+      "files_indexed": 22,
+      "manifest": "D:\\sandbox\\work-box\\dissertation-skills\\pipeline_outputs\\sources_manifest.json",
+      "skills_total": 8,
+      "skills_created": 8,
+      "skills_external": 0,
+      "skills_duplicates": 0,
+      "duration_s": 0.139
+    },
+    "biology_logic": {
+      "timestamp": "2026-09-16T20:19:27.035558+00:00",
+      "status": "SUCCESS",
+      "taxa_count": 0,
+      "taxa_details": [],
+      "authorities_count": 0,
+      "authorities_details": [],
+      "novel_taxa_count": 0,
+      "holotypes_count": 0,
+      "ethics_statement_verified": false,
+      "ethics_note": "omitted (no live-animal chapter)",
+      "duration_s": 0.004
+    },
+    "chapter_drafting": {
+      "timestamp": "2026-09-16T20:19:27.040158+00:00",
+      "status": "SUCCESS",
+      "frontmatter_count": 6,
+      "chapters_count": 7,
+      "appendices_count": 2,
+      "total_chapter_words": 7947,
+      "total_labels": 82,
+      "chapter_breakdown": [
+        {
+          "file": "01_introduction.tex",
+          "word_count": 1010,
+          "labels_count": 6,
+          "labels": [
+            "ch:introduction",
+            "sec:amr_crisis",
+            "sec:plants_antimicrobial",
+            "sec:himalayan_flora",
+            "sec:dipsacus_profile",
+            "sec:gaps_and_rationale"
+          ]
+        },
+        {
+          "file": "02_objectives.tex",
+          "word_count": 324,
+          "labels_count": 5,
+          "labels": [
+            "ch:objectives",
+            "sec:obj_rationale",
+            "sec:primary_objectives",
+            "sec:hypotheses",
+            "sec:scope"
+          ]
+        },
+        {
+          "file": "03_lit_review.tex",
+          "word_count": 2805,
+          "labels_count": 9,
+          "labels": [
+            "ch:lit_review",
+            "sec:lit_amr",
+            "sec:gram_neg_architecture",
+            "sec:phytochemical_mechanisms",
+            "sec:genus_dipsacus",
+            "sec:kashmir_precedents",
+            "sec:test_pathogens_bio",
+            "sec:assay_methodology",
+            "sec:lit_synthesis"
+          ]
+        },
+        {
+          "file": "04_methods.tex",
+          "word_count": 1530,
+          "labels_count": 28,
+          "labels": [
+            "ch:methods",
+            "sec:reagents",
+            "sec:instrumentation",
+            "sec:plant_collection",
+            "fig:collection_site",
+            "sec:plant_processing",
+            "fig:dried_herb_tray",
+            "fig:plant_material",
+            "fig:chopped_mortar",
+            "fig:mortar_pestle",
+            "fig:powdered_plant",
+            "fig:lab_weighing",
+            "sec:aqueous_extraction",
+            "eq:yield",
+            "fig:extraction_setup",
+            "fig:reflux_assembly",
+            "fig:soxhlet_bench",
+            "sec:phytochem_methods",
+            "tab:phytochem_reagents",
+            "fig:phytochem",
+            "sec:bacterial_maintenance",
+            "fig:pure_cultures",
+            "fig:ecoli_plate",
+            "sec:susceptibility_testing",
+            "fig:gen5_disc",
+            "fig:c1_c2_unlabelled",
+            "sec:zoi_measurement",
+            "sec:statistical_analysis"
+          ]
+        },
+        {
+          "file": "05_results.tex",
+          "word_count": 1158,
+          "labels_count": 21,
+          "labels": [
+            "ch:results",
+            "sec:results_yield",
+            "sec:results_taxonomy",
+            "tab:bacterial_taxonomy",
+            "tab:plant_taxonomy",
+            "sec:results_phytochem",
+            "tab:phytochem_results",
+            "subsec:results_ecoli",
+            "tab:zoi_ecoli",
+            "fig:ecoli_inhibition",
+            "subsec:results_paeruginosa",
+            "tab:zoi_paeruginosa",
+            "subsec:results_kpneumoniae",
+            "tab:zoi_kpneumoniae",
+            "fig:kpneumoniae_inhibition",
+            "sec:results_comparative",
+            "tab:zoi_comparative",
+            "sec:results_benchmarking",
+            "tab:organic_comparison",
+            "sec:results_graph",
+            "fig:zoi_barchart"
+          ]
+        },
+        {
+          "file": "06_discussion.tex",
+          "word_count": 790,
+          "labels_count": 8,
+          "labels": [
+            "ch:discussion",
+            "sec:disc_yield",
+            "sec:disc_antibacterial",
+            "sec:disc_envelope",
+            "sec:disc_klebsiella",
+            "sec:disc_phyto",
+            "sec:disc_regional",
+            "sec:disc_limits"
+          ]
+        },
+        {
+          "file": "07_conclusion.tex",
+          "word_count": 330,
+          "labels_count": 5,
+          "labels": [
+            "ch:conclusion",
+            "sec:conclusion_summary",
+            "sec:conclusion_fulfillment",
+            "sec:conclusion_contributions",
+            "sec:conclusion_future"
+          ]
+        }
+      ],
+      "duration_s": 0.005
+    },
+    "citation_audit": {
+      "timestamp": "2026-09-16T20:19:27.045389+00:00",
+      "status": "SUCCESS",
+      "defined_keys_count": 34,
+      "cited_keys_count": 34,
+      "unresolved_keys_count": 0,
+      "unresolved_keys": [],
+      "resolution_rate_pct": 100.0,
+      "duration_s": 0.006
+    },
+    "adversarial_review": {
+      "status": "SUCCESS",
+      "report": "D:\\sandbox\\work-box\\dissertation-skills\\pipeline_outputs\\reviewer2_audit.md",
+      "verdict": "RETAINED_EXISTING",
+      "duration_s": 0.001
+    },
+    "de_ai_humanizer": {
+      "status": "SUCCESS",
+      "human_score": 100,
+      "report": "D:\\sandbox\\work-box\\dissertation-skills\\pipeline_outputs\\de_ai_humanizer_report.md",
+      "duration_s": 0.019
+    },
+    "final_build": {
+      "timestamp": "2026-09-16T20:19:39.342827+00:00",
+      "status": "SUCCESS",
+      "build_exit_code": 0,
+      "pdf_artifact": "D:\\sandbox\\work-box\\dissertation-skills\\dissertation.pdf",
+      "pdf_size_bytes": 27331477,
+      "pdf_size_kb": 26690.9,
+      "zero_broken_references": true,
+      "zero_undefined_citations": true,
+      "duration_s": 12.277
+    }
+  },
+  "overall_status": "SUCCESS",
+  "completed_at": "2026-09-16T20:19:39.343749+00:00",
+  "total_duration_s": 12.45
+}

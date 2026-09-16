@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-09-16T20:19:39.342827+00:00",
+  "status": "SUCCESS",
+  "build_exit_code": 0,
+  "pdf_artifact": "D:\\sandbox\\work-box\\dissertation-skills\\dissertation.pdf",
+  "pdf_size_bytes": 27331477,
+  "pdf_size_kb": 26690.9,
+  "zero_broken_references": true,
+  "zero_undefined_citations": true
+}

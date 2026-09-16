@@ -276,7 +276,10 @@ def parse_diagnostics(transcript: str, log_file_content: str) -> Tuple[List[str]
         re.IGNORECASE
     )
     # Match fatal errors
-    error_regex = re.compile(r"(!\s*LaTeX Error:.*|fatal error:.*)", re.IGNORECASE)
+    error_regex = re.compile(
+        r"(!\s*(?:LaTeX|Package \w+) Error:.*|fatal error:.*)",
+        re.IGNORECASE,
+    )
 
     citations: List[str] = []
     for match in citation_regex.finditer(combined_text):
@@ -317,7 +320,10 @@ def compile_with_tectonic(
         str(root_path.name),
         "--outdir", str(outdir),
         "-p",  # Print engine progress
-        "--keep-intermediates"
+        "--keep-intermediates",
+        "--keep-logs",
+        # BibLaTeX (backend=bibtex) needs TeX → bibtex → TeX → TeX.
+        "--reruns", "2",
     ]
     log_info(f"Executing: {' '.join(cmd)}")
 
@@ -370,7 +376,9 @@ def compile_with_docker(
         "tectonic", str(root_path.name),
         "--outdir", "/workspace",
         "-p",
-        "--keep-intermediates"
+        "--keep-intermediates",
+        "--keep-logs",
+        "--reruns", "2",
     ]
     log_info(f"Executing Docker container: {' '.join(cmd)}")
 
@@ -468,10 +476,21 @@ def build_dissertation(
             except Exception:
                 pass
 
-        citations, references, errors = parse_diagnostics(transcript, log_content)
+        # Prefer the final engine log. -p chatter includes first-pass undefined
+        # citations that later reruns (and bibtex) resolve.
+        diag_source = log_content if log_content.strip() else transcript
+        citations, references, errors = parse_diagnostics(diag_source, "")
 
-        if returncode != 0 or errors:
+        if errors:
             log_error(f"Fatal error encountered on pass {pass_num}.")
+            if transcript:
+                tail = "\n".join(transcript.strip().splitlines()[-12:])
+                log_error(tail)
+            break
+
+        # Tectonic exits 1 while citations/labels are still resolving across passes.
+        if returncode != 0 and not citations and not references:
+            log_error(f"Compiler returned {returncode} on pass {pass_num} without parseable diagnostics.")
             break
 
         if not citations and not references:

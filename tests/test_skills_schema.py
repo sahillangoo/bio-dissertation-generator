@@ -140,3 +140,44 @@ def test_validator_rejects_excessive_description_length():
     # Assertion rule
     with pytest.raises(AssertionError):
         assert len(long_desc) <= 1024, "Description exceeds 1024 character limit"
+
+
+DISSERTATION_SKILLS = EXPECTED_SKILLS + ["final-output"]
+PLAYBOOK_SKILLS = ["dissertation-checker", "scholar-language-auditor"]
+ALLOWED_SKILL_FOLDERS = sorted(DISSERTATION_SKILLS + PLAYBOOK_SKILLS)
+
+
+def test_only_dissertation_skills_are_installed(skills_dir):
+    """Required dissertation skills and examiner playbooks must be present."""
+    skill_folders = {d.name for d in skills_dir.iterdir() if d.is_dir()}
+    missing = set(ALLOWED_SKILL_FOLDERS) - skill_folders
+    assert not missing, f"Missing required skills: {sorted(missing)}"
+
+
+def test_all_installed_skills_agent_specification(skills_dir):
+    """Verify dissertation skills adhere to Agent Skills frontmatter specification."""
+    name_regex = re.compile(r"^[a-z0-9-]+$")
+    skill_folders = [skills_dir / name for name in ALLOWED_SKILL_FOLDERS]
+    assert all(p.is_dir() for p in skill_folders), (
+        f"Expected {len(ALLOWED_SKILL_FOLDERS)} dissertation skills under {skills_dir}"
+    )
+
+    for skill_path in skill_folders:
+        s_name = skill_path.name
+        skill_md = skill_path / "SKILL.md"
+        assert skill_md.exists(), f"SKILL.md missing in {s_name}"
+        assert skill_md.stat().st_size > 0, f"SKILL.md is empty in {s_name}"
+
+        data = parse_yaml_frontmatter(skill_md)
+        assert "name" in data, f"'name' missing in {s_name}/SKILL.md"
+        assert "description" in data, f"'description' missing in {s_name}/SKILL.md"
+
+        fn_name = data["name"]
+        assert fn_name == s_name, f"Name '{fn_name}' does not match directory '{s_name}'"
+        assert len(fn_name) <= 64, f"Name '{fn_name}' exceeds 64 characters"
+        assert name_regex.match(fn_name), f"Name '{fn_name}' has invalid characters"
+
+        desc = data["description"]
+        assert isinstance(desc, str) and len(desc.strip()) > 0, f"Description empty in {s_name}"
+        assert len(desc) <= 1024, f"Description in {s_name} exceeds 1024 characters ({len(desc)})"
+

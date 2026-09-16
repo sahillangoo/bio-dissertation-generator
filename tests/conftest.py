@@ -34,27 +34,28 @@ EXPECTED_STAGING_DIRS = [
 # Expected Frontmatter Files
 EXPECTED_FRONTMATTER_FILES = [
     "title.tex",
+    "certificate.tex",
+    "declaration.tex",
     "abstract.tex",
-    "dedication.tex",
     "acknowledgements.tex",
     "abbreviations.tex",
-    "ethics_statement.tex",
 ]
 
 # Expected Chapter Files
 EXPECTED_CHAPTER_FILES = [
     "01_introduction.tex",
-    "02_lit_review.tex",
-    "03_methods.tex",
-    "04_results.tex",
-    "05_discussion.tex",
+    "02_objectives.tex",
+    "03_lit_review.tex",
+    "04_methods.tex",
+    "05_results.tex",
+    "06_discussion.tex",
+    "07_conclusion.tex",
 ]
 
 # Expected Appendix Files
 EXPECTED_APPENDIX_FILES = [
-    "appendix_a_specimens.tex",
-    "appendix_b_primers.tex",
-    "appendix_c_stats.tex",
+    "appendix_a_template.tex",
+    "appendix_b_plate_gallery.tex",
 ]
 
 
