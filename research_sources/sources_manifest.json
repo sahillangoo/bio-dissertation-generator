@@ -1,0 +1,126 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-09-16T12:53:03Z",
+  "total_files": 6,
+  "sources_directory": "D:/sandbox/work-box/dissertation-skills/research_sources",
+  "files": [
+    {
+      "path": "research_sources/existing_work/methods_draft.md",
+      "filename": "methods_draft.md",
+      "category": "existing_work",
+      "file_type": "markdown",
+      "size_bytes": 5513,
+      "sha256": "6bf66aaa1a24808a67ea842a051622cbbebc900984646504e2124b6b1c335788",
+      "target_chapter": "chapters/03_methods.tex",
+      "headings": [
+        "Preliminary Draft: Materials and Methods",
+        "1. Taxonomic Sampling and Field Collection",
+        "2. Morphometric Protocol",
+        "3. DNA Extraction, PCR Amplification, and Sequencing",
+        "4. Phylogenetic and Comparative Analyses",
+        "5. Animal Care and Ethical Approval"
+      ]
+    },
+    {
+      "path": "research_sources/existing_work/morphometrics.csv",
+      "filename": "morphometrics.csv",
+      "category": "existing_work",
+      "file_type": "tabular_data",
+      "size_bytes": 1523,
+      "sha256": "e84c8b423d2caf6a00a78819183550a5c93b7fe4f200f7efbfc1add9275df8d6",
+      "target_chapter": "appendices/appendix_a_specimens.tex",
+      "headings": [],
+      "tabular_metadata": {
+        "columns": [
+          "voucher_id",
+          "species",
+          "sex",
+          "locality",
+          "elevation_m",
+          "svl_mm",
+          "tail_len_mm",
+          "head_len_mm",
+          "head_wid_mm",
+          "femur_len_mm",
+          "mass_g"
+        ],
+        "row_count": 15
+      }
+    },
+    {
+      "path": "research_sources/papers/literature_notes.md",
+      "filename": "literature_notes.md",
+      "category": "papers",
+      "file_type": "markdown",
+      "size_bytes": 4039,
+      "sha256": "de1d7d77bf560231fcb8753df19d5ea4b9bfe6a4d6622cbd31cdcc3c600ae823",
+      "target_chapter": "chapters/03_methods.tex",
+      "headings": [
+        "Literature Review Notes & Synthesis Matrix",
+        "1. Synthesis Matrix: Phylogenetic Systematics and Biogeography",
+        "2. Conceptual Themes to Emphasize in Chapter 2",
+        "2.1 The Pleistocene Vicariance vs. Gradient Speciation Debate",
+        "2.2 Ecomorphological Divergence in Rock-Dwelling vs. Arboreal Ectotherms",
+        "3. Methodological Literature Notes"
+      ]
+    },
+    {
+      "path": "research_sources/papers/smith2021_phylogeny_notes.md",
+      "filename": "smith2021_phylogeny_notes.md",
+      "category": "papers",
+      "file_type": "markdown",
+      "size_bytes": 2235,
+      "sha256": "642c76570a0512d06da3b6385a8bd97b068205fa02c8e57c0b71d76ea16e5703",
+      "target_chapter": "chapters/02_lit_review.tex",
+      "headings": [
+        "Literature Appraisal: Smith et al. (2021)",
+        "1. Summary of Study",
+        "2. Key Takeaways for My Dissertation",
+        "3. Potential Counter-Arguments and Nuances"
+      ]
+    },
+    {
+      "path": "research_sources/citations/student_citations.bib",
+      "filename": "student_citations.bib",
+      "category": "citations",
+      "file_type": "bibtex",
+      "size_bytes": 5068,
+      "sha256": "f35d63516a9e75bcc734ea56e8e62c83a18b372f61cabdacdc344aba6ed7f81d",
+      "target_chapter": "references.bib",
+      "headings": [],
+      "citation_keys": [
+        "baird1852characteristics",
+        "folmer1994dna",
+        "leache2002molecular",
+        "wiens2002speciation",
+        "smith2021phylogenomics",
+        "sinervo2010erosion",
+        "huey2012predicting",
+        "minh2020iqtree",
+        "hohna2016revbayes",
+        "katoh2013mafft",
+        "iczn1999code",
+        "adams2013geomorph"
+      ],
+      "key_count": 12
+    },
+    {
+      "path": "research_sources/notes/committee_notes.md",
+      "filename": "committee_notes.md",
+      "category": "notes",
+      "file_type": "markdown",
+      "size_bytes": 4541,
+      "sha256": "cc3ce6e0dcbf018e76f2bab7df0ab80834ed7e909c18eb7acfb01a7b561dbd85",
+      "target_chapter": "chapters/02_lit_review.tex",
+      "headings": [
+        "Dissertation Committee Meeting Notes & Directives",
+        "1. Core Research Hypotheses",
+        "Hypothesis 1 ($H_1$): Ecomorphological Divergence Along Elevational Gradients",
+        "Hypothesis 2 ($H_2$): Cytonuclear Discordance and Introgression Across Sierra Passes",
+        "Hypothesis 3 ($H_3$): Thermal Restriction and Microhabitat Buffering",
+        "2. Chapter Architecture & Directives",
+        "3. Committee Revisions and Quality Checklist"
+      ]
+    }
+  ]
+}

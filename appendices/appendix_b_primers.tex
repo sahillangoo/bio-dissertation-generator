@@ -1,0 +1,56 @@
+% =========================================================================
+% Appendix B: PCR Primers and Molecular Protocols
+% =========================================================================
+
+\chapter{Oligonucleotide Primers and Amplification Conditions}
+\label{app:primers}
+
+This appendix documents all polymerase chain reaction (PCR) oligonucleotide primers used for targeted Sanger sequencing in this dissertation. All oligonucleotides were synthesized via standard solid-phase phosphoramidite chemistry and purified via reverse-phase cartridge desalting.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Oligonucleotide primers utilized for PCR amplification and bidirectional Sanger sequencing.}
+  \label{tab:primers_master}
+  \begin{tabular}{p{0.12\textwidth} p{0.12\textwidth} p{0.36\textwidth} p{0.08\textwidth} p{0.08\textwidth} p{0.14\textwidth}}
+    \toprule
+    \textbf{Locus} & \textbf{Primer} & \textbf{Sequence ($5' \to 3'$)} & \textbf{$T_a$ (\si{\celsius})} & \textbf{Size (bp)} & \textbf{Source} \\
+    \midrule
+    \gene{COI} & LCO1490 & \texttt{GGTCAACAAATCATAAAGATATTGG} & 50 & 658 & \textcite{folmer1994primers} \\
+    \gene{COI} & HCO2198 & \texttt{TAAACTTCAGGGTGACCAAAAAATCA} & 50 & 658 & \textcite{folmer1994primers} \\
+    \addlinespace
+    \gene{16S rRNA} & 16Sar-L & \texttt{CGCCTGTTTATCAAAAACAT} & 52 & 550 & Palumbi (1996) \\
+    \gene{16S rRNA} & 16Sbr-H & \texttt{CCGGTCTGAACTCAGATCACGT} & 52 & 550 & Palumbi (1996) \\
+    \addlinespace
+    \gene{RAG1} & RAG1-F1 & \texttt{AGCTGCAGYCARTAYCAYAARATGT} & 56 & 820 & \textcite{santos2009amazonian} \\
+    \gene{RAG1} & RAG1-R1 & \texttt{AACTCAGCTGCYTCRTTRAAYTC} & 56 & 820 & \textcite{santos2009amazonian} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section*{Cycling Profile Schematics}
+
+\begin{itemize}
+  \item \textbf{Mitochondrial \gene{COI}:}
+    \begin{enumerate}
+      \item Initial denaturation: \SI{94}{\celsius} for \SI{180}{\second}.
+      \item 35 cycles: Denaturation at \SI{94}{\celsius} for \SI{30}{\second}; Annealing at \SI{50}{\celsius} for \SI{45}{\second}; Elongation at \SI{72}{\celsius} for \SI{60}{\second}.
+      \item Final extension: \SI{72}{\celsius} for \SI{420}{\second}.
+      \item Soak: \SI{4}{\celsius} hold.
+    \end{enumerate}
+
+  \item \textbf{Mitochondrial \gene{16S rRNA}:}
+    \begin{enumerate}
+      \item Initial denaturation: \SI{94}{\celsius} for \SI{120}{\second}.
+      \item 32 cycles: Denaturation at \SI{94}{\celsius} for \SI{30}{\second}; Annealing at \SI{52}{\celsius} for \SI{40}{\second}; Elongation at \SI{72}{\celsius} for \SI{50}{\second}.
+      \item Final extension: \SI{72}{\celsius} for \SI{300}{\second}.
+    \end{enumerate}
+
+  \item \textbf{Nuclear Exon \gene{RAG1} (Touchdown PCR):}
+    \begin{enumerate}
+      \item Initial denaturation: \SI{95}{\celsius} for \SI{300}{\second}.
+      \item 10 touchdown cycles: \SI{94}{\celsius} for \SI{45}{\second}, \SI{60}{\celsius} to \SI{51}{\celsius} (\SI{-1}{\celsius} per cycle) for \SI{45}{\second}, \SI{72}{\celsius} for \SI{90}{\second}.
+      \item 28 standard cycles: \SI{94}{\celsius} for \SI{45}{\second}, \SI{55}{\celsius} for \SI{45}{\second}, \SI{72}{\celsius} for \SI{90}{\second}.
+      \item Final extension: \SI{72}{\celsius} for \SI{600}{\second}.
+    \end{enumerate}
+\end{itemize}

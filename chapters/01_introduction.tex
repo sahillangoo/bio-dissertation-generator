@@ -1,0 +1,85 @@
+% =========================================================================
+% Chapter 1: Introduction
+% =========================================================================
+
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{The Riddle of Cryptic Biodiversity}
+\label{sec:intro_cryptic}
+
+Understanding the generation and maintenance of biological diversity represents one of the foundational pursuits of evolutionary biology \parencite{darwin1859,mayr1942}. Over the past three decades, the integration of molecular systematics with traditional morphological analysis has fundamentally revolutionized our comprehension of species richness, revealing that phenotypic divergence frequently decouples from evolutionary lineage diversification \parencite{avise2000phylogeography}. In particular, tropical biodiversity hotspots harbor immense reservoirs of ``cryptic species''---distinct evolutionary lineages that are morphologically indistinguishable or erroneously synonymized due to conserved morphological traits or extreme phenotypic plasticity.
+
+In amphibians, morphological stasis combined with high levels of homoplasy presents acute challenges for systematic taxonomy. Anurans frequently rely on non-visual modalities such as bioacoustic advertisement calls or cutaneously secreted chemical pheromones to achieve reproductive isolation, allowing profound genetic divergence to accumulate in the absence of diagnostic external morphological change. Consequently, standard morphological keys frequently underestimate true lineage diversity, obscuring evolutionary history and misinforming conservation prioritization.
+
+\section{The Poison Frog Radiation: Model Clade in Tropical Systematics}
+\label{sec:intro_dendrobatidae}
+
+Poison frogs of the family \taxa{Dendrobatidae} Cope, 1865 comprise approximately 330 recognized species distributed throughout the humid Neotropics, from Central America through the Amazon Basin to the Atlantic Forest of Brazil. Dendrobatids are globally celebrated for their striking aposematic coloration, parental care behaviors (including egg guarding, tadpole transport, and obligate trophic oophagy), and the sequestering of lipophilic alkaloid toxins from dietary arthropods.
+
+Within Dendrobatidae, the genus \taxa{Ranitomeya} Bauer, 1986 represents a monophyletic radiation of diminutive, diurnal, phytotelm-breeding poison frogs primarily concentrated in the western Amazon Basin and the eastern Andean foothills \parencite{brown2011ranitomeya,santos2009amazonian}. Members of this genus, colloquially termed ``thumbnail poison frogs,'' rarely exceed \SI{20}{\milli\metre} in snout-vent length (\textsc{svl}). Several lineages exhibit hypervariable dorsal color morphs and mimetic polymorphism, which have historically led to conflicting taxonomic hypotheses.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[scale=0.85]
+    % Central box
+    \node[draw, rectangle, rounded corners, fill=dissertationblue!10, text width=6cm, align=center, inner sep=8pt] (core) at (0,0) {
+      \textbf{\taxa{Ranitomeya} Systematics}\\[3pt]
+      Evolutionary Lineages \& Cryptic Divergence
+    };
+    % Surrounding boxes
+    \node[draw, rectangle, rounded corners, fill=dissertationgreen!10, text width=3.5cm, align=center, inner sep=6pt] (mol) at (-5, 2.5) {
+      \textbf{Molecular Markers}\\
+      \gene{COI}, \gene{16S}, \gene{RAG1}\\
+      Coalescent Phylogenetics
+    };
+    \node[draw, rectangle, rounded corners, fill=orange!10, text width=3.5cm, align=center, inner sep=6pt] (morph) at (5, 2.5) {
+      \textbf{Morphometrics}\\
+      Caliper measurements\\
+      Multivariate PCA / CVA
+    };
+    \node[draw, rectangle, rounded corners, fill=purple!10, text width=3.5cm, align=center, inner sep=6pt] (geo) at (-5, -2.5) {
+      \textbf{Biogeography}\\
+      Andean Orogeny\\
+      Riverine Barriers
+    };
+    \node[draw, rectangle, rounded corners, fill=cyan!10, text width=3.5cm, align=center, inner sep=6pt] (nom) at (5, -2.5) {
+      \textbf{Taxonomic Formalization}\\
+      ICZN Compliance\\
+      Museum Vouchers
+    };
+    % Connecting arrows
+    \draw[-{Stealth[length=3mm]}, thick] (mol) -- (core);
+    \draw[-{Stealth[length=3mm]}, thick] (morph) -- (core);
+    \draw[-{Stealth[length=3mm]}, thick] (geo) -- (core);
+    \draw[-{Stealth[length=3mm]}, thick] (nom) -- (core);
+  \end{tikzpicture}
+  \caption{Conceptual framework of integrative taxonomy implemented in this dissertation. Multiple independent lines of evolutionary evidence---molecular phylogenetics, comparative morphometrics, historical biogeography, and formal ICZN nomenclature---are synthesized to resolve cryptic species boundaries.}
+  \label{fig:integrative_framework}
+\end{figure}
+
+The \taxa{Ranitomeya fantastica} species complex occupies a critical geographic transition zone between the Peruvian Amazon lowlands and the sub-Andean Cordillera Oriental. Despite comprehensive taxonomic revisions by \textcite{brown2011ranitomeya}, disjunct populations in the upper Huallaga and Mayo river drainages display enigmatic chromatic variation and notable divergence in call acoustic properties. Whether these localized populations constitute continuous clinal variation of described taxa or represent distinct evolutionary species under the General Lineage Concept remained unverified prior to this investigation.
+
+\section{Research Objectives and Specific Aims}
+\label{sec:intro_aims}
+
+The overarching objective of this doctoral dissertation is to conduct an integrative, multi-locus systematic revision of the genus \taxa{Ranitomeya}, with special focus on the \taxa{Ranitomeya fantastica} clade. To achieve this objective, this research addresses three primary aims:
+
+\begin{enumerate}
+  \item \textbf{Specific Aim 1: Multi-Locus Phylogenetic Reconstruction.} Construct a robust, time-calibrated phylogenetic framework for the genus \taxa{Ranitomeya} using mitochondrial (\gene{COI}, \gene{16S rRNA}) and nuclear (\gene{RAG1}) gene sequences sampled across the full geographic range of the clade.
+  \item \textbf{Specific Aim 2: Coalescent-Based Species Delimitation.} Test explicit species delimitation models using objective multi-rate Poisson Tree Processes (mPTP) and Bayesian Phylogenetics and Phylogeography (BPP) to determine whether isolated populations represent independently evolving lineages.
+  \item \textbf{Specific Aim 3: Morphometric Quantification and Formal Taxonomic Revision.} Conduct rigorous multivariate morphometric analyses across curated museum voucher series, evaluate diagnosability under the rules of the International Code of Zoological Nomenclature \parencite{iczn1999code}, and formally describe unrecognized taxa.
+\end{enumerate}
+
+\section{Dissertation Organization}
+\label{sec:intro_organization}
+
+This dissertation is organized into five interrelated chapters and three supplementary appendices:
+
+\begin{itemize}
+  \item \textbf{\cref{chap:lit_review}} provides a comprehensive synthesis of systematic theory, species concepts, the historical development of anuran phylogenetics, and the taxonomic history of Dendrobatidae.
+  \item \textbf{\cref{chap:methods}} details the field sampling strategies, laboratory protocols for DNA extraction and PCR amplification, chemical buffer recipes, and computational parameters for phylogenetic inference and species delimitation.
+  \item \textbf{\cref{chap:results}} presents the empirical phylogenetic trees, coalescent delimitation outputs, morphometric statistical tests, and the formal ICZN taxonomic description of a newly identified species.
+  \item \textbf{\cref{chap:discussion}} contextualizes the empirical discoveries within broader Neotropical biogeography, assesses diversification mechanisms driven by Andean orogenesis, and evaluates conservation implications.
+  \item \textbf{\cref{app:specimens}, \cref{app:primers}, and \cref{app:stats}} provide complete specimen catalogs, primer oligonucleotides, and statistical ANOVA tables, respectively.
+\end{itemize}

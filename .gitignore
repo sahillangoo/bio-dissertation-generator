@@ -1,0 +1,44 @@
+# LaTeX compilation intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.nav
+*.snm
+*.vrb
+
+# Build directory
+build/
+.tectonic/
+
+# Python & UV
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Preserve structure in staging
+!research_sources/**/.gitkeep
+
+# Agent metadata (ignore runtime agent directories, preserve skills)
+.agents/*
+!.agents/skills/
+

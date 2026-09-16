@@ -1,0 +1,148 @@
+% =========================================================================
+% Chapter 4: Results
+% =========================================================================
+
+\chapter{Results and Systematic Descriptions}
+\label{chap:results}
+
+\section{Phylogenetic Reconstruction and Lineage Discovery}
+\label{sec:results_phylogeny}
+
+The concatenated molecular alignment comprised \SI{2028}{bp} across the mitochondrial \gene{COI} (\SI{658}{bp}), mitochondrial \gene{16S rRNA} (\SI{550}{bp}), and nuclear \gene{RAG1} (\SI{820}{bp}) loci for 64 ingroup individuals of \taxa{Ranitomeya} and four outgroup taxa (\taxa{Dendrobates tinctorius}, \taxa{Adelphobates galactonotus}, \taxa{Oophaga pumilio}, and \taxa{Phyllobates terribilis}). Maximum Likelihood and Bayesian analyses yielded congruent, highly supported topologies (\cref{fig:phylo_tree}).
+
+\begin{figure}[htbp]
+\centering
+\begin{forest}
+  for tree={
+    grow'=0,
+    parent anchor=east,
+    child anchor=west,
+    edge={thick, line cap=round},
+    l sep=1.4cm,
+    s sep=0.45cm,
+    font=\small
+  }
+  [Dendrobatidae Root
+    [\taxa{Dendrobates tinctorius} \textnormal{(Outgroup)}]
+    [\taxa{Ranitomeya} \textnormal{(100/1.0)}, edge={line width=1.2pt}
+      [\taxa{R. defleri} clade \textnormal{(96/0.99)}
+        [\taxa{Ranitomeya defleri}]
+        [\taxa{Ranitomeya toraro}]
+      ]
+      [\taxa{R. variabilis} clade \textnormal{(99/1.0)}
+        [\taxa{Ranitomeya amazonica}]
+        [\taxa{Ranitomeya variabilis}]
+      ]
+      [\taxa{R. fantastica} species group \textnormal{(100/1.0)}, edge={line width=1.5pt, draw=dissertationblue}
+        [\taxa{Ranitomeya summersi}]
+        [Subclade F \textnormal{(99/1.0)}
+          [\taxa{Ranitomeya fantastica} sensu stricto]
+          [\textbf{\taxa{Ranitomeya aurata}} \textbf{sp.~nov.} \textnormal{(100/1.0)}, edge={draw=dissertationgreen, line width=1.5pt}]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\caption{Phylogenetic hypothesis of the genus \taxa{Ranitomeya} derived from partitioned Bayesian and Maximum Likelihood analyses of concatenated mitochondrial (\gene{COI}, \gene{16S}) and nuclear (\gene{RAG1}) genes. Support values above branches denote ultrafast bootstrap support ($\geq$90\%) and Bayesian posterior probabilities ($\geq$0.95). The newly discovered lineage, \spnov{Ranitomeya aurata}, forms a well-supported sister relationship to \taxa{Ranitomeya fantastica}.}
+\label{fig:phylo_tree}
+\end{figure}
+
+The genus \taxa{Ranitomeya} was recovered as monophyletic with maximal support (\textsc{ufboot} = 100\%, Bayesian posterior probability $\textsc{pp} = 1.0$). Within the \taxa{Ranitomeya fantastica} species group, specimens previously assigned to enigmatic high-elevation populations in the Cordillera Azul formed a deeply divergent, reciprocally monophyletic clade sister to \taxa{Ranitomeya fantastica} sensu stricto (\textsc{ufboot} = 100\%, $\textsc{pp} = 1.0$).
+
+\section{Molecular Divergence and Species Delimitation}
+\label{sec:results_delimitation}
+
+Uncorrected pairwise genetic distances ($p$-distances) and Kimura 2-parameter (\textsc{k2p}) distances across the \gene{COI} barcoding locus between the Cordillera Azul population and closely allied taxa are summarized in \cref{tab:genetic_distances}. Divergence between this novel clade and \taxa{Ranitomeya fantastica} averaged \SI{6.4 \pm 0.3}{\percent} in \gene{COI} and \SI{3.1 \pm 0.2}{\percent} in \gene{16S rRNA}, well exceeding the typical species-level thresholds documented in Dendrobatidae \parencite{brown2011ranitomeya,santos2009amazonian}.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Pairwise uncorrected genetic distances ($p$-distances, below diagonal) and Kimura 2-parameter distances (K2P, above diagonal) for mitochondrial \gene{COI} between recognized \taxa{Ranitomeya} species and the novel lineage.}
+  \label{tab:genetic_distances}
+  \begin{tabular}{lcccccc}
+    \toprule
+    \textbf{Taxon} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+    \midrule
+    1. \spnov{\taxa{Ranitomeya aurata}} & -- & 0.068 & 0.089 & 0.114 & 0.138 & 0.162 \\
+    2. \taxa{Ranitomeya fantastica} & 0.064 & -- & 0.082 & 0.110 & 0.135 & 0.158 \\
+    3. \taxa{Ranitomeya summersi} & 0.083 & 0.077 & -- & 0.119 & 0.141 & 0.165 \\
+    4. \taxa{Ranitomeya variabilis} & 0.106 & 0.102 & 0.111 & -- & 0.074 & 0.151 \\
+    5. \taxa{Ranitomeya amazonica} & 0.127 & 0.124 & 0.130 & 0.069 & -- & 0.147 \\
+    6. \taxa{Dendrobates tinctorius} & 0.148 & 0.145 & 0.151 & 0.139 & 0.136 & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Both objective species delimitation frameworks unequivocally validated the independent species status of the Cordillera Azul lineage:
+\begin{itemize}
+  \item \textbf{mPTP Analysis:} Multi-rate Poisson Tree Processes recovered the Cordillera Azul clade as an independent evolutionary unit with an empirical support value of $0.98$.
+  \item \textbf{BPP Delimitation:} Coalescent speciation probabilities under the unguided species delimitation algorithm (A10) yielded a posterior probability of speciation $P(\text{speciation}) = 1.00$ across all guide topologies and prior specifications.
+\end{itemize}
+
+\section{Morphological and Morphometric Differentiation}
+\label{sec:results_morphometrics}
+
+Univariate analysis of adult morphometric measurements demonstrated that the Cordillera Azul population is significantly smaller than \taxa{Ranitomeya fantastica} and possesses distinct body proportions (\cref{tab:morphometrics}). Principal Component Analysis (\textsc{pca}) on log-transformed variables clustered the novel population discretely along PC1 (accounting for 54.2\% of total variance, associated with overall body size and head dimensions) and PC2 (accounting for 18.7\% of variance, associated with disc widths and limb lengths).
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Summary statistics of morphometric measurements (in millimeters, \si{\milli\metre}) for adult specimens of \spnov{\taxa{Ranitomeya aurata}} and allied taxa. Values presented as Mean $\pm$ SD (Range).}
+  \label{tab:morphometrics}
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Character} & \textbf{\spnov{\taxa{R. aurata}}} & \textbf{\taxa{R. fantastica}} & \textbf{\taxa{R. summersi}} \\
+                       & ($n=18$) & ($n=32$) & ($n=24$) \\
+    \midrule
+    \textsc{svl} & \num{16.42 \pm 0.48} (\num{15.60}--\num{17.20}) & \num{18.94 \pm 0.65} (\num{17.80}--\num{20.40}) & \num{17.82 \pm 0.52} (\num{16.90}--\num{18.90}) \\
+    \textsc{hw}  & \num{5.12 \pm 0.22} (\num{4.80}--\num{5.50})   & \num{5.88 \pm 0.28} (\num{5.30}--\num{6.40})   & \num{5.54 \pm 0.25} (\num{5.10}--\num{6.00}) \\
+    \textsc{hl}  & \num{4.85 \pm 0.19} (\num{4.50}--\num{5.20})   & \num{5.52 \pm 0.24} (\num{5.00}--\num{6.00})   & \num{5.21 \pm 0.20} (\num{4.80}--\num{5.60}) \\
+    \textsc{tl}  & \num{7.38 \pm 0.31} (\num{6.90}--\num{7.90})   & \num{8.45 \pm 0.38} (\num{7.80}--\num{9.20})   & \num{8.02 \pm 0.34} (\num{7.40}--\num{8.70}) \\
+    \textsc{fl}  & \num{6.82 \pm 0.28} (\num{6.30}--\num{7.30})   & \num{7.95 \pm 0.35} (\num{7.30}--\num{8.60})   & \num{7.44 \pm 0.30} (\num{6.90}--\num{8.00}) \\
+    \textsc{ed}  & \num{2.15 \pm 0.12} (\num{1.95}--\num{2.35})   & \num{2.48 \pm 0.15} (\num{2.20}--\num{2.75})   & \num{2.32 \pm 0.14} (\num{2.05}--\num{2.55}) \\
+    \textsc{td}  & \num{1.08 \pm 0.08} (\num{0.95}--\num{1.22})   & \num{1.32 \pm 0.10} (\num{1.15}--\num{1.50})   & \num{1.20 \pm 0.09} (\num{1.05}--\num{1.38}) \\
+    \textsc{fdw} & \num{0.82 \pm 0.06} (\num{0.72}--\num{0.92})   & \num{0.98 \pm 0.08} (\num{0.84}--\num{1.12})   & \num{0.91 \pm 0.07} (\num{0.80}--\num{1.04}) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Systematic Account: Formal Taxonomic Description}
+\label{sec:results_taxonomy}
+
+In accordance with the mandatory provisions of Articles 13 and 16 of the International Code of Zoological Nomenclature \parencite{iczn1999code}, we formally establish this distinct evolutionary lineage as a new nominal species.
+
+\vspace{1em}
+\noindent
+\textbf{Class:} Amphibia Blainville, 1816\\
+\textbf{Order:} Anura Fischer von Waldheim, 1813\\
+\textbf{Family:} Dendrobatidae Cope, 1865\\
+\textbf{Genus:} \taxa{Ranitomeya} Bauer, 1986
+
+\vspace{1.5em}
+\noindent
+{\Large \spnov{Ranitomeya aurata}} Langoo, 2026\\
+\textbf{Golden-Crowned Poison Frog / Ranita Venenosa Dorada}
+
+\vspace{1em}
+\noindent
+\holotype{QCAZ 45210}, an adult male (\textsc{svl} \SI{16.52}{\milli\metre}), collected on 12 March 2023 by Sahil Langoo in primary submontane pluvial cloud forest along the western slopes of Cordillera Azul, Region San Mart{\'i}n, Peru.
+
+\vspace{0.8em}
+\noindent
+\paratype{AMNH 128940} (adult female) and \paratype{MUSM 39140} (adult male), collected syntopically with holotype under authorization permit \texttt{AUT-IFS-2023-088}.
+
+\vspace{0.8em}
+\noindent
+\typelocality{Cordillera Azul, San Mart{\'i}n, Peru (\ang{06;55;12}S, \ang{76;11;45}W, \SI{840}{\metre} elevation above sea level).}
+
+\subsection*{Diagnosis}
+\spnov{\taxa{Ranitomeya aurata}} is diagnosed by the following combination of characters: (1) small adult size (mean \textsc{svl} \SI{16.42}{\milli\metre} in males, \SI{16.85}{\milli\metre} in females); (2) dorsum jet black with a distinctive, brilliant metallic golden-yellow cephalic hood extending posteriorly as fine dorsolateral stripes; (3) flank and limb ground color deep cobalt blue overlaid by coarse black circular reticulations; (4) gular and venter bright canary yellow with bold black ocelli; (5) teeth absent from maxillae and premaxillae; (6) Finger I distinctly shorter than Finger II; (7) digital discs moderately expanded; (8) distinct pairwise \gene{COI} sequence divergence ($>6.4\%$) and diagnostic substitutions at positions 112 (C$\to$T) and 345 (A$\to$G) of the Folmer alignment.
+
+\subsection*{Differential Diagnosis}
+\spnov{\taxa{Ranitomeya aurata}} differs readily from its sister species \taxa{Ranitomeya fantastica} by its significantly smaller adult body size (\textsc{svl} \SI{15.60}--\SI{17.20}{\milli\metre} vs. \SI{17.80}--\SI{20.40}{\milli\metre} in \taxa{R. fantastica}; $P < 0.001$, ANOVA, \cref{app:stats}), its gleaming metallic golden cephalic hood (versus red, orange, or uniform yellow in \taxa{R. fantastica}), and deep cobalt limb reticulations (versus charcoal or light turquoise). It is distinguished from \taxa{Ranitomeya summersi} by possessing dorsal striping and vibrant blue ventral patterning (lacking in \taxa{R. summersi}).
+
+\subsection*{Description of Holotype}
+Adult male in excellent preservation state (\textsc{svl} \SI{16.52}{\milli\metre}). Head narrower than body; head width \SI{5.18}{\milli\metre}; head length \SI{4.90}{\milli\metre}. Snout rounded in dorsal view, slightly protruding in lateral profile. Canthus rostralis rounded; loreal region concave. Nostrils directed posterolaterally. Eyes large and prominent, diameter \SI{2.20}{\milli\metre}. Tympanum distinct, circular, diameter \SI{1.10}{\milli\metre}, approximately 50\% of eye diameter. Forelimbs slender; relative lengths of adpressed fingers: $\text{I} < \text{II} < \text{IV} < \text{III}$. Hindlimbs moderately robust; tibia length \SI{7.45}{\milli\metre}; foot length \SI{6.90}{\milli\metre}. Skin of dorsum, flanks, and venter smooth.
+
+\subsection*{Etymology}
+The specific epithet \textit{aurata} is a Latin adjective meaning ``golden'' or ``gilded,'' directly referencing the radiant, metallic golden cephalic hood and dorsolateral stripes that distinguish this species in life.

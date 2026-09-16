@@ -1,0 +1,94 @@
+% =========================================================================
+% Master Doctoral Dissertation Root Document
+% Field: Biology & Zoology (Systematics, Phylogenomics & Integrative Taxonomy)
+% Compiled via Tectonic Typesetting Engine / build.py
+% =========================================================================
+
+\documentclass[12pt,oneside,letterpaper]{book}
+
+% --- Load Master Preamble & Life Sciences Configurations ---
+\input{preamble}
+
+\begin{document}
+
+% =========================================================================
+% FRONT MATTER
+% =========================================================================
+\frontmatter
+
+% Academic Title Page
+\input{frontmatter/title}
+
+% Structured Abstract
+\input{frontmatter/abstract}
+
+% Dedication
+\input{frontmatter/dedication}
+
+% Acknowledgements & Grant Attributions
+\input{frontmatter/acknowledgements}
+
+% Automated Table of Contents & Lists
+\clearpage
+\phantomsection
+\pdfbookmark[0]{\contentsname}{contents}
+\tableofcontents
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+% Zoological, Genetic, and Institutional Abbreviations
+\input{frontmatter/abbreviations}
+
+% Animal Care, IACUC Protocol & Scientific Permit Attestation
+\input{frontmatter/ethics_statement}
+
+% =========================================================================
+% MAIN BODY CHAPTERS
+% =========================================================================
+\mainmatter
+
+% Chapter 1: Introduction & Research Aims
+\input{chapters/01_introduction}
+
+% Chapter 2: Literature Review, Systematic Theory & Dendrobatid Evolution
+\input{chapters/02_lit_review}
+
+% Chapter 3: Materials & Methods (Sampling, Molecular Protocols & Phylogenetics)
+\input{chapters/03_methods}
+
+% Chapter 4: Results & Formal Taxonomic Descriptions
+\input{chapters/04_results}
+
+% Chapter 5: Discussion, Historical Biogeography & Conservation Implications
+\input{chapters/05_discussion}
+
+% =========================================================================
+% BIBLIOGRAPHY & REFERENCES
+% =========================================================================
+\clearpage
+\phantomsection
+\printbibliography[heading=bibintoc, title={References}]
+
+% =========================================================================
+% APPENDICES
+% =========================================================================
+\appendix
+
+% Appendix A: Examined Museum Voucher Specimens & Localities
+\input{appendices/appendix_a_specimens}
+
+% Appendix B: Oligonucleotide Primers & Molecular Amplification Protocols
+\input{appendices/appendix_b_primers}
+
+% Appendix C: Supplementary Statistical Models, ANOVA & AICc Tables
+\input{appendices/appendix_c_stats}
+
+\end{document}

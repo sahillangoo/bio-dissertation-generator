@@ -1,0 +1,79 @@
+% =========================================================================
+% Appendix C: Supplementary Statistical Models
+% =========================================================================
+
+\chapter{Supplementary Statistical Models and Morphometric Analyses}
+\label{app:stats}
+
+This appendix presents detailed statistical testing outputs, including Analysis of Variance (\textsc{anova}) tables, General Linear Model (\textsc{glm}) parameters, and Akaike Information Criterion corrected for small sample sizes (\textsc{aic}c) for morphological traits across the \taxa{Ranitomeya fantastica} species group.
+
+\section{Factorial ANOVA on Morphometric Traits}
+
+A two-way factorial \textsc{anova} was executed to assess the fixed effects of Taxon (\spnov{\taxa{Ranitomeya aurata}}, \taxa{Ranitomeya fantastica}, and \taxa{Ranitomeya summersi}), Sex (Male vs.\ Female), and their interaction on adult Snout-Vent Length (\textsc{svl}) and Head Width (\textsc{hw}).
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Two-way factorial \textsc{anova} results evaluating variation in adult Snout-Vent Length (\textsc{svl}) across taxa and sexes.}
+  \label{tab:anova_svl}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    \textbf{Source of Variation} & \textbf{df} & \textbf{Sum of Sq} & \textbf{Mean Sq} & \textbf{$F$-statistic} & \textbf{$P$-value} \\
+    \midrule
+    Taxon & 2 & 78.412 & 39.206 & 134.72 & $< 0.0001$ \\
+    Sex & 1 & 4.285 & 4.285 & 14.72 & $0.0002$ \\
+    Taxon $\times$ Sex & 2 & 0.418 & 0.209 & 0.72 & $0.4901$ \\
+    Residuals (Error) & 68 & 19.791 & 0.291 & -- & -- \\
+    \midrule
+    Total & 73 & 102.906 & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Two-way factorial \textsc{anova} results evaluating variation in adult Head Width (\textsc{hw}) across taxa and sexes.}
+  \label{tab:anova_hw}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    \textbf{Source of Variation} & \textbf{df} & \textbf{Sum of Sq} & \textbf{Mean Sq} & \textbf{$F$-statistic} & \textbf{$P$-value} \\
+    \midrule
+    Taxon & 2 & 8.924 & 4.462 & 71.97 & $< 0.0001$ \\
+    Sex & 1 & 0.312 & 0.312 & 5.03 & $0.0282$ \\
+    Taxon $\times$ Sex & 2 & 0.084 & 0.042 & 0.68 & $0.5102$ \\
+    Residuals (Error) & 68 & 4.216 & 0.062 & -- & -- \\
+    \midrule
+    Total & 73 & 13.536 & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Tukey's Honestly Significant Difference (HSD) Post-Hoc Tests}
+
+Pairwise post-hoc comparisons with Tukey's adjustment demonstrated that adult \spnov{\taxa{Ranitomeya aurata}} is significantly smaller in overall \textsc{svl} than both \taxa{Ranitomeya fantastica} (difference: \SI{-2.52}{\milli\metre}; 95\% CI: \num{-2.86} to \num{-2.18}; $P < 0.0001$) and \taxa{Ranitomeya summersi} (difference: \SI{-1.40}{\milli\metre}; 95\% CI: \num{-1.76} to \num{-1.04}; $P < 0.0001$).
+
+\section{AICc Model Selection: Biogeographical Drivers of Body Size}
+
+Candidate linear models evaluating the predictive power of Elevation (m a.s.l.), River Drainage Basin, and Mean Annual Precipitation (Bio12 from WorldClim v2.1) in explaining adult body size (\textsc{svl}) were evaluated using Akaike Information Criterion corrected for small sample size (\textsc{aic}c).
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Model selection statistics for candidate regression models explaining body size (\textsc{svl}) variation across sub-Andean dendrobatids.}
+  \label{tab:aicc_models}
+  \begin{tabular}{lccccc}
+    \toprule
+    \textbf{Model Formulation} & \textbf{$K$} & \textbf{$\log(L)$} & \textbf{AICc} & \textbf{$\Delta$AICc} & \textbf{$w_i$} \\
+    \midrule
+    $\text{SVL} \sim \text{Taxon} + \text{Elevation}$ & 4 & -61.24 & 131.06 & 0.00 & 0.682 \\
+    $\text{SVL} \sim \text{Taxon} + \text{Elevation} + \text{Basin}$ & 6 & -59.88 & 133.02 & 1.96 & 0.256 \\
+    $\text{SVL} \sim \text{Taxon}$ & 3 & -65.10 & 136.54 & 5.48 & 0.044 \\
+    $\text{SVL} \sim \text{Elevation} + \text{Precipitation}$ & 4 & -78.40 & 165.38 & 34.32 & $<0.001$ \\
+    $\text{SVL} \sim \text{Null (Intercept only)}$ & 2 & -112.50 & 229.17 & 98.11 & $<0.001$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent
+\footnotesize{Note: $K$ is the number of estimated model parameters; $\log(L)$ is the log-likelihood; $\Delta\text{AICc} = \text{AICc}_i - \min(\text{AICc})$; $w_i$ is the Akaike model weight.}
