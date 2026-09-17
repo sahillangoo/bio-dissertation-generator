@@ -5,6 +5,16 @@
   "sources_directory": "D:/sandbox/work-box/dissertation-skills/research_sources",
   "files": [
     {
+      "path": "research_sources/existing_work/agarplate-final-result-fig.png",
+      "filename": "agarplate-final-result-fig.png",
+      "category": "existing_work",
+      "file_type": "binary_or_other",
+      "size_bytes": 2708658,
+      "sha256": "df5607c0360492f82992a5fbaeca97044a8e4ed2d46cb5cc39680cb68c29af28",
+      "target_chapter": "chapters/04_results.tex",
+      "headings": []
+    },
+    {
       "path": "research_sources/existing_work/agarplate-with-load-after-fig-7-10.jpeg",
       "filename": "agarplate-with-load-after-fig-7-10.jpeg",
       "category": "existing_work",
@@ -139,24 +149,14 @@
       "filename": "Antibacterial Efficacy Results - Zone of Inhibition.md",
       "category": "existing_work",
       "file_type": "markdown",
-      "size_bytes": 4200,
-      "sha256": "994dc95ecdfc1febedaa7c5915e810b1c099d928901e160308c76f3d03366507",
+      "size_bytes": 4227,
+      "sha256": "08e17cb0a1dd9c389a431eddc8c37563234fa12300d53eadfe8b995ec141ae8f",
       "target_chapter": "chapters/04_results.tex",
       "headings": [
         "**Antibacterial Potential of Aqueous Plant Extract: In Vitro Zone of Inhibition (ZOI) Analysis**",
         "**1\\. Summary Table of Antibacterial Efficacy**",
         "**2\\. Python Script to Recreate the Bar Graph**"
       ]
-    },
-    {
-      "path": "research_sources/existing_work/ChatGPT Image Sep 16, 2026, 10_26_29 PM.png",
-      "filename": "ChatGPT Image Sep 16, 2026, 10_26_29 PM.png",
-      "category": "existing_work",
-      "file_type": "binary_or_other",
-      "size_bytes": 2708658,
-      "sha256": "df5607c0360492f82992a5fbaeca97044a8e4ed2d46cb5cc39680cb68c29af28",
-      "target_chapter": "chapters/03_methods.tex",
-      "headings": []
     },
     {
       "path": "research_sources/existing_work/dipsacus-inermes-plant (34.12981° N, 74.83396° E).jpeg",
@@ -183,8 +183,8 @@
       "filename": "Title page.md",
       "category": "existing_work",
       "file_type": "markdown",
-      "size_bytes": 575,
-      "sha256": "ece3bf9e717fa573bb6e67b03202c7bd8e47c679670c8c30e332b204ce7d5f54",
+      "size_bytes": 532,
+      "sha256": "644cf2799ece6a666b6de133bd7b1592fdda9ce71d1189bbcbe2b9d16cf80531",
       "target_chapter": "chapters/03_methods.tex",
       "headings": []
     },

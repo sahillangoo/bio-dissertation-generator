@@ -111,8 +111,8 @@ def test_pipeline_audit_skills_flag(project_root):
     assert json_inventory.exists(), "skills_inventory.json was not generated"
     data = json.loads(json_inventory.read_text(encoding="utf-8"))
     assert data["status"] == "PASS"
-    assert data["summary"]["total_skills"] == 8
-    assert data["summary"]["created_count"] == 8
+    assert data["summary"]["total_skills"] == 9
+    assert data["summary"]["created_count"] == 9
     assert data["summary"]["external_count"] == 0
     assert data["summary"]["duplicates_detected"] == 0
     names = {s["name"] for s in data["created_skills"]}
@@ -138,8 +138,8 @@ def test_pipeline_list_skills_json(project_root):
     assert result.returncode == 0, f"--list-skills --json failed: {result.stderr}"
     data = json.loads(result.stdout)
     assert data["status"] == "PASS"
-    assert data["summary"]["total_skills"] == 8
-    assert len(data["created_skills"]) == 8
+    assert data["summary"]["total_skills"] == 9
+    assert len(data["created_skills"]) == 9
     assert len(data["external_skills"]) == 0
     assert len(data["duplicates"]) == 0
 

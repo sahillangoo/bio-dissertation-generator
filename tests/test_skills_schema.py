@@ -143,7 +143,7 @@ def test_validator_rejects_excessive_description_length():
 
 
 DISSERTATION_SKILLS = EXPECTED_SKILLS + ["final-output"]
-PLAYBOOK_SKILLS = ["dissertation-checker", "scholar-language-auditor"]
+PLAYBOOK_SKILLS = ["dissertation-checker", "scholar-language-auditor", "bio-image-verifier"]
 ALLOWED_SKILL_FOLDERS = sorted(DISSERTATION_SKILLS + PLAYBOOK_SKILLS)
 
 

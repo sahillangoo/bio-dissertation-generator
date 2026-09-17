@@ -1,10 +1,14 @@
 {
-  "timestamp": "2026-09-16T20:19:39.342827+00:00",
+  "timestamp": "2026-09-17T07:55:48.782596+00:00",
   "status": "SUCCESS",
   "build_exit_code": 0,
   "pdf_artifact": "D:\\sandbox\\work-box\\dissertation-skills\\dissertation.pdf",
-  "pdf_size_bytes": 27331477,
-  "pdf_size_kb": 26690.9,
+  "pdf_size_bytes": 11561428,
+  "pdf_size_kb": 11290.46,
+  "docx_artifact": "D:\\sandbox\\work-box\\dissertation-skills\\dissertation.docx",
+  "docx_size_bytes": 11520114,
+  "docx_size_kb": 11250.11,
+  "docx_valid": true,
   "zero_broken_references": true,
   "zero_undefined_citations": true
 }

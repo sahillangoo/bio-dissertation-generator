@@ -5,7 +5,7 @@ verify.py - Automated Diagnostic & Verification Suite for Biology & Zoology Diss
 Executes comprehensive three-pass validation:
   Pass 1: Antigravity Skills Schema & Progressive Disclosure Validation (.agents/skills/)
   Pass 2: Research Sources Staging & Automated Ingestion Integration (research_sources/)
-  Pass 3: Headless End-to-End LaTeX Compilation & Cross-Reference Diagnostic Integrity
+  Pass 3: Headless End-to-End LaTeX Compilation, PDF/DOCX artifacts, & Cross-Reference Diagnostic Integrity
 
 Exit codes:
   0: All executed diagnostic passes passed with 100% success.
@@ -26,6 +26,14 @@ import subprocess
 import sys
 import time
 from typing import Any, Dict, List, Optional, Set, Tuple
+
+from docx_export import (
+    DOCX_IDENTITY_STRINGS,
+    docx_layout_issues,
+    docx_missing_identity_strings,
+    docx_plain_text,
+    is_valid_docx,
+)
 
 # Attempt Rich and Click imports; provide graceful plain-text fallbacks
 try:
@@ -67,24 +75,22 @@ EXPECTED_FRONTMATTER_FILES = [
     "title.tex",
     "certificate.tex",
     "declaration.tex",
-    "abstract.tex",
     "acknowledgements.tex",
+    "abstract.tex",
     "abbreviations.tex",
 ]
 
 EXPECTED_CHAPTER_FILES = [
     "01_introduction.tex",
-    "02_objectives.tex",
-    "03_lit_review.tex",
-    "04_methods.tex",
-    "05_results.tex",
-    "06_discussion.tex",
-    "07_conclusion.tex",
+    "02_lit_review.tex",
+    "03_methods.tex",
+    "04_results.tex",
+    "05_discussion.tex",
+    "06_conclusion.tex",
 ]
 
 EXPECTED_APPENDIX_FILES = [
-    "appendix_a_template.tex",
-    "appendix_b_plate_gallery.tex",
+    "appendix_a_zoi.tex",
 ]
 
 
@@ -585,7 +591,7 @@ def verify_build(
     start_time = time.perf_counter()
     pass_res = PassResult(
         pass_id="build",
-        title="Pass 3: Headless PDF Compilation & Cross-Reference Integrity",
+        title="Pass 3: Headless PDF/DOCX Compilation & Cross-Reference Integrity",
         status="PASS"
     )
 
@@ -638,7 +644,7 @@ def verify_build(
         pass_res.checks.append(CheckResult(
             name="Modular Document Components",
             status="PASS",
-            message="All frontmatter, chapters, appendices, preamble, and references.bib verified"
+            message="All required frontmatter, preamble, and references.bib verified"
         ))
 
     # 3. Citation integrity audit in source files
@@ -759,6 +765,55 @@ def verify_build(
                         status="PASS",
                         message=f"Valid PDF artifact generated: {pdf_target.name} ({pdf_size / 1024:.2f} KB, magic header %PDF-)"
                     ))
+
+        # 5b. Output DOCX Validation
+        docx_target = pdf_target.with_suffix(".docx")
+        if not docx_target.exists():
+            pass_res.checks.append(CheckResult(
+                name="Output DOCX Artifact",
+                status="FAIL",
+                message=f"Target DOCX file was not generated: {docx_target}"
+            ))
+            pass_res.status = "FAIL"
+        elif not is_valid_docx(docx_target):
+            pass_res.checks.append(CheckResult(
+                name="Output DOCX Artifact",
+                status="FAIL",
+                message=f"Generated DOCX is missing, too small, or not valid OOXML: {docx_target}"
+            ))
+            pass_res.status = "FAIL"
+        else:
+            missing_identity = docx_missing_identity_strings(docx_target)
+            layout_issues = docx_layout_issues(docx_target)
+            if missing_identity:
+                pass_res.checks.append(CheckResult(
+                    name="Output DOCX Artifact",
+                    status="FAIL",
+                    message=(
+                        "DOCX OOXML is valid but missing identity text: "
+                        + ", ".join(missing_identity)
+                        + f" (required: {', '.join(DOCX_IDENTITY_STRINGS)})"
+                    ),
+                    details=[docx_plain_text(docx_target)[:240]],
+                ))
+                pass_res.status = "FAIL"
+            elif layout_issues:
+                pass_res.checks.append(CheckResult(
+                    name="Output DOCX Artifact",
+                    status="FAIL",
+                    message="DOCX is missing thesis formatting: " + "; ".join(layout_issues),
+                ))
+                pass_res.status = "FAIL"
+            else:
+                docx_size = docx_target.stat().st_size
+                pass_res.checks.append(CheckResult(
+                    name="Output DOCX Artifact",
+                    status="PASS",
+                    message=(
+                        f"Valid DOCX artifact generated: {docx_target.name} "
+                        f"({docx_size / 1024:.2f} KB, OOXML PK + word/document.xml)"
+                    )
+                ))
 
         # 6. Cross-reference and citation diagnostics
         log_file = project_root / f"{root_tex.stem}.log"

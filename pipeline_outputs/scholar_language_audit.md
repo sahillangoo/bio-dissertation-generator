@@ -1,33 +1,32 @@
 # Scholar language audit
 
-**Date:** 2026-09-17  
-**Rubric:** `.agents/skills/bio-chapter-builder/references/language_register_scale.md` (Band 2–3 target)  
-**Live files only** (not leftover frog chapters)
-
 | File | Voice | Lexicon | Syntax | Caution | Hygiene | Overall |
-|------|------:|--------:|-------:|--------:|---------|--------:|
-| frontmatter/abstract.tex | 3 | 3 | 2 | 3 | pass | 3 |
-| chapters/01_introduction.tex | 3 | 3 | 3 | 3 | pass | 3 |
-| chapters/02_objectives.tex | 3 | 2 | 2 | 3 | pass | 3 |
-| chapters/03_lit_review.tex | 3 | 3 | 3 | 3 | pass | 3 |
-| chapters/04_methods.tex | 3 | 3 | 2 | 3 | pass | 3 |
-| chapters/05_results.tex | 3 | 2 | 2 | 3 | pass | 3 |
-| chapters/06_discussion.tex | 3 | 3 | 3 | 3 | pass | 3 |
-| chapters/07_conclusion.tex | 3 | 2 | 2 | 3 | pass | 2 |
+|------|-------|---------|--------|---------|---------|---------|
+| frontmatter/abstract.tex | 3 | 3 | 2 | 3 | PASS | Band 3 |
+| chapters/01_introduction.tex | 3 | 3 | 3 | 3 | PASS | Band 3 |
+| chapters/02_lit_review.tex | 3 | 3 | 3 | 3 | PASS | Band 3 |
+| chapters/03_methods.tex | 3 | 2 | 2 | 3 | PASS | Band 2–3 |
+| chapters/04_results.tex | 3 | 2 | 2 | 3 | PASS | Band 2 |
+| chapters/05_discussion.tex | 3 | 3 | 3 | 3 | PASS | Band 3 |
+| chapters/06_conclusion.tex | 3 | 3 | 2 | 3 | PASS | Band 3 |
 
-## Edits
-- Chapter 3 opening: dropped “laboratory curiosity” and “present century” padding.
-- Chapter 3: defined MIC once in the assay section (lowest concentration that stops visible growth in a dilution assay).
-- Chapter 3: RND, outer membrane, APG IV, and the three pathogens now cite verified reviews instead of unsourced generalisation.
-- Methods: Soxhlet named as hot continuous extraction (already present); phytochemical tests tied to Harborne.
-- Discussion: restated that zone diameter is not an MIC.
+Live `\input` files only. Acknowledgements remain first person. Scientific chapters stay third person, British spelling, Band 2–3.
+
+## This pass (AI-slop / humanizer)
+
+- Skills used: `scholar-language-auditor` (sentence read) and pipeline stage `de_ai_humanizer` (keyword scan). Standalone `no-ai-slop` / `humanizer` folders are not in the live `.agents/skills/` set.
+- Keyword scan: **0** hits in live chapters and abstract for delve, tapestry, pivotal, paramount, moreover, furthermore, utilize, aforementioned, seminal, profound, shed light, it is worth noting, IN VITRO-style hype.
+- One leftover frog file (`frontmatter/ethics_statement.tex`) contains “subsequently”; it is **not** `\input` and was not rewritten.
+- “Taken together” appears once in the national synthesis of Chapter 2. That is ordinary scientific English, not a stacked Moreover/Furthermore opener. Left as written.
+- **Rewrite: skipped.** The live dissertation is already aligned.
+
+## Edits this pass
+- none
 
 ## Unchanged numbers
+- ZOI means, SDs, Appendix A replicates
+- GPS 34.12981° N, 74.83396° E
 - Yield 24.13% (w/w)
-- GPS 34.12981 N, 74.83396 E
-- All ZOI replicates and mean ± SD from the laboratory table
-- Phytochemistry all +
-- C1 50 µg mL⁻¹; C2 100 µg mL⁻¹
-
-## Hygiene
-No first person in scientific chapters. No metaphors, slogans, or promotional adjectives. Acknowledgements remain first person (allowed).
+- C1 50 mg/mL, C2 100 mg/mL
+- Phytochemical + scores
+- GEN 5 = 5 µg

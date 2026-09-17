@@ -8,7 +8,7 @@ Coordinates the 7-stage research, verification, review, and publication workflow
   Stage 4: citation_audit - BibLaTeX key resolution & citation verification
   Stage 5: adversarial_review - "Reviewer 2" claim audit & methodology critique
   Stage 6: de_ai_humanizer - Stylistic de-fluffing & AI-tell detection scan
-  Stage 7: final_build - Multi-pass Tectonic compilation & PDF verification
+  Stage 7: final_build - Multi-pass Tectonic compilation, PDF + DOCX verification
 """
 
 from __future__ import annotations
@@ -26,6 +26,8 @@ import subprocess
 import sys
 import time
 from typing import Any, Dict, List, Optional, Set, Tuple
+
+from docx_export import is_valid_docx
 
 # Attempt Rich formatting; fallback gracefully
 try:
@@ -213,6 +215,36 @@ def run_stage_chapter_drafting(project_root: Path, output_dir: Path) -> Dict[str
         "total_labels": total_labels,
         "chapter_breakdown": chapter_stats,
     }
+
+    img_script = (
+        project_root / ".agents" / "skills" / "bio-image-verifier" / "scripts" / "verify_images.py"
+    )
+    if img_script.exists():
+        img_res = subprocess.run(
+            [
+                sys.executable,
+                str(img_script),
+                "--root",
+                str(project_root / "dissertation.tex"),
+                "--figures",
+                str(project_root / "figures"),
+                "--report",
+                str(output_dir / "image_verification.json"),
+                "--json",
+            ],
+            capture_output=True,
+            text=True,
+            cwd=str(project_root),
+        )
+        try:
+            report["image_verification"] = json.loads(img_res.stdout)
+        except json.JSONDecodeError:
+            report["image_verification"] = {
+                "status": "FAIL",
+                "stderr": (img_res.stderr or img_res.stdout)[-500:],
+            }
+        if report["image_verification"].get("status") == "FAIL":
+            report["status"] = "FAIL"
 
     report_path = output_dir / "drafting_status.json"
     report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
@@ -423,7 +455,7 @@ def run_stage_de_ai_humanizer(project_root: Path, output_dir: Path) -> Dict[str,
 # ============================================================================
 
 def run_stage_final_build(project_root: Path, output_dir: Path) -> Dict[str, Any]:
-    log_step("Stage 7 (Final Build)", "Compiling dissertation.tex to publication-grade dissertation.pdf...")
+    log_step("Stage 7 (Final Build)", "Compiling dissertation.tex to dissertation.pdf and dissertation.docx...")
 
     build_py = project_root / "build.py"
     build_res = subprocess.run(
@@ -438,13 +470,23 @@ def run_stage_final_build(project_root: Path, output_dir: Path) -> Dict[str, Any
     pdf_size = pdf_path.stat().st_size if pdf_exists else 0
     pdf_valid = pdf_exists and pdf_size > 10000
 
+    docx_path = project_root / "dissertation.docx"
+    docx_exists = docx_path.exists()
+    docx_size = docx_path.stat().st_size if docx_exists else 0
+    docx_valid = is_valid_docx(docx_path) if docx_exists else False
+
+    both_valid = pdf_valid and docx_valid
     report = {
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "status": "SUCCESS" if (build_res.returncode == 0 and pdf_valid) else "FAIL",
+        "status": "SUCCESS" if (build_res.returncode == 0 and both_valid) else "FAIL",
         "build_exit_code": build_res.returncode,
         "pdf_artifact": str(pdf_path),
         "pdf_size_bytes": pdf_size,
         "pdf_size_kb": round(pdf_size / 1024.0, 2),
+        "docx_artifact": str(docx_path),
+        "docx_size_bytes": docx_size,
+        "docx_size_kb": round(docx_size / 1024.0, 2),
+        "docx_valid": docx_valid,
         "zero_broken_references": "Broken References   │   0" in build_res.stdout or "0 broken references" in build_res.stdout,
         "zero_undefined_citations": "Undefined Citations │   0" in build_res.stdout or "0 undefined citations" in build_res.stdout,
     }
@@ -452,10 +494,18 @@ def run_stage_final_build(project_root: Path, output_dir: Path) -> Dict[str, Any
     report_path = output_dir / "final_verification_report.json"
     report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
 
-    if pdf_valid:
-        log_step("Stage 7 (Final Build)", f"PDF compiled successfully: dissertation.pdf ({round(pdf_size/1024.0, 2)} KB)", "SUCCESS")
+    if both_valid:
+        log_step(
+            "Stage 7 (Final Build)",
+            (
+                f"PDF and DOCX compiled successfully: dissertation.pdf "
+                f"({round(pdf_size/1024.0, 2)} KB), dissertation.docx "
+                f"({round(docx_size/1024.0, 2)} KB)"
+            ),
+            "SUCCESS",
+        )
     else:
-        log_step("Stage 7 (Final Build)", "Build failed or PDF incomplete", "FAIL")
+        log_step("Stage 7 (Final Build)", "Build failed or PDF/DOCX incomplete", "FAIL")
 
     return report
 
@@ -473,6 +523,7 @@ CREATED_SKILLS_SET = {
     "dissertation-checker",
     "final-output",
     "scholar-language-auditor",
+    "bio-image-verifier",
 }
 
 CREATED_SKILLS_INFO = {
@@ -507,6 +558,10 @@ CREATED_SKILLS_INFO = {
     "dissertation-checker": {
         "role": "Claim-data, caption, citation, and layout check before final PDF",
         "domain": "Examiner playbook",
+    },
+    "bio-image-verifier": {
+        "role": "Live \\includegraphics path check, caption hygiene, figure placement",
+        "domain": "Figure and photograph audit",
     },
 }
 

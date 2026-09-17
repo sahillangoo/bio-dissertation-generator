@@ -21,6 +21,7 @@
 # Build directory
 build/
 .tectonic/
+.pandoc/
 
 # Python & UV
 .venv/

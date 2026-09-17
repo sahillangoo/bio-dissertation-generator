@@ -10,16 +10,35 @@
   bottom=1.0in,
   left=1.25in,
   right=1.0in,
-  headheight=36pt,
-  headsep=12pt,
+  headheight=18pt,
+  headsep=10pt,
   footskip=28pt
 ]{geometry}
 
 % --- Line Spacing & Paragraph Formatting ---
 \usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{placeins}
 \onehalfspacing
 \setlength{\parindent}{0.35in}
 \setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\titleformat{\chapter}[block]
+  {\normalfont\bfseries\Large}
+  {\thechapter.}{0.6em}{\MakeUppercase}
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\bfseries\Large\centering}
+  {}{0pt}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{4pt}{16pt}
+\titleformat{\section}[block]
+  {\normalfont\bfseries\large}
+  {\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{12pt}{8pt}
+\titleformat{\subsection}[block]
+  {\normalfont\bfseries\normalsize}
+  {\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{6pt}
 
 % --- Micro-typography & Fonts ---
 \usepackage[utf8]{inputenc}
@@ -42,9 +61,20 @@
 
 % --- Graphics & Multi-panel Figures ---
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage{caption}
 \usepackage{subcaption}
-\captionsetup{font={small,stretch=1.1},labelfont=bf}
+\usepackage{float}
+\captionsetup{
+  font={small,stretch=1.1},
+  labelfont=bf,
+  format=plain,
+  labelsep=period
+}
+\captionsetup[figure]{name={Fig.}}
+\captionsetup[table]{name={Table}}
+% Dissertation figures are sequential across chapters (not Fig. 3.1).
+\counterwithout{figure}{chapter}
 
 % --- Color Palette ---
 \usepackage[table]{xcolor}
@@ -66,7 +96,9 @@
   multi-part-units = single,
   range-phrase = --,
   range-units = single,
-  detect-all = true
+  detect-all = true,
+  table-alignment-mode = format,
+  tight-spacing = true
 }
 \DeclareSIUnit\molar{M}
 \DeclareSIUnit\Molar{M}
@@ -99,11 +131,24 @@
   uniquename=false,
   uniquelist=false,
   sorting=nyt,
+  date=year,
   doi=true,
   url=true,
   isbn=false
 ]{biblatex}
 \addbibresource{references.bib}
+% Author--year list (APA-like): no ``In:'' on journal articles;
+% volume(issue); clickable DOI; ragged entries so long DOIs do not stretch
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\addspace}}}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+  \printfield{number}%
+  \setunit{\addcomma\addspace}%
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat{doi}{\mkbibacro{DOI}\addcolon\space\href{https://doi.org/#1}{#1}}
+\AtBeginBibliography{\raggedright}
 
 % --- Hyperlinks & PDF Metadata ---
 \usepackage{hyperref}
@@ -121,7 +166,8 @@
 
 % --- Intelligent Cross-Referencing (cleveref must load after hyperref) ---
 \usepackage[capitalize,nameinlink,noabbrev]{cleveref}
-\crefname{figure}{Figure}{Figures}
+\crefname{figure}{Fig.}{Figs.}
+\Crefname{figure}{Fig.}{Figs.}
 \crefname{table}{Table}{Tables}
 \crefname{chapter}{Chapter}{Chapters}
 \crefname{section}{Section}{Sections}
@@ -176,17 +222,26 @@
 % Running header: dissertation title + roll number
 % Running footer: department + page number
 \usepackage{fancyhdr}
-\newcommand{\disshorttitle}{Antibacterial Potential of \textit{Dipsacus inermis}: An in vitro Study}
+\newcommand{\invitro}{\textit{in vitro}}
+\newcommand{\invivo}{\textit{in vivo}}
+% KU Zoology M.Sc. title registers (same department layout as the 2025
+% Zoology dissertation used for pagination: cover in capitals, header in
+% title case, certificate/declaration in sentence case). Scientific
+% exceptions: binomial italic, not all-caps; \textit{in vitro} always
+% lowercase italic (never all-caps or title-cased in vitro).
+\newcommand{\distitle}{Antibacterial Potential of \textit{Dipsacus inermis}: An \textit{in vitro} Study}
+\newcommand{\distitlecover}{ANTIBACTERIAL POTENTIAL OF\\ \textit{Dipsacus inermis}:\\ AN \textit{in vitro} STUDY}
+\newcommand{\distitlecite}{Antibacterial potential of \textit{Dipsacus inermis}: an \textit{in vitro} study}
+\newcommand{\disshorttitle}{\distitle}
 \newcommand{\disroll}{24061119001}
 \newcommand{\disfooter}{Department of Zoology, University of Kashmir, Srinagar, 190006, J\&K}
 \newcommand{\applydissheaders}{%
   \fancyhf{}%
   \fancyhead[C]{%
-    \footnotesize
-    \begin{tabular}{@{}c@{}}
-      Antibacterial Potential of \textit{Dipsacus inermis}: An in vitro Study\\
-      Enrollment No.\ \disroll
-    \end{tabular}%
+    \scriptsize
+    \makebox[\headwidth][c]{%
+      \disshorttitle\hfill Enrollment No.\ \disroll
+    }%
   }%
   \fancyfoot[L]{\footnotesize \disfooter}%
   \fancyfoot[R]{\thepage}%

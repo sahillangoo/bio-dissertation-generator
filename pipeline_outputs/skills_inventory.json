@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-16T20:19:27.023993+00:00",
+  "timestamp": "2026-09-17T07:56:21.537488+00:00",
   "status": "PASS",
   "summary": {
-    "total_skills": 8,
-    "created_count": 8,
+    "total_skills": 9,
+    "created_count": 9,
     "external_count": 0,
     "duplicates_detected": 0
   },
@@ -20,6 +20,18 @@
       "source": "local / project-authored",
       "role": "Modular LaTeX dissertation chapter & appendix scaffolding, cross-chapter synthesis",
       "domain": "Dissertation Chapter Architecture"
+    },
+    {
+      "name": "bio-image-verifier",
+      "description": "Verifies Kashmir M.Sc. dissertation photographs against live LaTeX includes, caption rules, and file placement. Use when adding or moving figures, checking missing images, or confirming a plate caption names only what is visible.",
+      "path": ".agents/skills/bio-image-verifier",
+      "has_scripts": true,
+      "has_references": true,
+      "has_examples": true,
+      "stream": "created",
+      "source": "local / project-authored",
+      "role": "Live \\includegraphics path check, caption hygiene, figure placement",
+      "domain": "Figure and photograph audit"
     },
     {
       "name": "bio-nomenclature-ethics",

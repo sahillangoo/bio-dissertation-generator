@@ -1,8 +1,441 @@
 {
-  "timestamp": "2026-09-16T20:19:27.035558+00:00",
+  "timestamp": "2026-09-17T07:55:37.350957+00:00",
   "status": "SUCCESS",
-  "taxa_count": 0,
-  "taxa_details": [],
+  "taxa_count": 108,
+  "taxa_details": [
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Acinetobacter"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Dipsacus sylvestris"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Borrelia burgdorferi"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Dipsacus fullonum"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "K. pneumoniae"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "01_introduction.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Dipsacus sylvestris"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Dipsacus sylvestris"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Borrelia burgdorferi"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Dipsacus fullonum"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "K. pneumoniae"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Staphylococcus aureus"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Bacillus subtilis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Salmonella typhi"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Enterobacter aerogenes"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "K. pneumoniae"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "K. pneumoniae"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Pseudomonas"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "K. pneumoniae"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "K. pneumoniae"
+    },
+    {
+      "file": "02_lit_review.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "03_methods.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "04_results.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "04_results.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "04_results.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "04_results.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "04_results.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "04_results.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "D.\\ inermis"
+    },
+    {
+      "file": "05_discussion.tex",
+      "taxon": "D. inermis"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "E. coli"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "K. pneumoniae"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "06_conclusion.tex",
+      "taxon": "P. aeruginosa"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Escherichia coli"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Klebsiella pneumoniae"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Pseudomonas aeruginosa"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Dipsacus inermis"
+    },
+    {
+      "file": "abstract.tex",
+      "taxon": "Dipsacus inermis"
+    }
+  ],
   "authorities_count": 0,
   "authorities_details": [],
   "novel_taxa_count": 0,

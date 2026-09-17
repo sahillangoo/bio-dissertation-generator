@@ -1,0 +1,94 @@
+{
+  "status": "SUCCESS",
+  "live_tex_files": [
+    "dissertation.tex",
+    "preamble.tex",
+    "frontmatter\\title.tex",
+    "frontmatter\\certificate.tex",
+    "frontmatter\\declaration.tex",
+    "frontmatter\\acknowledgements.tex",
+    "frontmatter\\abstract.tex",
+    "frontmatter\\abbreviations.tex",
+    "chapters\\01_introduction.tex",
+    "chapters\\02_lit_review.tex",
+    "chapters\\03_methods.tex",
+    "chapters\\04_results.tex",
+    "chapters\\05_discussion.tex",
+    "chapters\\06_conclusion.tex",
+    "appendices\\appendix_a_zoi.tex"
+  ],
+  "includes_count": 13,
+  "missing_count": 0,
+  "missing": [],
+  "caption_flags": [],
+  "unused_figure_files": [
+    "fig6_pure_cultures.jpg"
+  ],
+  "includes": [
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig1_collection_site.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig1_collection_site.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig2_dried_herb.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig2_dried_herb.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig3_mortar_pestle.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig3_mortar_pestle.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig4_lab_weighing.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig4_lab_weighing.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig5_soxhlet.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig5_soxhlet.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig6a_kpneumoniae.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6a_kpneumoniae.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig6b_paeruginosa.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6b_paeruginosa.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig6c_ecoli.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6c_ecoli.jpg"
+    },
+    {
+      "file": "chapters\\03_methods.tex",
+      "include": "fig7_assay_layout.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig7_assay_layout.jpg"
+    },
+    {
+      "file": "chapters\\04_results.tex",
+      "include": "fig8_phytochem_tubes.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig8_phytochem_tubes.jpg"
+    },
+    {
+      "file": "chapters\\04_results.tex",
+      "include": "fig11_final_result_plates.png",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig11_final_result_plates.png"
+    },
+    {
+      "file": "chapters\\04_results.tex",
+      "include": "fig9_assay_trio_dated.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig9_assay_trio_dated.jpg"
+    },
+    {
+      "file": "chapters\\04_results.tex",
+      "include": "fig10_gen5_plate.jpg",
+      "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig10_gen5_plate.jpg"
+    }
+  ]
+}

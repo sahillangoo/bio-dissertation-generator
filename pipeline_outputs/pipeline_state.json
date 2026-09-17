@@ -1,22 +1,455 @@
 {
   "pipeline": "bio-dissertation-generator-pipeline",
-  "started_at": "2026-09-16T20:19:26.893936+00:00",
+  "started_at": "2026-09-17T07:55:37.191384+00:00",
   "stages": {
     "staging": {
       "status": "SUCCESS",
       "files_indexed": 22,
       "manifest": "D:\\sandbox\\work-box\\dissertation-skills\\pipeline_outputs\\sources_manifest.json",
-      "skills_total": 8,
-      "skills_created": 8,
+      "skills_total": 9,
+      "skills_created": 9,
       "skills_external": 0,
       "skills_duplicates": 0,
-      "duration_s": 0.139
+      "duration_s": 0.157
     },
     "biology_logic": {
-      "timestamp": "2026-09-16T20:19:27.035558+00:00",
+      "timestamp": "2026-09-17T07:55:37.350957+00:00",
       "status": "SUCCESS",
-      "taxa_count": 0,
-      "taxa_details": [],
+      "taxa_count": 108,
+      "taxa_details": [
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Acinetobacter"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Dipsacus sylvestris"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Borrelia burgdorferi"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Dipsacus fullonum"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "K. pneumoniae"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "01_introduction.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Dipsacus sylvestris"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Dipsacus sylvestris"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Borrelia burgdorferi"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Dipsacus fullonum"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "K. pneumoniae"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Staphylococcus aureus"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Bacillus subtilis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Salmonella typhi"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Enterobacter aerogenes"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "K. pneumoniae"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "K. pneumoniae"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Pseudomonas"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "K. pneumoniae"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "K. pneumoniae"
+        },
+        {
+          "file": "02_lit_review.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "03_methods.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "04_results.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "04_results.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "04_results.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "04_results.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "04_results.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "04_results.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "D.\\ inermis"
+        },
+        {
+          "file": "05_discussion.tex",
+          "taxon": "D. inermis"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "E. coli"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "K. pneumoniae"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "06_conclusion.tex",
+          "taxon": "P. aeruginosa"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Escherichia coli"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Klebsiella pneumoniae"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Pseudomonas aeruginosa"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Dipsacus inermis"
+        },
+        {
+          "file": "abstract.tex",
+          "taxon": "Dipsacus inermis"
+        }
+      ],
       "authorities_count": 0,
       "authorities_details": [],
       "novel_taxa_count": 0,
@@ -26,153 +459,183 @@
       "duration_s": 0.004
     },
     "chapter_drafting": {
-      "timestamp": "2026-09-16T20:19:27.040158+00:00",
+      "timestamp": "2026-09-17T07:55:37.356290+00:00",
       "status": "SUCCESS",
       "frontmatter_count": 6,
-      "chapters_count": 7,
-      "appendices_count": 2,
-      "total_chapter_words": 7947,
-      "total_labels": 82,
+      "chapters_count": 6,
+      "appendices_count": 1,
+      "total_chapter_words": 6999,
+      "total_labels": 25,
       "chapter_breakdown": [
         {
           "file": "01_introduction.tex",
-          "word_count": 1010,
-          "labels_count": 6,
+          "word_count": 762,
+          "labels_count": 2,
           "labels": [
             "ch:introduction",
-            "sec:amr_crisis",
-            "sec:plants_antimicrobial",
-            "sec:himalayan_flora",
-            "sec:dipsacus_profile",
-            "sec:gaps_and_rationale"
+            "sec:objectives"
           ]
         },
         {
-          "file": "02_objectives.tex",
-          "word_count": 324,
-          "labels_count": 5,
+          "file": "02_lit_review.tex",
+          "word_count": 2432,
+          "labels_count": 1,
           "labels": [
-            "ch:objectives",
-            "sec:obj_rationale",
-            "sec:primary_objectives",
-            "sec:hypotheses",
-            "sec:scope"
+            "ch:litreview"
           ]
         },
         {
-          "file": "03_lit_review.tex",
-          "word_count": 2805,
-          "labels_count": 9,
-          "labels": [
-            "ch:lit_review",
-            "sec:lit_amr",
-            "sec:gram_neg_architecture",
-            "sec:phytochemical_mechanisms",
-            "sec:genus_dipsacus",
-            "sec:kashmir_precedents",
-            "sec:test_pathogens_bio",
-            "sec:assay_methodology",
-            "sec:lit_synthesis"
-          ]
-        },
-        {
-          "file": "04_methods.tex",
-          "word_count": 1530,
-          "labels_count": 28,
+          "file": "03_methods.tex",
+          "word_count": 1377,
+          "labels_count": 11,
           "labels": [
             "ch:methods",
-            "sec:reagents",
-            "sec:instrumentation",
-            "sec:plant_collection",
-            "fig:collection_site",
-            "sec:plant_processing",
-            "fig:dried_herb_tray",
-            "fig:plant_material",
-            "fig:chopped_mortar",
-            "fig:mortar_pestle",
-            "fig:powdered_plant",
-            "fig:lab_weighing",
-            "sec:aqueous_extraction",
-            "eq:yield",
-            "fig:extraction_setup",
-            "fig:reflux_assembly",
-            "fig:soxhlet_bench",
-            "sec:phytochem_methods",
-            "tab:phytochem_reagents",
-            "fig:phytochem",
-            "sec:bacterial_maintenance",
-            "fig:pure_cultures",
-            "fig:ecoli_plate",
-            "sec:susceptibility_testing",
-            "fig:gen5_disc",
-            "fig:c1_c2_unlabelled",
-            "sec:zoi_measurement",
-            "sec:statistical_analysis"
-          ]
-        },
-        {
-          "file": "05_results.tex",
-          "word_count": 1158,
-          "labels_count": 21,
-          "labels": [
-            "ch:results",
-            "sec:results_yield",
-            "sec:results_taxonomy",
-            "tab:bacterial_taxonomy",
+            "fig:collection",
             "tab:plant_taxonomy",
-            "sec:results_phytochem",
-            "tab:phytochem_results",
-            "subsec:results_ecoli",
-            "tab:zoi_ecoli",
-            "fig:ecoli_inhibition",
-            "subsec:results_paeruginosa",
-            "tab:zoi_paeruginosa",
-            "subsec:results_kpneumoniae",
-            "tab:zoi_kpneumoniae",
-            "fig:kpneumoniae_inhibition",
-            "sec:results_comparative",
-            "tab:zoi_comparative",
-            "sec:results_benchmarking",
-            "tab:organic_comparison",
-            "sec:results_graph",
-            "fig:zoi_barchart"
+            "tab:bact_taxonomy",
+            "fig:dried",
+            "fig:mortar",
+            "fig:weighing",
+            "fig:soxhlet",
+            "fig:cultures",
+            "tab:phyto_methods",
+            "fig:assaylayout"
           ]
         },
         {
-          "file": "06_discussion.tex",
-          "word_count": 790,
+          "file": "04_results.tex",
+          "word_count": 942,
           "labels_count": 8,
           "labels": [
-            "ch:discussion",
-            "sec:disc_yield",
-            "sec:disc_antibacterial",
-            "sec:disc_envelope",
-            "sec:disc_klebsiella",
-            "sec:disc_phyto",
-            "sec:disc_regional",
-            "sec:disc_limits"
+            "ch:results",
+            "tab:phytochem",
+            "fig:phytochem",
+            "tab:zoi",
+            "fig:finalplates",
+            "fig:assaytrio",
+            "fig:gen5",
+            "fig:zoibars"
           ]
         },
         {
-          "file": "07_conclusion.tex",
-          "word_count": 330,
-          "labels_count": 5,
+          "file": "05_discussion.tex",
+          "word_count": 1226,
+          "labels_count": 2,
           "labels": [
-            "ch:conclusion",
-            "sec:conclusion_summary",
-            "sec:conclusion_fulfillment",
-            "sec:conclusion_contributions",
-            "sec:conclusion_future"
+            "ch:discussion",
+            "tab:compare"
+          ]
+        },
+        {
+          "file": "06_conclusion.tex",
+          "word_count": 260,
+          "labels_count": 1,
+          "labels": [
+            "ch:conclusion"
           ]
         }
       ],
-      "duration_s": 0.005
+      "image_verification": {
+        "status": "SUCCESS",
+        "live_tex_files": [
+          "dissertation.tex",
+          "preamble.tex",
+          "frontmatter\\title.tex",
+          "frontmatter\\certificate.tex",
+          "frontmatter\\declaration.tex",
+          "frontmatter\\acknowledgements.tex",
+          "frontmatter\\abstract.tex",
+          "frontmatter\\abbreviations.tex",
+          "chapters\\01_introduction.tex",
+          "chapters\\02_lit_review.tex",
+          "chapters\\03_methods.tex",
+          "chapters\\04_results.tex",
+          "chapters\\05_discussion.tex",
+          "chapters\\06_conclusion.tex",
+          "appendices\\appendix_a_zoi.tex"
+        ],
+        "includes_count": 13,
+        "missing_count": 0,
+        "missing": [],
+        "caption_flags": [],
+        "unused_figure_files": [
+          "fig6_pure_cultures.jpg"
+        ],
+        "includes": [
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig1_collection_site.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig1_collection_site.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig2_dried_herb.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig2_dried_herb.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig3_mortar_pestle.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig3_mortar_pestle.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig4_lab_weighing.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig4_lab_weighing.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig5_soxhlet.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig5_soxhlet.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig6a_kpneumoniae.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6a_kpneumoniae.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig6b_paeruginosa.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6b_paeruginosa.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig6c_ecoli.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6c_ecoli.jpg"
+          },
+          {
+            "file": "chapters\\03_methods.tex",
+            "include": "fig7_assay_layout.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig7_assay_layout.jpg"
+          },
+          {
+            "file": "chapters\\04_results.tex",
+            "include": "fig8_phytochem_tubes.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig8_phytochem_tubes.jpg"
+          },
+          {
+            "file": "chapters\\04_results.tex",
+            "include": "fig11_final_result_plates.png",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig11_final_result_plates.png"
+          },
+          {
+            "file": "chapters\\04_results.tex",
+            "include": "fig9_assay_trio_dated.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig9_assay_trio_dated.jpg"
+          },
+          {
+            "file": "chapters\\04_results.tex",
+            "include": "fig10_gen5_plate.jpg",
+            "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig10_gen5_plate.jpg"
+          }
+        ]
+      },
+      "duration_s": 0.103
     },
     "citation_audit": {
-      "timestamp": "2026-09-16T20:19:27.045389+00:00",
+      "timestamp": "2026-09-17T07:55:37.459399+00:00",
       "status": "SUCCESS",
-      "defined_keys_count": 34,
-      "cited_keys_count": 34,
+      "defined_keys_count": 31,
+      "cited_keys_count": 31,
       "unresolved_keys_count": 0,
       "unresolved_keys": [],
       "resolution_rate_pct": 100.0,
@@ -188,21 +651,25 @@
       "status": "SUCCESS",
       "human_score": 100,
       "report": "D:\\sandbox\\work-box\\dissertation-skills\\pipeline_outputs\\de_ai_humanizer_report.md",
-      "duration_s": 0.019
+      "duration_s": 0.017
     },
     "final_build": {
-      "timestamp": "2026-09-16T20:19:39.342827+00:00",
+      "timestamp": "2026-09-17T07:55:48.782596+00:00",
       "status": "SUCCESS",
       "build_exit_code": 0,
       "pdf_artifact": "D:\\sandbox\\work-box\\dissertation-skills\\dissertation.pdf",
-      "pdf_size_bytes": 27331477,
-      "pdf_size_kb": 26690.9,
+      "pdf_size_bytes": 11561428,
+      "pdf_size_kb": 11290.46,
+      "docx_artifact": "D:\\sandbox\\work-box\\dissertation-skills\\dissertation.docx",
+      "docx_size_bytes": 11520114,
+      "docx_size_kb": 11250.11,
+      "docx_valid": true,
       "zero_broken_references": true,
       "zero_undefined_citations": true,
-      "duration_s": 12.277
+      "duration_s": 11.305
     }
   },
   "overall_status": "SUCCESS",
-  "completed_at": "2026-09-16T20:19:39.343749+00:00",
-  "total_duration_s": 12.45
+  "completed_at": "2026-09-17T07:55:48.783787+00:00",
+  "total_duration_s": 11.59
 }

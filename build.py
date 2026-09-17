@@ -3,7 +3,7 @@
 Master Compilation Engine for Biology & Zoology Doctoral Dissertation.
 Cross-platform CLI supporting standalone Tectonic auto-bootstrapping,
 Docker fallback, multi-pass cross-referencing, diagnostic validation,
-and clean PDF generation.
+clean PDF generation, and Pandoc DOCX export.
 """
 
 from __future__ import annotations
@@ -20,6 +20,8 @@ import urllib.request
 import zipfile
 from pathlib import Path
 from typing import List, Optional, Tuple
+
+from docx_export import export_docx
 
 # Attempt rich and click imports; provide graceful standard fallbacks if needed
 try:
@@ -553,6 +555,12 @@ def build_dissertation(
 
     log_success(f"PDF generated successfully: {output} ({pdf_size / 1024:.2f} KB)")
 
+    docx_output = output.with_suffix(".docx")
+    docx_rc = export_docx(root, docx_output, verbose=verbose)
+    if docx_rc != 0:
+        log_error(f"DOCX export failed for {docx_output}")
+        return 1
+
     if not keep_intermediates:
         clean_intermediates(workspace, root.stem)
 
@@ -571,13 +579,14 @@ def watch_and_rebuild(root: Path, output: Path, **kwargs) -> None:
     """Watch thesis source files and automatically trigger rebuild on modification."""
     log_info(f"Watching directory {root.parent} for changes. Press Ctrl+C to terminate.")
     source_extensions = {".tex", ".bib", ".sty", ".cls", ".png", ".jpg", ".pdf"}
+    ignored_names = {output.name, output.with_suffix(".docx").name}
 
     def get_mtimes() -> dict[Path, float]:
         mtimes = {}
         for path in root.parent.rglob("*"):
             if path.is_file() and path.suffix in source_extensions:
                 # Ignore output and intermediates
-                if path.name == output.name or path.name.startswith("."):
+                if path.name in ignored_names or path.name.startswith("."):
                     continue
                 try:
                     mtimes[path] = path.stat().st_mtime

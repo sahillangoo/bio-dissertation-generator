@@ -1,142 +1,172 @@
 {
-  "timestamp": "2026-09-16T20:19:27.040158+00:00",
+  "timestamp": "2026-09-17T07:55:37.356290+00:00",
   "status": "SUCCESS",
   "frontmatter_count": 6,
-  "chapters_count": 7,
-  "appendices_count": 2,
-  "total_chapter_words": 7947,
-  "total_labels": 82,
+  "chapters_count": 6,
+  "appendices_count": 1,
+  "total_chapter_words": 6999,
+  "total_labels": 25,
   "chapter_breakdown": [
     {
       "file": "01_introduction.tex",
-      "word_count": 1010,
-      "labels_count": 6,
+      "word_count": 762,
+      "labels_count": 2,
       "labels": [
         "ch:introduction",
-        "sec:amr_crisis",
-        "sec:plants_antimicrobial",
-        "sec:himalayan_flora",
-        "sec:dipsacus_profile",
-        "sec:gaps_and_rationale"
+        "sec:objectives"
       ]
     },
     {
-      "file": "02_objectives.tex",
-      "word_count": 324,
-      "labels_count": 5,
+      "file": "02_lit_review.tex",
+      "word_count": 2432,
+      "labels_count": 1,
       "labels": [
-        "ch:objectives",
-        "sec:obj_rationale",
-        "sec:primary_objectives",
-        "sec:hypotheses",
-        "sec:scope"
+        "ch:litreview"
       ]
     },
     {
-      "file": "03_lit_review.tex",
-      "word_count": 2805,
-      "labels_count": 9,
-      "labels": [
-        "ch:lit_review",
-        "sec:lit_amr",
-        "sec:gram_neg_architecture",
-        "sec:phytochemical_mechanisms",
-        "sec:genus_dipsacus",
-        "sec:kashmir_precedents",
-        "sec:test_pathogens_bio",
-        "sec:assay_methodology",
-        "sec:lit_synthesis"
-      ]
-    },
-    {
-      "file": "04_methods.tex",
-      "word_count": 1530,
-      "labels_count": 28,
+      "file": "03_methods.tex",
+      "word_count": 1377,
+      "labels_count": 11,
       "labels": [
         "ch:methods",
-        "sec:reagents",
-        "sec:instrumentation",
-        "sec:plant_collection",
-        "fig:collection_site",
-        "sec:plant_processing",
-        "fig:dried_herb_tray",
-        "fig:plant_material",
-        "fig:chopped_mortar",
-        "fig:mortar_pestle",
-        "fig:powdered_plant",
-        "fig:lab_weighing",
-        "sec:aqueous_extraction",
-        "eq:yield",
-        "fig:extraction_setup",
-        "fig:reflux_assembly",
-        "fig:soxhlet_bench",
-        "sec:phytochem_methods",
-        "tab:phytochem_reagents",
-        "fig:phytochem",
-        "sec:bacterial_maintenance",
-        "fig:pure_cultures",
-        "fig:ecoli_plate",
-        "sec:susceptibility_testing",
-        "fig:gen5_disc",
-        "fig:c1_c2_unlabelled",
-        "sec:zoi_measurement",
-        "sec:statistical_analysis"
-      ]
-    },
-    {
-      "file": "05_results.tex",
-      "word_count": 1158,
-      "labels_count": 21,
-      "labels": [
-        "ch:results",
-        "sec:results_yield",
-        "sec:results_taxonomy",
-        "tab:bacterial_taxonomy",
+        "fig:collection",
         "tab:plant_taxonomy",
-        "sec:results_phytochem",
-        "tab:phytochem_results",
-        "subsec:results_ecoli",
-        "tab:zoi_ecoli",
-        "fig:ecoli_inhibition",
-        "subsec:results_paeruginosa",
-        "tab:zoi_paeruginosa",
-        "subsec:results_kpneumoniae",
-        "tab:zoi_kpneumoniae",
-        "fig:kpneumoniae_inhibition",
-        "sec:results_comparative",
-        "tab:zoi_comparative",
-        "sec:results_benchmarking",
-        "tab:organic_comparison",
-        "sec:results_graph",
-        "fig:zoi_barchart"
+        "tab:bact_taxonomy",
+        "fig:dried",
+        "fig:mortar",
+        "fig:weighing",
+        "fig:soxhlet",
+        "fig:cultures",
+        "tab:phyto_methods",
+        "fig:assaylayout"
       ]
     },
     {
-      "file": "06_discussion.tex",
-      "word_count": 790,
+      "file": "04_results.tex",
+      "word_count": 942,
       "labels_count": 8,
       "labels": [
-        "ch:discussion",
-        "sec:disc_yield",
-        "sec:disc_antibacterial",
-        "sec:disc_envelope",
-        "sec:disc_klebsiella",
-        "sec:disc_phyto",
-        "sec:disc_regional",
-        "sec:disc_limits"
+        "ch:results",
+        "tab:phytochem",
+        "fig:phytochem",
+        "tab:zoi",
+        "fig:finalplates",
+        "fig:assaytrio",
+        "fig:gen5",
+        "fig:zoibars"
       ]
     },
     {
-      "file": "07_conclusion.tex",
-      "word_count": 330,
-      "labels_count": 5,
+      "file": "05_discussion.tex",
+      "word_count": 1226,
+      "labels_count": 2,
       "labels": [
-        "ch:conclusion",
-        "sec:conclusion_summary",
-        "sec:conclusion_fulfillment",
-        "sec:conclusion_contributions",
-        "sec:conclusion_future"
+        "ch:discussion",
+        "tab:compare"
+      ]
+    },
+    {
+      "file": "06_conclusion.tex",
+      "word_count": 260,
+      "labels_count": 1,
+      "labels": [
+        "ch:conclusion"
       ]
     }
-  ]
+  ],
+  "image_verification": {
+    "status": "SUCCESS",
+    "live_tex_files": [
+      "dissertation.tex",
+      "preamble.tex",
+      "frontmatter\\title.tex",
+      "frontmatter\\certificate.tex",
+      "frontmatter\\declaration.tex",
+      "frontmatter\\acknowledgements.tex",
+      "frontmatter\\abstract.tex",
+      "frontmatter\\abbreviations.tex",
+      "chapters\\01_introduction.tex",
+      "chapters\\02_lit_review.tex",
+      "chapters\\03_methods.tex",
+      "chapters\\04_results.tex",
+      "chapters\\05_discussion.tex",
+      "chapters\\06_conclusion.tex",
+      "appendices\\appendix_a_zoi.tex"
+    ],
+    "includes_count": 13,
+    "missing_count": 0,
+    "missing": [],
+    "caption_flags": [],
+    "unused_figure_files": [
+      "fig6_pure_cultures.jpg"
+    ],
+    "includes": [
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig1_collection_site.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig1_collection_site.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig2_dried_herb.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig2_dried_herb.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig3_mortar_pestle.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig3_mortar_pestle.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig4_lab_weighing.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig4_lab_weighing.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig5_soxhlet.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig5_soxhlet.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig6a_kpneumoniae.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6a_kpneumoniae.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig6b_paeruginosa.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6b_paeruginosa.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig6c_ecoli.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig6c_ecoli.jpg"
+      },
+      {
+        "file": "chapters\\03_methods.tex",
+        "include": "fig7_assay_layout.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig7_assay_layout.jpg"
+      },
+      {
+        "file": "chapters\\04_results.tex",
+        "include": "fig8_phytochem_tubes.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig8_phytochem_tubes.jpg"
+      },
+      {
+        "file": "chapters\\04_results.tex",
+        "include": "fig11_final_result_plates.png",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig11_final_result_plates.png"
+      },
+      {
+        "file": "chapters\\04_results.tex",
+        "include": "fig9_assay_trio_dated.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig9_assay_trio_dated.jpg"
+      },
+      {
+        "file": "chapters\\04_results.tex",
+        "include": "fig10_gen5_plate.jpg",
+        "resolved": "D:\\sandbox\\work-box\\dissertation-skills\\figures\\fig10_gen5_plate.jpg"
+      }
+    ]
+  }
 }

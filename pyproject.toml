@@ -33,5 +33,7 @@ dev = [
 include = [
     "build.py",
     "verify.py",
+    "docx_export.py",
+    "preamble_docx.tex",
 ]
 

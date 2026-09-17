@@ -1,0 +1,36 @@
+% Pandoc-safe macro file for Word/Google Docs export.
+% Loaded in place of preamble.tex so TikZ, Forest, BibLaTeX, and page styles
+% are not fed to the Pandoc LaTeX reader.
+
+\newcommand{\taxa}[1]{\textit{#1}}
+\newcommand{\taxonauth}[2]{\textit{#1}~#2}
+\newcommand{\spnov}[1]{\textit{#1}~\textbf{sp.~nov.}}
+\newcommand{\gennov}[1]{\textit{#1}~\textbf{gen.~nov.}}
+\newcommand{\holotype}[1]{\textbf{Holotype:} \texttt{#1}}
+\newcommand{\paratype}[1]{\textbf{Paratype:} \texttt{#1}}
+\newcommand{\typelocality}[1]{\textbf{Type Locality:} #1}
+\newcommand{\gene}[1]{\textit{#1}}
+\newcommand{\protein}[1]{\textsf{#1}}
+\newcommand{\invitro}{\textit{in vitro}}
+\newcommand{\invivo}{\textit{in vivo}}
+\newcommand{\distitle}{Antibacterial Potential of \textit{Dipsacus inermis}: An \textit{in vitro} Study}
+\newcommand{\distitlecover}{ANTIBACTERIAL POTENTIAL OF \textit{Dipsacus inermis}: AN \textit{in vitro} STUDY}
+\newcommand{\distitlecite}{Antibacterial potential of \textit{Dipsacus inermis}: an \textit{in vitro} study}
+\newcommand{\disshorttitle}{\distitle}
+\newcommand{\disroll}{24061119001}
+\newcommand{\disfooter}{Department of Zoology, University of Kashmir, Srinagar, 190006, J\&K}
+\newcommand{\applydissheaders}{}
+\newcommand{\ce}[1]{#1}
+\newcommand{\num}[1]{#1}
+\newcommand{\cref}[1]{\ref{#1}}
+\newcommand{\Cref}[1]{\ref{#1}}
+\newcommand{\SI}[2]{#1~#2}
+\newcommand{\si}[1]{#1}
+\newcommand{\toprule}{\hline}
+\newcommand{\midrule}{\hline}
+\newcommand{\bottomrule}{\hline}
+\newcommand{\FloatBarrier}{}
+\newcommand{\phantomsection}{}
+\newcommand{\pagestyle}[1]{}
+\newcommand{\thispagestyle}[1]{}
+\newcommand{\graphicspath}[1]{}

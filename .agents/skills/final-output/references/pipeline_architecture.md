@@ -26,7 +26,7 @@ This document defines the 7-stage architecture, data contracts, and error recove
 [Stage 6: De-AI & Stylistic Humanizer]    ────► pipeline_outputs/de_ai_humanizer_report.md
        │
        ▼
-[Stage 7: Final Tectonic Build]           ────► dissertation.pdf & final_verification_report.json
+[Stage 7: Final Tectonic+Pandoc Build]    ────► dissertation.pdf, dissertation.docx & final_verification_report.json
 ```
 
 ## Stage Specifications
@@ -68,7 +68,7 @@ This document defines the 7-stage architecture, data contracts, and error recove
 - **Criteria**: Style tightening suggestions and human voice score.
 
 ### Stage 7: `final_build`
-- **Purpose**: Executes automated multi-pass compilation via Tectonic and zero-broken-cross-reference diagnostics.
-- **Tools**: `build.py`, `verify.py`.
-- **Output**: `dissertation.pdf` (>100 KB), `pipeline_outputs/final_verification_report.json`.
-- **Criteria**: 0 fatal LaTeX errors, 0 undefined citations (`[?]`), 0 broken cross-references (`??`).
+- **Purpose**: Executes automated multi-pass compilation via Tectonic, Pandoc DOCX export, and zero-broken-cross-reference diagnostics.
+- **Tools**: `build.py`, `verify.py`, `docx_export.py`.
+- **Output**: `dissertation.pdf` (>100 KB), `dissertation.docx` (>10 KB, OOXML), `pipeline_outputs/final_verification_report.json`.
+- **Criteria**: 0 fatal LaTeX errors, 0 undefined citations (`[?]`), 0 broken cross-references (`??`), valid PDF and DOCX artifacts.

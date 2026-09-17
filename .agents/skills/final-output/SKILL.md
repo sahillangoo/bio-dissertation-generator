@@ -23,7 +23,7 @@ The `final-output` skill coordinates the research, verification, and publication
 │                        (bio-reference-manager)                              │
 │ 5. ADVERSARIAL REVIEW: Claim audit and methodology critique                 │
 │ 6. DE-AI & HUMANIZE  : Scan prose for promotional fluff and AI tells        │
-│ 7. FINAL BUILD       : Headless Tectonic compile to dissertation.pdf        │
+│ 7. FINAL BUILD       : Headless Tectonic PDF + Pandoc DOCX export           │
 │                        (build.py, verify.py -> 0 broken refs, 0 [?])        │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -34,7 +34,7 @@ The `final-output` skill coordinates the research, verification, and publication
 ```bash
 uv run python pipeline.py --all
 ```
-This executes all 7 stages sequentially, writing structured checkpoints and audit reports into `pipeline_outputs/` and compiling `dissertation.pdf`.
+This executes all 7 stages sequentially, writing structured checkpoints and audit reports into `pipeline_outputs/` and compiling `dissertation.pdf` plus `dissertation.docx`.
 
 ### 2. Inspect Pipeline State & Available Stages
 ```bash
@@ -71,7 +71,7 @@ uv run python .agents/skills/final-output/scripts/run_pipeline.py --audit-skills
 | **4** | `citation_audit` | `bio-reference-manager` | `pipeline_outputs/citation_verification.json` |
 | **5** | `adversarial_review` | pipeline heuristics | `pipeline_outputs/reviewer2_audit.md` |
 | **6** | `de_ai_humanizer` | pipeline heuristics | `pipeline_outputs/de_ai_humanizer_report.md` |
-| **7** | `final_build` | `build.py`, `verify.py` | `dissertation.pdf`, `pipeline_outputs/final_verification_report.json` |
+| **7** | `final_build` | `build.py`, `verify.py` | `dissertation.pdf`, `dissertation.docx`, `pipeline_outputs/final_verification_report.json` |
 
 ## Pipeline State & Checkpoint Data Contract
 
@@ -86,7 +86,7 @@ Execution checkpoints are recorded in `pipeline_outputs/pipeline_state.json`:
     "citation_audit": {"status": "SUCCESS"},
     "adversarial_review": {"status": "SUCCESS", "report": "reviewer2_audit.md"},
     "de_ai_humanizer": {"status": "SUCCESS", "report": "de_ai_humanizer_report.md"},
-    "final_build": {"status": "SUCCESS", "pdf": "dissertation.pdf"}
+    "final_build": {"status": "SUCCESS", "pdf": "dissertation.pdf", "docx": "dissertation.docx"}
   },
   "overall_status": "COMPLETED"
 }

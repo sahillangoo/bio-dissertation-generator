@@ -1,0 +1,60 @@
+% =========================================================================
+% Chapter 5: Discussion
+% =========================================================================
+
+\chapter{Discussion}\label{ch:discussion}
+
+The aqueous extract contained the polar classes expected from a water Soxhlet: flavonoids, phenols, tannins, saponins, alkaloids, terpenoids, phytosterols, carbohydrates, and quinones (\cref{tab:phytochem}, \cref{fig:phytochem}). Cowan's catalogue assigns membrane leakage to phenolics and flavonoids, protein binding to tannins, and pore-like disruption to saponins \citep{cowan1999plant,jubair2021review}. Those assignments are consistent with a clear zone around the extract. They are not proof that any one class caused the zone.
+
+Distilled water produced no zone. The solvent therefore does not explain the clearance. GEN 5 produced the widest mean zone on every isolate, as expected for a defined aminoglycoside disc \citep{clsi2024m100}. The extract never matched that disc. C1 and C2 are milligrams per millilitre of a crude concentrate. GEN 5 is five micrograms of a single drug. The comparison is a benchmark, not a potency ratio.
+
+\section{Isolate profiles}
+
+\taxa{Escherichia coli} showed a larger mean zone at C2 than at C1 ($14.99$\,mm versus $11.94$\,mm). That direction matches a simple concentration effect: more solute at C2, more diffusion into the lawn. The outer membrane of \taxa{E. coli} is a barrier \citep{nikaido2003molecular,pages2008porin}, but it did not abolish activity at either strength.
+
+\taxa{Klebsiella pneumoniae} also increased from C1 to C2, but only by about one millimetre ($12.35$\,mm to $13.25$\,mm). The capsule and a typical enterobacterial envelope are a plausible reason for the smaller step \citep{who2024bacterial}. \citet{drakhshaan2026identification} did not test this species, so the values cannot be stacked against their dichloromethane table. They are a new row for the aqueous extract, not a claim of first discovery in the whole \textit{Dipsacus} literature.
+
+\taxa{Pseudomonas aeruginosa} did not follow the same direction. C1 gave $16.03 \pm 0.25$\,mm, the largest extract mean in the study. C2 gave $12.53 \pm 0.45$\,mm, representing an inverted response of $-3.50$\,mm. Calling this isolate ``resistant'' would contradict the C1 plate, where the extract produced a clear, reproducible zone across all three replicates ($16.00$, $16.30$, and $15.80$\,mm; \cref{tab:raw_paer}). Technical explanations, including well-loading discrepancies, pigment masking of the C2 perimeter, or inter-plate agar variation, cannot be excluded. Two biological and physical hypotheses reconcile this non-linear behaviour.
+
+The first hypothesis concerns active efflux kinetics and outer-membrane permeation dynamics. \taxa{Pseudomonas aeruginosa} possesses an envelope with inherently low permeability, governed by the slow porin OprF, in which over 95\% of molecules adopt a closed two-domain conformer with minimal conductance, leaving only 1--5\% in an open $\beta$-barrel conformation \citep{chevalier2017porins}. Active drug extrusion is driven by the tripartite MexAB-OprM efflux pump, in which the inner-membrane proton antiporter MexB operates with the periplasmic adaptor MexA and the outer-membrane duct OprM to expel diverse amphiphilic and aromatic substrates \citep{li1995role,masuda2000substrate}. At C1 (\SI{50}{\milli\gram\per\milli\litre}), passive influx of polar phytochemicals across open OprF channels and surfactant-destabilised lipid domains exceeds basal MexAB-OprM extrusion velocity. Periplasmic and intracellular accumulation reaches inhibitory concentrations, driving cell lysis and establishing a wide clear zone ($16.03$\,mm). At C2 (\SI{100}{\milli\gram\per\milli\litre}), elevated solute influx raises the local concentration to the critical threshold required for MexB allosteric cooperativity or stress-mediated transcriptional induction of the \textit{mexAB-oprM} operon \citep{li1995role,poole2005efflux}. Accelerated active extrusion through OprM outpaces inward diffusion through closed-conformer OprF channels, lowering steady-state intracellular accumulation below lethal levels at the zone periphery and permitting bacterial growth closer to the well ($12.53$\,mm).
+
+The second hypothesis concerns colloidal micellar self-assembly and hydrogel diffusion impedance. Phytochemical analysis confirmed abundant saponins (froth test) and a high extraction yield of 24.13\% (w/w), consistent with substantial recovery of oleanane bidesmosides such as dipsacoside B and asperosaponin VI \citep{zhao2011phytochemicals,skala2023dipsacus}. Amphiphilic saponins assemble into multimolecular micellar aggregates once their concentration exceeds the Critical Micelle Concentration (CMC). At C1 (\SI{50}{\milli\gram\per\milli\litre}), saponin molecules exist predominantly as unassociated monomers that diffuse through the 1.5\% agar hydrogel network. At C2 (\SI{100}{\milli\gram\per\milli\litre}), the concentration surpasses the CMC, promoting self-assembly into bulky micellar aggregates exceeding 50--100\,kDa with substantially enlarged hydrodynamic radii. These macromolecular assemblies suffer severe steric restriction within the fibrous agar matrix. Retarded diffusion is compounded by the high solution viscosity of the concentrated extract, which contains water-soluble polysaccharides and mucilage (evidenced by a strong positive Fehling's reaction; \cref{tab:phytochem}). The resulting steep, truncated diffusion gradient confines the effective inhibitory concentration to a narrower radius around the C2 well.
+
+These interpretations remain reasoned biophysical hypotheses. In the absence of isogenic knockout strains ($\Delta$\textit{mexB}, $\Delta$\textit{oprF}), efflux pump inhibitor controls, or quantitative LC-MS profiling of the specific extract batch, the relative contributions of active efflux induction, micellar aggregation, and technical factors cannot be definitively resolved from agar diffusion assays alone. Candidate metadata limitations noted in earlier chapters---the unrecorded herbarium voucher accession number, lack of ATCC strain accession identifiers, unrecorded extract well loading volume, and unrecorded collection month---prevent direct kinetic modeling. The data are therefore reported as measured, without forcing the numbers into a monotonic concentration gradient.
+
+\section{Comparison with organic-solvent extracts}
+
+\citet{drakhshaan2026identification} used \SI{50}{\micro\gram\per\milli\litre} and \SI{100}{\micro\gram\per\milli\litre} dichloromethane and methanol extracts. Their gentamicin disc was \SI{10}{\micro\gram}. The present C1 and C2 are milligrams per millilitre, a thousand-fold difference on the label, and GEN 5 is not a ten-microgram disc. Millimetre values from that paper are therefore listed only to show that organic extracts of the same species can clear \taxa{E. coli} and \taxa{P. aeruginosa} lawns (\cref{tab:compare}). They are not same-dose replicates.
+
+\begin{table}[htbp]
+\centering
+\caption{Published zones for organic extracts of \taxa{D.\ inermis} \citep{drakhshaan2026identification} beside the present aqueous means. Units of the extract dose are not the same.}
+\label{tab:compare}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.44\textwidth}*{2}{S[table-format=2.2(2)]}@{}}
+\toprule
+Treatment & {\textit{E.\ coli} (mm)} & {\textit{P.\ aeruginosa} (mm)} \\
+\midrule
+Present aqueous C2, \SI{100}{\milli\gram\per\milli\litre} & 14.99 \pm 0.51 & 12.53 \pm 0.45 \\
+Present aqueous C1, \SI{50}{\milli\gram\per\milli\litre} & 11.94 \pm 0.14 & 16.03 \pm 0.25 \\
+DCM \SI{100}{\micro\gram\per\milli\litre} & 15.93 \pm 0.11 & 16.83 \pm 0.29 \\
+DCM \SI{50}{\micro\gram\per\milli\litre} & 12.93 \pm 0.11 & 13.10 \pm 0.17 \\
+MeOH \SI{100}{\micro\gram\per\milli\litre} & 15.80 \pm 0.34 & 15.17 \pm 0.29 \\
+MeOH \SI{50}{\micro\gram\per\milli\litre} & 11.13 \pm 0.23 & 9.07 \pm 0.11 \\
+Gentamicin \SI{10}{\micro\gram} (that study) & 15.00 \pm 0.12 & 14.50 \pm 0.30 \\
+GEN 5 (this study) & 17.00 \pm 0.00 & 17.17 \pm 0.29 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The 24.13\% aqueous yield is much higher than the 2.72\% dichloromethane and 2.9\% methanol yields reported by \citet{drakhshaan2026identification}. Water also extracts sugars, mucilage, and other bulk polar matter as well as phenolics. A high yield does not mean a high titre of antibacterial molecules.
+
+\section{Regional context}
+
+Kashmiri use of wopal haakh as a boiled leaf preparation \citep{lone2015study,haq2023cross,ahad2023ethnobotanical} is an aqueous tradition. The Soxhlet water extract is a laboratory relative of that solvent, not a clinical decoction trial. The NF-$\kappa$B study from the same university shows that local \taxa{D. inermis} is pharmacologically active \citep{hassan2020dipsacus}. Antibacterial zones on LB plates do not extend that claim to patients.
+
+\section{Limits}
+
+The screen used two concentrations, one solvent, three isolates without accession numbers, LB rather than Mueller--Hinton agar, and zone of inhibition only. MIC and MBC were not measured. GC-MS and LC-MS of the aqueous concentrate were not done. Some plates in the photograph set carry MET 5 discs; those discs were not entered in \cref{tab:zoi}. Collection month and a herbarium voucher number were not available. The work is a preliminary \invitro{} record for an aqueous extract from the Botanical Garden stand.
+
+\FloatBarrier

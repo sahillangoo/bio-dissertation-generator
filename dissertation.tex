@@ -1,13 +1,13 @@
 % =========================================================================
 % Master Dissertation Root Document
-% Subject: ANTIBACTERIAL POTENTIAL OF DIPSACUS INERMIS: AN IN VITRO STUDY
+% Subject: ANTIBACTERIAL POTENTIAL OF Dipsacus inermis: AN in vitro STUDY
+% Cover: all-caps English; header: title case; certificates: sentence case.
 % Candidate: BAZILLA SALEEM (Roll No: 24061119001)
 % Department of Zoology, University of Kashmir, Srinagar
 % =========================================================================
 
 \documentclass[12pt,oneside,a4paper]{book}
 
-% --- Load Master Preamble & Life Sciences Configurations ---
 \input{preamble}
 
 \begin{document}
@@ -18,86 +18,42 @@
 \frontmatter
 \pagestyle{frontmatterstyle}
 
-% 1. Academic Title Page
 \input{frontmatter/title}
-
-% 2. Official Certificate
 \input{frontmatter/certificate}
-
-% 3. Declaration by the Candidate
 \input{frontmatter/declaration}
-
-% 4. Acknowledgements
 \input{frontmatter/acknowledgements}
-
-% 5. Structured Abstract
 \input{frontmatter/abstract}
 
-% 6. Table of Contents / Index
 \clearpage
-\phantomsection
-\pdfbookmark[0]{\contentsname}{contents}
 \tableofcontents
 
-% 7. List of Figures
 \clearpage
-\phantomsection
-\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
-% 8. List of Tables
 \clearpage
-\phantomsection
-\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 
-% 9. List of Acronyms and Abbreviations
 \input{frontmatter/abbreviations}
 
 % =========================================================================
-% MAIN BODY CHAPTERS (Arabic Numeral Pagination, Running Header & Footer)
+% MAIN MATTER (Arabic Pagination)
 % =========================================================================
 \mainmatter
 \pagestyle{fancy}
 
-% 10. Chapter 1: Introduction
 \input{chapters/01_introduction}
+\input{chapters/02_lit_review}
+\input{chapters/03_methods}
+\input{chapters/04_results}
+\input{chapters/05_discussion}
+\input{chapters/06_conclusion}
 
-% 11. Chapter 2: Objectives of the Study
-\input{chapters/02_objectives}
-
-% 12. Chapter 3: Review of Literature
-\input{chapters/03_lit_review}
-
-% 13. Chapter 4: Materials and Methods
-\input{chapters/04_methods}
-
-% 14. Chapter 5: Results
-\input{chapters/05_results}
-
-% 15. Chapter 6: Discussion
-\input{chapters/06_discussion}
-
-% 16. Chapter 7: Conclusion
-\input{chapters/07_conclusion}
-
-% =========================================================================
-% BIBLIOGRAPHY & REFERENCES
-% =========================================================================
 \clearpage
 \phantomsection
-% 17. References
-\printbibliography[heading=bibintoc, title={References}]
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[title={REFERENCES}]
 
-% =========================================================================
-% APPENDICES
-% =========================================================================
 \appendix
-
-% 18. Appendix A: Raw triplicate measurements
-\input{appendices/appendix_a_template}
-
-% 19. Appendix B: Laboratory plate gallery
-\input{appendices/appendix_b_plate_gallery}
+\input{appendices/appendix_a_zoi}
 
 \end{document}

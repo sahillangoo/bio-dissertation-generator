@@ -1,9 +1,9 @@
 # De-AI & Stylistic Humanizer Diagnostic Report
 
-**Generated**: 2026-09-17 01:49:27
-**Total Words Scanned**: 8765 words across 13 files
+**Generated**: 2026-09-17 13:25:37
+**Total Words Scanned**: 7991 words across 12 files
 **Human Authenticity Score**: 100/100
-**AI-Tell Density**: 0 flagged patterns per 8.8k words
+**AI-Tell Density**: 0 flagged patterns per 8.0k words
 
 ---
 

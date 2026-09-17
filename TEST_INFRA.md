@@ -120,7 +120,7 @@ Validates the integrated lifecycle from raw research staging to LaTeX compilatio
 
 ### Tier 4: Real-World Workloads (Full Headless Compilation & Integrity)
 
-Validates the entire dissertation compilation pipeline from master document to publication-ready PDF.
+Validates the entire dissertation compilation pipeline from master document to publication-ready PDF and Word `.docx`.
 
 | Test ID | Module | Workload Target | Validation Rules |
 |---|---|---|---|
@@ -129,7 +129,8 @@ Validates the entire dissertation compilation pipeline from master document to p
 | `T4-E2E-03` | `test_e2e_workload.py` | Zero Broken Cross-References | Engine transcript and log contain zero instances of `LaTeX Warning: Reference '...' undefined` or `LaTeX Warning: There were undefined references`. |
 | `T4-E2E-04` | `test_e2e_workload.py` | Zero Unresolved Citations | Engine transcript and log contain zero instances of `LaTeX Warning: Citation '...' undefined` or `Citation '...' on page X undefined`. |
 | `T4-E2E-05` | `test_e2e_workload.py` | Multi-Pass Cross-Reference Convergence | Aux/TOC generation passes successfully resolve Table of Contents, List of Figures, List of Tables, and Chapter references. |
-| `T4-E2E-06` | `test_e2e_workload.py` | Clean Build Flag Support | Executing `build.py --clean` removes temporary auxiliary files (`.aux`, `.bbl`, `.blg`, `.log`, `.out`, `.toc`, `.lof`, `.lot`). |
+| `T4-E2E-06` | `test_e2e_workload.py` | DOCX Artifact Generation | `dissertation.docx` is generated, has non-zero size (> 10,000 bytes), is a valid OOXML zip (`PK` + `word/document.xml`), and contains identity text (`Dipsacus`, `Bazilla`). |
+| `T4-E2E-07` | `test_e2e_workload.py` | Clean Build Flag Support | Executing `build.py --clean` removes temporary auxiliary files (`.aux`, `.bbl`, `.blg`, `.log`, `.out`, `.toc`, `.lof`, `.lot`). |
 
 ---
 
@@ -194,7 +195,7 @@ tests/
 ├── test_latex_structure.py    # Tier 1 & 2: Modular LaTeX documents, preamble macros, .bib keys
 ├── test_build_cli.py          # Tier 1 & 2: build.py CLI options, engine flags, --strict mode
 ├── test_cross_feature.py      # Tier 3: Ingestion -> Manifest -> BibTeX merge -> Chapter synthesis
-└── test_e2e_workload.py       # Tier 4: Headless PDF compilation, non-zero PDF, zero broken refs
+└── test_e2e_workload.py       # Tier 4: Headless PDF/DOCX compilation, non-zero artifacts, zero broken refs
 ```
 
 ---
@@ -203,7 +204,7 @@ tests/
 
 A release is marked `TEST_READY` when:
 1. **100% Pass Rate**: Every test in Tiers 1 through 4 passes without failure.
-2. **Strict Verification**: Headless compilation produces `dissertation.pdf` exceeding 10 KB with valid PDF magic bytes.
+2. **Strict Verification**: Headless compilation produces `dissertation.pdf` exceeding 10 KB with valid PDF magic bytes, and `dissertation.docx` exceeding 10 KB with a valid OOXML (`PK`) package.
 3. **Zero Diagnostic Broken References**: No undefined citation (`[?]`) or reference (`??`) warnings in the final compilation log.
 4. **Skill Conformance**: All 5 skills pass YAML frontmatter parsing, directory structure validation, and CLI `--help` checks.
 5. **Hermetic Test Integrity**: No tests leave dangling temporary files outside `tmp_path` or alter the production git state.

@@ -1,51 +1,44 @@
-# Reviewer 2: adversarial science audit
+# Reviewer 2: Adversarial Manuscript & Logic Audit
 
-**Date:** 2026-09-17  
-**Target:** Kashmir M.Sc. Zoology dissertation, aqueous *Dipsacus inermis* well diffusion  
-**Persona:** methodology / microbiology (not the frog morphometrics stub this file previously held)  
-**Mode:** report only
+**Target Manuscript**: `dissertation.tex` (M.Sc. Zoology, aqueous *Dipsacus inermis*)
+**Review Persona**: Internal examiner, methods and claim limits
 
-## Executive summary
+## Executive evaluation
 
-The empirical core (yield 24.13%, qualitative phytochemistry, triplicate LB well zones at 50 and 100 µg mL⁻¹, water = 0, gentamicin disc as intra-plate control) matches the laboratory table. Inverse *P. aeruginosa* C1 > C2 is disclosed. Gentamicin is not forced to 10 µg. MIC, ATCC, voucher, and a *P. aeruginosa* inhibition plate are correctly absent.
+The dissertation is a two-concentration aqueous Soxhlet screen read as millimetre zones on LB agar. Claims stay inside that design. The *P. aeruginosa* C1 > C2 inversion is reported as measured. Organic-extract millimetres from Drakhshaan et al. (2026) are compared only with the mg/mL versus µg/mL and GEN 5 versus 10 µg mismatches stated.
 
-Recommendation: **revise two over-claims in the introduction and one mis-cited AMR statistic in the literature review**, then accept the methods–results–discussion chain.
+## Claim-by-claim
 
-## Strengths
+### Concentrations and ZOI digits
+- **Claim**: C1 = 50 mg/mL, C2 = 100 mg/mL; Table 4.2 means match the laboratory file.
+- **Challenge**: The laboratory markdown labels wells as 50/100 µg.
+- **Defense**: Locked decision treats those labels as mg/mL; millimetre digits are not rescaled.
 
-- LB agar vs Mueller–Hinton is stated; CLSI is not used as a plant-extract breakpoint.
-- Whole plant vs earlier “aerial parts” abstract error is corrected.
-- Soxhlet photographs are not called simple reflux in the caption body.
-- *K. pneumoniae* novelty is conservative in Ch.5–7.
+### Positive control
+- **Claim**: GEN 5 (5 µg) is the tabulated disc.
+- **Challenge**: Some photographs show MET 5.
+- **Defense**: MET 5 plates are omitted from Table 4.2 and noted as unused for the mean.
 
-## Weaknesses
+### Medium
+- **Claim**: Lawn on LB agar, lids dated 01-07-2026 and 04/08/26.
+- **Challenge**: CLSI tables assume Mueller–Hinton.
+- **Defense**: Methods and discussion state LB, not MHA. Breakpoints are not applied to the extract.
 
-| Severity | Location | Issue | Evidence | Fix |
-|----------|----------|-------|----------|-----|
-| Major | Ch.1 gaps | Absolute novelty vs *K. pneumoniae* | “no study has evaluated… novel scientific contribution” | Indexed-gap wording only |
-| Major | Ch.3 AMR | 10 million deaths / year cited to who2024 | BPPL is a priority list, not that forecast | Delete or move to an uncited policy clause |
-| Moderate | Ch.1 | 2050 1.91 / 8.2 million without a 2024 GRAM cite | Not in amrcollaborators2022 | Drop |
-| Moderate | Design | Inverse Pa dose unexplained | No plate, no MIC | Already tagged non-monotonic; keep |
-| Moderate | Design | n=3, no inferential test | Notes had ANOVA placeholder | Correctly omitted p-values |
-| Minor | Unused files | Frog leftover `.tex` still on disk | Not `\input` | Delete if OS allows |
+### Captions
+- **Claim**: Fig. 9 names only readable lids; Fig. 7 and Fig. 10 carry no binomial.
+- **Challenge**: The lower plate on Fig. 9 looks like *E. coli*.
+- **Defense**: Species line not fully legible; caption leaves it unnamed.
 
-## Inverse Pa, LB vs MHA, whole plant, novelty
+### Phytochemistry
+- **Claim**: Nine positive tube tests matching the labelled rack.
+- **Challenge**: Wagner’s, Shinoda, lead acetate, Keller–Kiliani are common in Indian theses.
+- **Defense**: Those tests were not run and are not invented.
 
-- **Inverse Pa:** C1 16.03 > C2 12.53 mm. Do not rank species by “susceptibility” using a single concentration. Draft already avoids a global rank order in Results.
-- **LB vs MHA:** stated in Methods, Objectives, Discussion. Adequate.
-- **Whole plant vs aerial:** Methods follow powder plates; abstract uses whole plant.
-- **Novelty:** fail only in Introduction gap bullet; other chapters pass.
+### Statistics and MIC
+- **Claim**: Mean ± SD, n = 3 only.
+- **Challenge**: Examiners may want ANOVA or MIC inferred from zones.
+- **Defense**: Neither is calculated.
 
-## Questions for the author (already answered in text)
+## Verdict
 
-1. ATCC? No.  
-2. 10 µg gentamicin? Not claimed.  
-3. Fig. 8c? Not available.  
-4. CLSI plant-extract category? Not applied.
-
-## Revision roadmap
-
-1. Patch Ch.1 *Klebsiella* gap sentence.  
-2. Patch Ch.3 10-million / who2024.  
-3. Drop uncited 2050 mortality numbers.  
-4. Do not add ANOVA, MIC, or a fake Pa plate.
+ACCEPT WITH THE CANDIDATE NOTES already listed in the dissertation checker (no voucher, no ATCC, no well volume, no collection month).

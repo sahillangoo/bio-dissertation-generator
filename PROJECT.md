@@ -72,10 +72,10 @@ A specialized, modular academic dissertation engineering platform tailored for L
   - `\SI{value}{unit}` -> unit rendering via `siunitx`
   - `\begin{forest} ... \end{forest}` -> phylogenetic tree rendering
 
-### `build.py` <-> LaTeX Source Files <-> `dissertation.pdf`
+### `build.py` <-> LaTeX Source Files <-> `dissertation.pdf` + `dissertation.docx`
 - Input: Root document `dissertation.tex` and modular dependencies
 - Invocation: `uv run python build.py [--root dissertation.tex] [--output dissertation.pdf] [--strict] [--clean]`
-- Output: Exit code 0, `dissertation.pdf` (>10 KB, 165.51 KB generated), warning report (citations, references)
+- Output: Exit code 0, `dissertation.pdf` (>10 KB, `%PDF-` header), `dissertation.docx` (>10 KB, OOXML), warning report (citations, references)
 
 ### `verify.py` <-> System Verification
 - Invocation: `uv run python verify.py [--skills-only] [--staging-only] [--build-only] [--json]`
@@ -92,10 +92,13 @@ d:\sandbox\work-box\dissertation-skills\
 ├── deploy_github.ps1
 ├── pyproject.toml
 ├── build.py
+├── docx_export.py
 ├── verify.py
 ├── dissertation.tex
 ├── dissertation.pdf
+├── dissertation.docx
 ├── preamble.tex
+├── preamble_docx.tex
 ├── references.bib
 ├── frontmatter/
 │   ├── title.tex

@@ -1,6 +1,7 @@
 """
-Tier 4 Tests: Real-World Workloads & Full Headless LaTeX-to-PDF Compilation.
-Verifies complete dissertation compilation, non-zero PDF generation, zero undefined citations/references, and clean flag.
+Tier 4 Tests: Real-World Workloads & Full Headless LaTeX-to-PDF/DOCX Compilation.
+Verifies complete dissertation compilation, non-zero PDF and DOCX generation,
+zero undefined citations/references, and clean flag.
 """
 
 import os
@@ -8,6 +9,8 @@ import sys
 import subprocess
 from pathlib import Path
 import pytest
+
+from docx_export import docx_layout_issues, docx_missing_identity_strings, is_valid_docx
 
 
 @pytest.fixture(scope="module")
@@ -35,7 +38,7 @@ def headless_build_run(project_root):
         ],
         capture_output=True,
         text=True,
-        timeout=180,
+        timeout=300,
     )
     return result
 
@@ -64,6 +67,24 @@ def test_pdf_artifact_integrity(project_root, headless_build_run):
     with open(pdf_out, "rb") as f:
         header = f.read(5)
     assert header == b"%PDF-", f"Invalid PDF file magic header: {header}"
+
+
+def test_docx_artifact_integrity(project_root, headless_build_run):
+    """T4-E2E-06: Verify dissertation.docx exists, is non-zero (> 10 KB), and is valid OOXML."""
+    assert headless_build_run.returncode == 0, "Build did not exit successfully"
+
+    docx_out = project_root / "dissertation.docx"
+    assert docx_out.exists(), f"Expected dissertation.docx missing at {docx_out}"
+
+    size_bytes = docx_out.stat().st_size
+    assert size_bytes > 10240, (
+        f"dissertation.docx is suspiciously small ({size_bytes} bytes, expected > 10 KB)"
+    )
+    assert is_valid_docx(docx_out), f"Invalid OOXML package: {docx_out}"
+    missing = docx_missing_identity_strings(docx_out)
+    assert not missing, f"DOCX missing identity text: {missing}"
+    layout_issues = docx_layout_issues(docx_out)
+    assert not layout_issues, f"DOCX missing thesis formatting: {layout_issues}"
 
 
 def test_zero_broken_cross_references(project_root, headless_build_run):
@@ -123,7 +144,7 @@ def test_build_clean_cleans_auxiliary_files(project_root):
         [sys.executable, str(build_py), "--clean", "--root", "dissertation.tex"],
         capture_output=True,
         text=True,
-        timeout=180,
+        timeout=300,
     )
 
     assert result.returncode == 0, f"build.py --clean failed: {result.stderr}"

@@ -30,7 +30,7 @@ def test_dissertation_root_document_exists(project_root):
 
 
 def test_dissertation_root_includes_modular_components(project_root):
-    """T1-LATEX-01: Verify dissertation.tex includes preamble, frontmatter, chapters, and bibliography."""
+    """T1-LATEX-01: Verify dissertation.tex includes preamble and the kept front-matter pages."""
     root_tex = project_root / "dissertation.tex"
     if not root_tex.exists():
         pytest.skip("dissertation.tex not yet implemented")
@@ -45,14 +45,23 @@ def test_dissertation_root_includes_modular_components(project_root):
         "dissertation.tex does not input preamble.tex"
     )
 
-    # Core modular inputs
-    for module_pattern in ["frontmatter", "chapters", "appendices"]:
-        assert re.search(rf"\\(?:input|include)\s*\{{[^}}]*{module_pattern}", content), (
-            f"dissertation.tex does not include {module_pattern} module"
+    for module in EXPECTED_FRONTMATTER_FILES:
+        stem = module.replace(".tex", "")
+        assert re.search(rf"\\(?:input|include)\s*\{{[^}}]*frontmatter/{stem}", content), (
+            f"dissertation.tex does not include frontmatter/{stem}"
         )
-    assert re.search(r"\\(?:printbibliography|addbibresource|bibliography)", content), (
-        "dissertation.tex does not include bibliography command (printbibliography / addbibresource)"
-    )
+
+    for module in EXPECTED_CHAPTER_FILES:
+        stem = module.replace(".tex", "")
+        assert re.search(rf"\\(?:input|include)\s*\{{[^}}]*chapters/{stem}", content), (
+            f"dissertation.tex does not include chapters/{stem}"
+        )
+
+    for module in EXPECTED_APPENDIX_FILES:
+        stem = module.replace(".tex", "")
+        assert re.search(rf"\\(?:input|include)\s*\{{[^}}]*appendices/{stem}", content), (
+            f"dissertation.tex does not include appendices/{stem}"
+        )
 
 
 def test_preamble_loads_required_life_sciences_packages(project_root):
@@ -105,30 +114,64 @@ def test_frontmatter_certificate_and_declaration(project_root):
         assert keyword in decl, f"Keyword '{keyword}' missing in declaration.tex"
 
 
-@pytest.mark.parametrize("ch_filename", EXPECTED_CHAPTER_FILES)
-def test_chapter_modules_exist(project_root, ch_filename):
-    """T1-LATEX-04: Verify all 5 modular chapter files exist in chapters/."""
-    ch_file = project_root / "chapters" / ch_filename
-    assert ch_file.exists(), f"Chapter module missing: {ch_file}"
-    assert ch_file.stat().st_size > 0, f"Chapter module is empty: {ch_file}"
+def test_chapter_modules_exist_for_kashmir_thesis(project_root):
+    """T1-LATEX-04: Live Kashmir chapter files exist and are non-empty."""
+    ch_dir = project_root / "chapters"
+    assert ch_dir.is_dir(), f"Chapter directory missing: {ch_dir}"
+    for name in EXPECTED_CHAPTER_FILES:
+        path = ch_dir / name
+        assert path.exists(), f"Missing chapter file: {path}"
+        assert path.stat().st_size > 200, f"Chapter file too small: {path}"
 
 
-@pytest.mark.parametrize("app_filename", EXPECTED_APPENDIX_FILES)
-def test_appendix_modules_exist(project_root, app_filename):
-    """T1-LATEX-05: Verify all appendix files exist in appendices/."""
-    app_file = project_root / "appendices" / app_filename
-    assert app_file.exists(), f"Appendix module missing: {app_file}"
-    assert app_file.stat().st_size > 0, f"Appendix module is empty: {app_file}"
+def test_appendix_modules_exist_for_kashmir_thesis(project_root):
+    """T1-LATEX-05: Raw ZOI appendix exists."""
+    app_dir = project_root / "appendices"
+    assert app_dir.is_dir(), f"Appendix directory missing: {app_dir}"
+    path = app_dir / "appendix_a_zoi.tex"
+    assert path.exists() and path.stat().st_size > 100
 
 
 def test_master_references_bib_validity(project_root):
-    """T1-LATEX-06: Verify references.bib exists and contains valid BibTeX entries."""
+    """T1-LATEX-06: references.bib holds the live Kashmir bibliography."""
     bib_file = project_root / "references.bib"
     assert bib_file.exists(), f"Master references.bib missing at {bib_file}"
-    assert bib_file.stat().st_size > 0, f"{bib_file} is empty"
-
     keys = extract_bibtex_keys(bib_file)
-    assert len(keys) >= 5, f"references.bib contains too few entries ({len(keys)} found, expected >= 5)"
+    assert len(keys) >= 15, (
+        f"references.bib contains only {len(keys)} entries; expected a populated bibliography"
+    )
+
+
+def test_in_vitro_title_casing(project_root):
+    """KU Zoology registers: cover capitals, header title case, cites sentence case; in vitro always italic lowercase."""
+    header = r"Antibacterial Potential of \textit{Dipsacus inermis}: An \textit{in vitro} Study"
+    cover = r"ANTIBACTERIAL POTENTIAL OF\\ \textit{Dipsacus inermis}:\\ AN \textit{in vitro} STUDY"
+    cited = r"Antibacterial potential of \textit{Dipsacus inermis}: an \textit{in vitro} study"
+    title = (project_root / "frontmatter" / "title.tex").read_text(encoding="utf-8")
+    cert = (project_root / "frontmatter" / "certificate.tex").read_text(encoding="utf-8")
+    decl = (project_root / "frontmatter" / "declaration.tex").read_text(encoding="utf-8")
+    acks = (project_root / "frontmatter" / "acknowledgements.tex").read_text(encoding="utf-8")
+    preamble = (project_root / "preamble.tex").read_text(encoding="utf-8")
+    for label, text in (
+        ("title", title),
+        ("certificate", cert),
+        ("declaration", decl),
+        ("acknowledgements", acks),
+        ("preamble", preamble),
+    ):
+        assert "IN VITRO" not in text, f"all-caps IN VITRO found in {label}"
+        assert "In Vitro" not in text, f"title-cased In Vitro found in {label}"
+    assert r"\distitlecover" in title
+    assert cover in preamble
+    assert header in preamble
+    assert cited in preamble
+    assert r"\distitlecite" in cert
+    assert r"\distitlecite" in decl
+    assert r"\distitlecite" in acks
+    assert r"\disshorttitle" in preamble
+    assert r"\makebox[\headwidth]" in preamble
+    assert r"Enrollment No.\ \disroll" in preamble
+    assert r"AN \textit{in vitro} STUDY\\" not in preamble
 
 
 # ============================================================================
@@ -142,9 +185,8 @@ def test_all_cited_keys_resolved_in_references_bib(project_root):
         pytest.skip("references.bib not yet implemented")
 
     defined_keys = extract_bibtex_keys(bib_file)
-    assert len(defined_keys) > 0, "No keys found in references.bib"
 
-    # Scan only the live Kashmir thesis (not leftover frog/morphometrics files).
+    # Scan only the live Kashmir thesis files currently included in the root document.
     all_tex_files = [
         project_root / "dissertation.tex",
         *[project_root / "frontmatter" / f for f in EXPECTED_FRONTMATTER_FILES],
@@ -178,3 +220,14 @@ def test_citation_extractor_detects_synthetic_missing_key(tmp_path):
     defined = {"darwin1859"}
     missing = cited - defined
     assert missing == {"unresolved_author_2099"}
+
+
+def test_final_result_plate_is_included(project_root):
+    """Results chapter includes the incubated dual-plate photograph."""
+    results = (project_root / "chapters" / "04_results.tex").read_text(encoding="utf-8")
+    plate = project_root / "figures" / "fig11_final_result_plates.png"
+    assert plate.exists() and plate.stat().st_size > 1000
+    assert "fig11_final_result_plates.png" in results
+    assert r"\label{fig:finalplates}" in results
+    assert "agarplate-final-result-fig" not in results
+

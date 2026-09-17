@@ -47,15 +47,16 @@ Executing 7-stage dissertation workflow...
   ✔ Stage 6 completed successfully.
 
 [STAGE 7/7] Final Headless Dissertation Build & Verification...
-  • Compiling dissertation.tex -> dissertation.pdf via Tectonic...
+  • Compiling dissertation.tex -> dissertation.pdf and dissertation.docx...
   • Zero undefined citations ([?]); Zero broken references (??).
-  ✔ Stage 7 completed successfully: dissertation.pdf (165.51 KB).
+  ✔ Stage 7 completed successfully: dissertation.pdf (165.51 KB), dissertation.docx.
 
 ================================================================================
                   PIPELINE EXECUTION SUMMARY: ALL STAGES PASSED                 
 ================================================================================
 Deliverables:
   - dissertation.pdf (Publication-Ready PDF)
+  - dissertation.docx (Word / Google Docs export)
   - pipeline_outputs/pipeline_state.json
   - pipeline_outputs/reviewer2_audit.md
   - pipeline_outputs/de_ai_humanizer_report.md

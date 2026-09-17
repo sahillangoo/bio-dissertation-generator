@@ -53,7 +53,7 @@ This platform unifies these demands into three integrated layers:
 ┌────────────────────────────────────────────────────────────────────────┐
 │               3. Modular LaTeX Engine & Build Automation               │
 │   dissertation.tex, preamble.tex, chapters/, appendices/, build.py     │
-│   ──> Output: dissertation.pdf (Publication-Standard Quality)          │
+│   ──> Output: dissertation.pdf and dissertation.docx                       │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -172,12 +172,12 @@ uv sync
 
 ## Quickstart Guide
 
-### 1. Compile the Dissertation to PDF
-To build the complete dissertation into `dissertation.pdf`:
+### 1. Compile the Dissertation to PDF and Word
+To build the complete dissertation into `dissertation.pdf` and `dissertation.docx`:
 ```bash
 uv run python build.py
 ```
-*Tectonic will download on first run (if needed), resolve references, and generate `dissertation.pdf` in the workspace root.*
+*Tectonic and Pandoc will download on first run (if needed). The PDF is the typeset submission copy; the `.docx` is the Word/Google Docs editable export.*
 
 ### 2. Run Diagnostics
 To verify that skills, staging, and the LaTeX pipeline are error-free:
@@ -260,6 +260,7 @@ uv run python pipeline.py [OPTIONS]
 - `pipeline_outputs/de_ai_humanizer_report.md`: Stylistic authenticity score, cliché analysis, and de-AI refinement recommendations.
 - `pipeline_outputs/pipeline_state.json`: Execution timestamps, stage durations, and convergence status.
 - `dissertation.pdf`: Final publication-ready PDF artifact in root.
+- `dissertation.docx`: Editable Word/Google Docs export generated alongside the PDF.
 
 ---
 
@@ -292,7 +293,7 @@ uv run python build.py [OPTIONS]
 | Flag | Short | Default | Description |
 |:---|:---|:---|:---|
 | `--root` | `-r` | `dissertation.tex` | Master LaTeX source file |
-| `--output` | `-o` | `dissertation.pdf` | Destination PDF path |
+| `--output` | `-o` | `dissertation.pdf` | Destination PDF path. A sibling `.docx` is written automatically. |
 | `--engine` | `-e` | `auto` | Compiler: `auto`, `tectonic`, `docker`, or `system` |
 | `--clean` | `-c` | `False` | Cleans auxiliary files before/after compilation |
 | `--keep-intermediates` | | `False` | Retains temporary auxiliary files (`.aux`, `.bcf`, etc.) |
